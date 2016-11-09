@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.commands = @[@"Command + C",@"Command + V"];
+    self.commands = @[@"command + C",@"command + V"];
     [self.view addSubview:self.twoTableView];
 }
 
@@ -66,7 +66,7 @@
     NSString *functionKey = [command substringToIndex:plusRange.location];
     NSString *commandKey = [command substringFromIndex:plusRange.location + plusRange.length];
     NSLog(@"%@_%@",functionKey,commandKey);
-    return @{@"commandType":toNSNumber(QTCommandTwo) ,@"functionKey":functionKey, @"commandKey":commandKey};
+    return @{@"commandType":toNSNumber(QTCommandTwo) ,@"functionKeys":@[functionKey], @"commandKey":commandKey};
 }
 
 @end

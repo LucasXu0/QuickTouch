@@ -11,11 +11,13 @@
 #include <Carbon/Carbon.h>
 #include <CoreFoundation/CoreFoundation.h>
 #import "NSString+KeyCode.h"
+#import "FTKey.h"
 
 typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
     QTCommandTwo, // 单功能键 + 普通键 如 Command + c
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
+    QTCommandSpecial
 };
 
 @interface AppDelegate () <GCDAsyncUdpSocketDelegate>
@@ -47,19 +49,28 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     // 解析 Command Dict
     NSDictionary *commandDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
     NSLog(@"%@",commandDict);
-    NSUInteger commandType = [commandDict[@"commandType"] integerValue];
+    QTCommandType commandType = [commandDict[@"commandType"] integerValue];
     
     switch (commandType) {
-        case 1:{
+        case QTCommandOne:{
             NSString *command = commandDict[@"command"];
             BOOL isEnter = [commandDict[@"isEnter"] boolValue];
             [self handleTypeOneCommand:command isEnter:isEnter];
         }
             break;
-        case 2:{
-            NSString *functionkey = commandDict[@"functionkey"];
-            NSString *commandKey = commandDict[@"commandKey"];
-            [self handleTypeOneCommandKey:nil functionKey:nil];
+        case QTCommandTwo:{
+            NSArray *functionkeys = commandDict[@"functionKeys"];
+            NSString *commandKey = commandDict[@"commandKeys"];
+            [self handleTypeTwoCommandKey:commandKey functionKeys:functionkeys];
+        }
+            break;
+        case QTCommandThree:{
+        
+        }
+            break;
+        case QTCommandSpecial:{
+            NSString *command = commandDict[@"command"];
+            [self handleTypeSpecialCommand:command];
         }
             break;
         default:
@@ -77,29 +88,24 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
      for (int i = 0 ; i < command.length ; i++) {
         each = [NSString stringWithFormat:@"%c",[command characterAtIndex:i]];
         keyCode = [NSString keyCodeFormKeyString:each];
-         [self pressKey:keyCode];
+         [FTKey pressNormalKey:keyCode];
      }
     
     if (isEnter) {
         keyCode = [NSString keyCodeFormKeyString:@"ENTER"];
-        [self pressKey:keyCode];
+        [FTKey pressNormalKey:keyCode];
     }
 }
 
-- (void)handleTypeOneCommandKey:(NSString *) command functionKey:(NSString *)functionKey{
-    CGKeyCode keyCode = [NSString keyCodeFormKeyString:@"F11"];
-    [self pressKey:keyCode];
+- (void)handleTypeTwoCommandKey:(NSString *) command functionKeys:(NSArray *)functionKeys{
+    CGKeyCode commandKC = [NSString keyCodeFormKeyString:command];
+    [FTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
 
-- (void)pressKey:(CGKeyCode) keyCode{
-    CGEventRef eventDown, eventUp;
-    eventDown = CGEventCreateKeyboardEvent(nil, keyCode, YES);
-    eventUp = CGEventCreateKeyboardEvent(nil, keyCode, NO);
-    CGEventPost(kCGHIDEventTap, eventDown);
-    sleep(0.0001);
-    CGEventPost(kCGHIDEventTap, eventUp);
-    CFRelease(eventUp);
-    CFRelease(eventDown);
+- (void)handleTypeSpecialCommand:(NSString *) command{
+    CGKeyCode keyCode = [NSString keyCodeFormKeyString:command];
+    [FTKey pressNormalKey:keyCode];
 }
+
 
 @end

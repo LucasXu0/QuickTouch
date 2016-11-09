@@ -17,6 +17,8 @@
 		341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3411355E1DD2CEB000D98C94 /* Assets.xcassets */; };
 		341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355F1DD2CEB000D98C94 /* AppDelegate.m */; };
 		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
+		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
+		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
@@ -48,6 +50,10 @@
 		3411355F1DD2CEB000D98C94 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		341135601DD2CEB000D98C94 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3411356A1DD2CF2400D98C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
+		3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialKeyViewController.h; sourceTree = "<group>"; };
+		3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
+		341135721DD31BC300D98C94 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
+		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B049C51DD0D89500998965 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34B049C71DD0D89500998965 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,18 +120,18 @@
 		341135411DD2CE5D00D98C94 /* QuickTouchServer */ = {
 			isa = PBXGroup;
 			children = (
-				341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */,
-				341135521DD2CEB000D98C94 /* NSString+KeyCode.m */,
+				341135561DD2CEB000D98C94 /* GCD */,
+				341135601DD2CEB000D98C94 /* AppDelegate.h */,
+				3411355F1DD2CEB000D98C94 /* AppDelegate.m */,
+				3411355C1DD2CEB000D98C94 /* FTKey.h */,
+				3411355B1DD2CEB000D98C94 /* FTKey.m */,
 				341135531DD2CEB000D98C94 /* NSString+KeyCode.h */,
+				341135521DD2CEB000D98C94 /* NSString+KeyCode.m */,
 				341135541DD2CEB000D98C94 /* main.m */,
 				341135551DD2CEB000D98C94 /* Info.plist */,
-				341135561DD2CEB000D98C94 /* GCD */,
-				3411355B1DD2CEB000D98C94 /* FTKey.m */,
-				3411355C1DD2CEB000D98C94 /* FTKey.h */,
+				341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */,
 				3411355D1DD2CEB000D98C94 /* Base.lproj */,
 				3411355E1DD2CEB000D98C94 /* Assets.xcassets */,
-				3411355F1DD2CEB000D98C94 /* AppDelegate.m */,
-				341135601DD2CEB000D98C94 /* AppDelegate.h */,
 			);
 			path = QuickTouchServer;
 			sourceTree = "<group>";
@@ -185,6 +191,10 @@
 				34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */,
 				34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */,
 				34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */,
+				3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */,
+				3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */,
+				341135721DD31BC300D98C94 /* CustomShortCutViewController.h */,
+				341135731DD31BC300D98C94 /* CustomShortCutViewController.m */,
 				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
 				34B049D01DD0D89500998965 /* Assets.xcassets */,
 				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
@@ -399,6 +409,8 @@
 				34B049DE1DD0D97500998965 /* MainViewController.m in Sources */,
 				34B049C61DD0D89500998965 /* main.m in Sources */,
 				34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */,
+				3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */,
+				341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +598,7 @@
 				341135501DD2CE5D00D98C94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34B049BC1DD0D89500998965 /* Build configuration list for PBXProject "QuickTouchClient" */ = {
 			isa = XCConfigurationList;

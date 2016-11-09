@@ -21,7 +21,11 @@
     if ([keyString isEqualToString:@"z"]) return 6;
     if ([keyString isEqualToString:@"x"]) return 7;
     if ([keyString isEqualToString:@"c"]) return 8;
+    if ([keyString isEqualToString:@"C"]) return 8;
+
     if ([keyString isEqualToString:@"v"]) return 9;
+    if ([keyString isEqualToString:@"V"]) return 9;
+
     // what is 10?
     if ([keyString isEqualToString:@"b"]) return 11;
     if ([keyString isEqualToString:@"q"]) return 12;
@@ -67,6 +71,8 @@
     if ([keyString isEqualToString:@"ENTER"]) return 52;
     if ([keyString isEqualToString:@"ESCAPE"]) return 53;
     
+    if ([keyString isEqualToString:@"Command"]) return 55;
+
     // some more missing codes abound, reserved I presume, but it would
     // have been helpful for Apple to have a document with them all listed
     
@@ -77,6 +83,9 @@
     if ([keyString isEqualToString:@"+"]) return 69;
     
     if ([keyString isEqualToString:@"CLEAR"]) return 71;
+    
+    if ([keyString isEqualToString:@"VolumeUp"]) return 72;
+    if ([keyString isEqualToString:@"VolumeDown"]) return 73;
     
     if ([keyString isEqualToString:@"/"]) return 75;
     if ([keyString isEqualToString:@"ENTER"]) return 76;  // numberpad on full kbd
@@ -127,7 +136,8 @@
     if ([keyString isEqualToString:@"RIGHT"]) return 124;
     if ([keyString isEqualToString:@"DOWN"]) return 125;
     if ([keyString isEqualToString:@"UP"]) return 126;
-    
+
+
     return 0;
     //fprintf(stderr, "keyString %s Not Found. Aborting...\n", keyString);
     //exit(EXIT_FAILURE);

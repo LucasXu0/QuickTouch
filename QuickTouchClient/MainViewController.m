@@ -9,6 +9,9 @@
 #import "MainViewController.h"
 #import "OneViewController.h"
 #import "TwoViewController.h"
+#import "SpecialKeyViewController.h"
+#import "CustomShortCutViewController.h"
+
 #define cellID @"commandTypesCell"
 
 @interface MainViewController () <GCDAsyncUdpSocketDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -26,7 +29,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function"];
+    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -61,7 +64,18 @@
             TwoViewController *twoVC = [TwoViewController new];
             twoVC.title = @"Two";
             [self.navigationController pushViewController:twoVC animated:NO];
-;
+        }
+            break;
+        case 2:{
+            SpecialKeyViewController *specialKeyVC = [SpecialKeyViewController new];
+            specialKeyVC.title = @"Special";
+            [self.navigationController pushViewController:specialKeyVC animated:NO];
+        }
+            break;
+        case 3:{
+            CustomShortCutViewController *customVC = [CustomShortCutViewController new];
+            customVC.title = @"Custom";
+            [self.navigationController pushViewController:customVC animated:NO];
         }
             break;
         default:

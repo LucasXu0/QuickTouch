@@ -10,12 +10,7 @@
 
 @interface FTKey : NSObject
 
-
-/**
- 根据 key code 触发相应键
-
- @param keyCode Key Code
- */
 + (void)pressNormalKey:(CGKeyCode) keyCode;
++ (void)pressNormalKey:(CGKeyCode) keyCode withFlags:(NSArray *)flags;
 
 @end
