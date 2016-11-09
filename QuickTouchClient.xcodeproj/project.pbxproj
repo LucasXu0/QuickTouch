@@ -10,7 +10,6 @@
 		07CB409008305A8583BF1ACE /* Pods_QuickTouchClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */; };
 		341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135521DD2CEB000D98C94 /* NSString+KeyCode.m */; };
 		341135621DD2CEB000D98C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135541DD2CEB000D98C94 /* main.m */; };
-		341135631DD2CEB000D98C94 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341135551DD2CEB000D98C94 /* Info.plist */; };
 		341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */; };
 		341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */; };
 		341135661DD2CEB000D98C94 /* FTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355B1DD2CEB000D98C94 /* FTKey.m */; };
@@ -317,7 +316,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */,
-				341135631DD2CEB000D98C94 /* Info.plist in Resources */,
 				3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +486,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -535,6 +534,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

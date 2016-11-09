@@ -25,10 +25,16 @@
     CGEventRef eventDown, eventUp;
     eventDown = CGEventCreateKeyboardEvent(nil, keyCode, YES);
     for (NSString *flag in flags) {
+        if (!flag.length) {
+            continue ;
+        }
         CGEventSetFlags(eventDown, eventFlag(flag));
     }
     eventUp = CGEventCreateKeyboardEvent(nil, keyCode, NO);
     for (NSString *flag in flags) {
+        if (!flag.length) {
+            continue ;
+        }
         CGEventSetFlags(eventUp, eventFlag(flag));
     }
     CGEventPost(kCGHIDEventTap, eventDown);
@@ -39,12 +45,14 @@
 }
 
 CGEventFlags eventFlag(NSString *flag){
-    if ([flag  isEqual: @"command"]) {
+    if ([flag isEqual: @"command"]) {
         return kCGEventFlagMaskCommand;
-    }else if([flag  isEqual: @"kCGEventFlagMaskCommand"]){
-        return kCGEventFlagMaskCommand;
+    }else if([flag isEqual: @"shift"]){
+        return kCGEventFlagMaskShift;
+    }else if([flag isEqualToString:@"control"]){
+        return kCGEventFlagMaskControl;
     }
-    return kCGEventFlagMaskCommand;
+    return kCGEventFlagMaskSecondaryFn;
 }
 
 //typedef CF_OPTIONS(uint64_t, CGEventFlags) { /* Flags for events */

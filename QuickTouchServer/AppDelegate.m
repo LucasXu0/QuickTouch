@@ -17,7 +17,8 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
     QTCommandTwo, // 单功能键 + 普通键 如 Command + c
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
-    QTCommandSpecial
+    QTCommandSpecial,
+    QTCommandMultiKeys //组合键
 };
 
 @interface AppDelegate () <GCDAsyncUdpSocketDelegate>
@@ -73,12 +74,15 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
             [self handleTypeSpecialCommand:command];
         }
             break;
+        case QTCommandMultiKeys:{
+            NSString *normalKey = commandDict[@"normalKey"];
+            NSArray *functionKeys = commandDict[@"functionKeys"];
+            [self handleTypeMultiNormalKey:normalKey functionKeys:functionKeys];
+        }
+            break;
         default:
             break;
     }
-
-    
-    
 }
 
 #pragma mark - 处理 QTCommandType
@@ -105,6 +109,11 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
 - (void)handleTypeSpecialCommand:(NSString *) command{
     CGKeyCode keyCode = [NSString keyCodeFormKeyString:command];
     [FTKey pressNormalKey:keyCode];
+}
+
+- (void)handleTypeMultiNormalKey:(NSString *) normalKey functionKeys:(NSArray *)functionKeys{
+    CGKeyCode commandKC = [NSString keyCodeFormKeyString:normalKey];
+    [FTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
 
 

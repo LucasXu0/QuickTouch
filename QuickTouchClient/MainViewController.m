@@ -53,6 +53,7 @@
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch ((int)indexPath.row) {
         case 0:{
             OneViewController *oneVC = [OneViewController new];
