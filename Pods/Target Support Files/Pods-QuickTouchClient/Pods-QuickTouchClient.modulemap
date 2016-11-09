@@ -1,6 +1,0 @@
-framework module Pods_QuickTouchClient {
-  umbrella header "Pods-QuickTouchClient-umbrella.h"
-
-  export *
-  module * { export * }
-}
