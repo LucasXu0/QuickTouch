@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07CB409008305A8583BF1ACE /* Pods_QuickTouchClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */; };
+		341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135521DD2CEB000D98C94 /* NSString+KeyCode.m */; };
+		341135621DD2CEB000D98C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135541DD2CEB000D98C94 /* main.m */; };
+		341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */; };
+		341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */; };
+		341135661DD2CEB000D98C94 /* FTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355B1DD2CEB000D98C94 /* FTKey.m */; };
+		341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3411355E1DD2CEB000D98C94 /* Assets.xcassets */; };
+		341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355F1DD2CEB000D98C94 /* AppDelegate.m */; };
+		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
+		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
+		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
+		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
+		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
+		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
+		34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D21DD0D89500998965 /* LaunchScreen.storyboard */; };
+		34B049DE1DD0D97500998965 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049DC1DD0D97500998965 /* MainViewController.m */; };
+		34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC201DD22FB40007D6A1 /* OneViewController.m */; };
+		34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC211DD22FB40007D6A1 /* OneViewController.xib */; };
+		34C6DC261DD2329F0007D6A1 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC251DD2329F0007D6A1 /* CommandSender.m */; };
+		34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */; };
+		34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */; };
+		34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */; };
+		34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		341135401DD2CE5D00D98C94 /* QuickTouchServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QuickTouchServer-prefix.pch"; sourceTree = "<group>"; };
+		341135521DD2CEB000D98C94 /* NSString+KeyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyCode.m"; sourceTree = "<group>"; };
+		341135531DD2CEB000D98C94 /* NSString+KeyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyCode.h"; sourceTree = "<group>"; };
+		341135541DD2CEB000D98C94 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		341135551DD2CEB000D98C94 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		341135571DD2CEB000D98C94 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		341135591DD2CEB000D98C94 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		3411355B1DD2CEB000D98C94 /* FTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTKey.m; sourceTree = "<group>"; };
+		3411355C1DD2CEB000D98C94 /* FTKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTKey.h; sourceTree = "<group>"; };
+		3411355E1DD2CEB000D98C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3411355F1DD2CEB000D98C94 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		341135601DD2CEB000D98C94 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3411356A1DD2CF2400D98C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
+		3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialKeyViewController.h; sourceTree = "<group>"; };
+		3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
+		341135721DD31BC300D98C94 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
+		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
+		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B049C51DD0D89500998965 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		34B049C71DD0D89500998965 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		34B049C81DD0D89500998965 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		34B049D01DD0D89500998965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34B049D31DD0D89500998965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34B049D51DD0D89500998965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34B049DB1DD0D97500998965 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		34B049DC1DD0D97500998965 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		34C6DC201DD22FB40007D6A1 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		34C6DC211DD22FB40007D6A1 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
+		34C6DC241DD2329F0007D6A1 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
+		34C6DC251DD2329F0007D6A1 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
+		34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
+		34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTouchClient-prefix.pch"; sourceTree = "<group>"; };
+		34DEA03B1DD0DE76003B5D2D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		34DEA03D1DD0DE76003B5D2D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickTouchClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85DD7EAC6B03C7CF7E8BDF84 /* Pods-QuickTouchClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient.debug.xcconfig"; sourceTree = "<group>"; };
+		EEC6579A36956BED82996FE1 /* Pods-QuickTouchClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3411353D1DD2CE5D00D98C94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34B049BE1DD0D89500998965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07CB409008305A8583BF1ACE /* Pods_QuickTouchClient.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		283688C599F57196FC5F3725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31A809881270A232B465DE48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85DD7EAC6B03C7CF7E8BDF84 /* Pods-QuickTouchClient.debug.xcconfig */,
+				EEC6579A36956BED82996FE1 /* Pods-QuickTouchClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		341135411DD2CE5D00D98C94 /* QuickTouchServer */ = {
+			isa = PBXGroup;
+			children = (
+				341135561DD2CEB000D98C94 /* GCD */,
+				341135601DD2CEB000D98C94 /* AppDelegate.h */,
+				3411355F1DD2CEB000D98C94 /* AppDelegate.m */,
+				3411355C1DD2CEB000D98C94 /* FTKey.h */,
+				3411355B1DD2CEB000D98C94 /* FTKey.m */,
+				341135531DD2CEB000D98C94 /* NSString+KeyCode.h */,
+				341135521DD2CEB000D98C94 /* NSString+KeyCode.m */,
+				341135541DD2CEB000D98C94 /* main.m */,
+				341135551DD2CEB000D98C94 /* Info.plist */,
+				341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */,
+				3411355D1DD2CEB000D98C94 /* Base.lproj */,
+				3411355E1DD2CEB000D98C94 /* Assets.xcassets */,
+			);
+			path = QuickTouchServer;
+			sourceTree = "<group>";
+		};
+		341135561DD2CEB000D98C94 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				341135571DD2CEB000D98C94 /* GCDAsyncSocket.h */,
+				341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */,
+				341135591DD2CEB000D98C94 /* GCDAsyncUdpSocket.h */,
+				3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		3411355D1DD2CEB000D98C94 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				341135691DD2CF2400D98C94 /* MainMenu.xib */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		34B049B81DD0D89500998965 = {
+			isa = PBXGroup;
+			children = (
+				34B049C31DD0D89500998965 /* QuickTouchClient */,
+				341135411DD2CE5D00D98C94 /* QuickTouchServer */,
+				34B049C21DD0D89500998965 /* Products */,
+				31A809881270A232B465DE48 /* Pods */,
+				283688C599F57196FC5F3725 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		34B049C21DD0D89500998965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34B049C11DD0D89500998965 /* QuickTouchClient.app */,
+				341135401DD2CE5D00D98C94 /* QuickTouchServer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34B049C31DD0D89500998965 /* QuickTouchClient */ = {
+			isa = PBXGroup;
+			children = (
+				34DEA0391DD0DE6B003B5D2D /* Shared */,
+				34B049C71DD0D89500998965 /* AppDelegate.h */,
+				34B049C81DD0D89500998965 /* AppDelegate.m */,
+				34C6DC241DD2329F0007D6A1 /* CommandSender.h */,
+				34C6DC251DD2329F0007D6A1 /* CommandSender.m */,
+				34B049DB1DD0D97500998965 /* MainViewController.h */,
+				34B049DC1DD0D97500998965 /* MainViewController.m */,
+				34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */,
+				34C6DC201DD22FB40007D6A1 /* OneViewController.m */,
+				34C6DC211DD22FB40007D6A1 /* OneViewController.xib */,
+				34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */,
+				34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */,
+				34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */,
+				3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */,
+				3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */,
+				341135721DD31BC300D98C94 /* CustomShortCutViewController.h */,
+				341135731DD31BC300D98C94 /* CustomShortCutViewController.m */,
+				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
+				34B049D01DD0D89500998965 /* Assets.xcassets */,
+				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
+				34B049D51DD0D89500998965 /* Info.plist */,
+				34B049C41DD0D89500998965 /* Supporting Files */,
+			);
+			path = QuickTouchClient;
+			sourceTree = "<group>";
+		};
+		34B049C41DD0D89500998965 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				34B049C51DD0D89500998965 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34DEA0391DD0DE6B003B5D2D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				34DEA03A1DD0DE76003B5D2D /* GCD */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		34DEA03A1DD0DE76003B5D2D /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				34DEA03B1DD0DE76003B5D2D /* GCDAsyncSocket.h */,
+				34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */,
+				34DEA03D1DD0DE76003B5D2D /* GCDAsyncUdpSocket.h */,
+				34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3411353F1DD2CE5D00D98C94 /* QuickTouchServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3411354E1DD2CE5D00D98C94 /* Build configuration list for PBXNativeTarget "QuickTouchServer" */;
+			buildPhases = (
+				3411353C1DD2CE5D00D98C94 /* Sources */,
+				3411353D1DD2CE5D00D98C94 /* Frameworks */,
+				3411353E1DD2CE5D00D98C94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickTouchServer;
+			productName = QuickTouchServer;
+			productReference = 341135401DD2CE5D00D98C94 /* QuickTouchServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		34B049C01DD0D89500998965 /* QuickTouchClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34B049D81DD0D89500998965 /* Build configuration list for PBXNativeTarget "QuickTouchClient" */;
+			buildPhases = (
+				C744ADAFEF29C8F7FBA960B8 /* [CP] Check Pods Manifest.lock */,
+				34B049BD1DD0D89500998965 /* Sources */,
+				34B049BE1DD0D89500998965 /* Frameworks */,
+				34B049BF1DD0D89500998965 /* Resources */,
+				F7853AE342B638E1A767FD7F /* [CP] Embed Pods Frameworks */,
+				1ADC3EEB5DD63E805B50BAFF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickTouchClient;
+			productName = QuickTouchClient;
+			productReference = 34B049C11DD0D89500998965 /* QuickTouchClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34B049B91DD0D89500998965 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = TsuiYuenHong;
+				TargetAttributes = {
+					3411353F1DD2CE5D00D98C94 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 446D3AAR7E;
+						ProvisioningStyle = Automatic;
+					};
+					34B049C01DD0D89500998965 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = DK9MPZYTDE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 34B049BC1DD0D89500998965 /* Build configuration list for PBXProject "QuickTouchClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 34B049B81DD0D89500998965;
+			productRefGroup = 34B049C21DD0D89500998965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34B049C01DD0D89500998965 /* QuickTouchClient */,
+				3411353F1DD2CE5D00D98C94 /* QuickTouchServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3411353E1DD2CE5D00D98C94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */,
+				3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34B049BF1DD0D89500998965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */,
+				34B049D11DD0D89500998965 /* Assets.xcassets in Resources */,
+				34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */,
+				34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1ADC3EEB5DD63E805B50BAFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C744ADAFEF29C8F7FBA960B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7853AE342B638E1A767FD7F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3411353C1DD2CE5D00D98C94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */,
+				341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */,
+				341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */,
+				341135621DD2CEB000D98C94 /* main.m in Sources */,
+				341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */,
+				341135661DD2CEB000D98C94 /* FTKey.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34B049BD1DD0D89500998965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */,
+				34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */,
+				34C6DC261DD2329F0007D6A1 /* CommandSender.m in Sources */,
+				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
+				34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */,
+				34B049DE1DD0D97500998965 /* MainViewController.m in Sources */,
+				34B049C61DD0D89500998965 /* main.m in Sources */,
+				34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */,
+				3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */,
+				341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		341135691DD2CF2400D98C94 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3411356A1DD2CF2400D98C94 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		34B049D21DD0D89500998965 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34B049D31DD0D89500998965 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3411354F1DD2CE5D00D98C94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 446D3AAR7E;
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchServer/QuickTouchServer-prefix.pch";
+				INFOPLIST_FILE = QuickTouchServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		341135501DD2CE5D00D98C94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 446D3AAR7E;
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchServer/QuickTouchServer-prefix.pch";
+				INFOPLIST_FILE = QuickTouchServer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		34B049D61DD0D89500998965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		34B049D71DD0D89500998965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		34B049D91DD0D89500998965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85DD7EAC6B03C7CF7E8BDF84 /* Pods-QuickTouchClient.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DK9MPZYTDE;
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchClient/QuickTouchClient-prefix.pch";
+				INFOPLIST_FILE = QuickTouchClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
+			};
+			name = Debug;
+		};
+		34B049DA1DD0D89500998965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC6579A36956BED82996FE1 /* Pods-QuickTouchClient.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DK9MPZYTDE;
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchClient/QuickTouchClient-prefix.pch";
+				INFOPLIST_FILE = QuickTouchClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3411354E1DD2CE5D00D98C94 /* Build configuration list for PBXNativeTarget "QuickTouchServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3411354F1DD2CE5D00D98C94 /* Debug */,
+				341135501DD2CE5D00D98C94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34B049BC1DD0D89500998965 /* Build configuration list for PBXProject "QuickTouchClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34B049D61DD0D89500998965 /* Debug */,
+				34B049D71DD0D89500998965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34B049D81DD0D89500998965 /* Build configuration list for PBXNativeTarget "QuickTouchClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34B049D91DD0D89500998965 /* Debug */,
+				34B049DA1DD0D89500998965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34B049B91DD0D89500998965 /* Project object */;
+}
