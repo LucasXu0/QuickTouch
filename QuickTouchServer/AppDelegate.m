@@ -41,7 +41,6 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     //
     //    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sayHi) name:NSWorkspaceDidActivateApplicationNotification object:nil];
     //
-    [[NSWorkspace sharedWorkspace] launchApplication:@"test"];
 }
 //
 //- (void)sayHi{
@@ -88,6 +87,11 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
             [self handleTypeMultiNormalKey:normalKey functionKeys:functionKeys];
         }
             break;
+        case QTCommandSuperCustom:{
+            NSString *command = commandDict[@"command"];
+            [self qtThunder];
+        }
+            break;
         default:
             break;
     }
@@ -124,5 +128,19 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     [FTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
 
+- (void)qtThunder{
+    // Command + C 复制
+    CGKeyCode ckeyCode = [NSString keyCodeFormKeyString:@"c"];
+    [FTKey pressNormalKey:ckeyCode withFlag:@"command"];
+    
+    // Open Thunder 打开迅雷
+    [[NSWorkspace sharedWorkspace] launchApplication:@"Thunder"];
+    
+    
+    sleep(5.0);
+    // Command + V 粘贴
+    CGKeyCode vkeyCode = [NSString keyCodeFormKeyString:@"v"];
+    [FTKey pressNormalKey:vkeyCode withFlag:@"command"];
+}
 
 @end

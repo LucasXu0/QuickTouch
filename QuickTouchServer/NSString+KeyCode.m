@@ -22,11 +22,8 @@
     if ([keyString isEqualToString:@"x"]) return 7;
     if ([keyString isEqualToString:@"c"]) return 8;
     if ([keyString isEqualToString:@"C"]) return 8;
-
     if ([keyString isEqualToString:@"v"]) return 9;
     if ([keyString isEqualToString:@"V"]) return 9;
-
-    // what is 10?
     if ([keyString isEqualToString:@"b"]) return 11;
     if ([keyString isEqualToString:@"q"]) return 12;
     if ([keyString isEqualToString:@"w"]) return 13;
@@ -70,28 +67,16 @@
     if ([keyString isEqualToString:@"DELETE"]) return 51;
     if ([keyString isEqualToString:@"ENTER"]) return 52;
     if ([keyString isEqualToString:@"ESCAPE"]) return 53;
-    
     if ([keyString isEqualToString:@"Command"]) return 55;
-
-    // some more missing codes abound, reserved I presume, but it would
-    // have been helpful for Apple to have a document with them all listed
-    
     if ([keyString isEqualToString:@"."]) return 65;
-    
     if ([keyString isEqualToString:@"*"]) return 67;
-    
     if ([keyString isEqualToString:@"+"]) return 69;
-    
     if ([keyString isEqualToString:@"CLEAR"]) return 71;
-    
     if ([keyString isEqualToString:@"VolumeUp"]) return 72;
     if ([keyString isEqualToString:@"VolumeDown"]) return 73;
-    
     if ([keyString isEqualToString:@"/"]) return 75;
     if ([keyString isEqualToString:@"ENTER"]) return 76;  // numberpad on full kbd
-    
     if ([keyString isEqualToString:@"="]) return 78;
-    
     if ([keyString isEqualToString:@"="]) return 81;
     if ([keyString isEqualToString:@"0"]) return 82;
     if ([keyString isEqualToString:@"1"]) return 83;
@@ -101,27 +86,19 @@
     if ([keyString isEqualToString:@"5"]) return 87;
     if ([keyString isEqualToString:@"6"]) return 88;
     if ([keyString isEqualToString:@"7"]) return 89;
-    
     if ([keyString isEqualToString:@"8"]) return 91;
     if ([keyString isEqualToString:@"9"]) return 92;
-    
     if ([keyString isEqualToString:@"F5"]) return 96;
     if ([keyString isEqualToString:@"F6"]) return 97;
     if ([keyString isEqualToString:@"F7"]) return 98;
     if ([keyString isEqualToString:@"F3"]) return 99;
     if ([keyString isEqualToString:@"F8"]) return 100;
     if ([keyString isEqualToString:@"F9"]) return 101;
-    
     if ([keyString isEqualToString:@"F11"]) return 103;
-    
     if ([keyString isEqualToString:@"F13"]) return 105;
-    
     if ([keyString isEqualToString:@"F14"]) return 107;
-    
     if ([keyString isEqualToString:@"F10"]) return 109;
-    
     if ([keyString isEqualToString:@"F12"]) return 111;
-    
     if ([keyString isEqualToString:@"F15"]) return 113;
     if ([keyString isEqualToString:@"HELP"]) return 114;
     if ([keyString isEqualToString:@"HOME"]) return 115;
@@ -136,7 +113,6 @@
     if ([keyString isEqualToString:@"RIGHT"]) return 124;
     if ([keyString isEqualToString:@"DOWN"]) return 125;
     if ([keyString isEqualToString:@"UP"]) return 126;
-
 
     return 0;
     //fprintf(stderr, "keyString %s Not Found. Aborting...\n", keyString);

@@ -21,6 +21,19 @@
     CFRelease(eventDown);
 }
 
++ (void)pressNormalKey:(CGKeyCode)keyCode withFlag:(NSString *)flag{
+    CGEventRef eventDown, eventUp;
+    eventDown = CGEventCreateKeyboardEvent(nil, keyCode, YES);
+    CGEventSetFlags(eventDown, eventFlag(flag));
+    eventUp = CGEventCreateKeyboardEvent(nil, keyCode, NO);
+    CGEventSetFlags(eventUp, eventFlag(flag));
+    CGEventPost(kCGHIDEventTap, eventDown);
+    sleep(0.0001);
+    CGEventPost(kCGHIDEventTap, eventUp);
+    CFRelease(eventUp);
+    CFRelease(eventDown);
+}
+
 + (void)pressNormalKey:(CGKeyCode)keyCode withFlags:(NSArray *)flags{
     CGEventRef eventDown, eventUp;
     eventDown = CGEventCreateKeyboardEvent(nil, keyCode, YES);
