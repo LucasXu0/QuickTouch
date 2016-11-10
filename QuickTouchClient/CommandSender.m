@@ -25,4 +25,8 @@
    [self.socket sendData:commandData toHost:QTHOST port:QTPORT withTimeout:1.0 tag:0];
 }
 
+- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
+    NSDictionary *macInfos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+}
+
 @end

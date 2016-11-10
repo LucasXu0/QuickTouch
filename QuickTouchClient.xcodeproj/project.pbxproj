@@ -25,6 +25,8 @@
 		34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D21DD0D89500998965 /* LaunchScreen.storyboard */; };
 		34B049DE1DD0D97500998965 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049DC1DD0D97500998965 /* MainViewController.m */; };
 		34B984B31DD42AE800B38897 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B984B21DD42AE800B38897 /* CommandSender.m */; };
+		34B984B71DD43FB600B38897 /* MacInfosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B984B51DD43FB600B38897 /* MacInfosViewController.m */; };
+		34B984B81DD43FB600B38897 /* MacInfosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34B984B61DD43FB600B38897 /* MacInfosViewController.xib */; };
 		34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC201DD22FB40007D6A1 /* OneViewController.m */; };
 		34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC211DD22FB40007D6A1 /* OneViewController.xib */; };
 		34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */; };
@@ -67,6 +69,9 @@
 		34B049DC1DD0D97500998965 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		34B984B11DD42AE800B38897 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
 		34B984B21DD42AE800B38897 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
+		34B984B41DD43FB600B38897 /* MacInfosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacInfosViewController.h; sourceTree = "<group>"; };
+		34B984B51DD43FB600B38897 /* MacInfosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacInfosViewController.m; sourceTree = "<group>"; };
+		34B984B61DD43FB600B38897 /* MacInfosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MacInfosViewController.xib; sourceTree = "<group>"; };
 		34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		34C6DC201DD22FB40007D6A1 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		34C6DC211DD22FB40007D6A1 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
@@ -199,6 +204,9 @@
 				341135731DD31BC300D98C94 /* CustomShortCutViewController.m */,
 				34AB50E91DD426FA00315615 /* SuperCustomViewController.h */,
 				34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */,
+				34B984B41DD43FB600B38897 /* MacInfosViewController.h */,
+				34B984B51DD43FB600B38897 /* MacInfosViewController.m */,
+				34B984B61DD43FB600B38897 /* MacInfosViewController.xib */,
 				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
 				34B049D01DD0D89500998965 /* Assets.xcassets */,
 				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
@@ -330,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */,
+				34B984B81DD43FB600B38897 /* MacInfosViewController.xib in Resources */,
 				34B049D11DD0D89500998965 /* Assets.xcassets in Resources */,
 				34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */,
 				34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */,
@@ -406,6 +415,7 @@
 			files = (
 				34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */,
 				34B984B31DD42AE800B38897 /* CommandSender.m in Sources */,
+				34B984B71DD43FB600B38897 /* MacInfosViewController.m in Sources */,
 				34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */,
 				34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */,
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,

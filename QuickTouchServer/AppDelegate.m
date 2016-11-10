@@ -38,21 +38,27 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
 #warning 错误信息待完善
     [self.udpSocket bindToPort:QTPORT error:nil];
     [self.udpSocket beginReceiving:nil];
-    //
-    //    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sayHi) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-    //
+    
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+    
 }
-//
-//- (void)sayHi{
-//    NSLog(@"hi %@",[NSWorkspace sharedWorkspace].frontmostApplication.localizedName);
-//}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
 
-# pragma mark - GCDAsyncUdpSocketDelegate
+#pragma mark - send mac infos
+- (void)sendMacInfos{
+    NSLog(@"%@",[NSWorkspace sharedWorkspace].frontmostApplication.localizedName);
+    NSDictionary *macInfos = @{
+                               @"currentAppName":[NSWorkspace sharedWorkspace].frontmostApplication.localizedName,
+                               
+                               };
+    NSData *macInfosData = [NSJSONSerialization dataWithJSONObject:macInfos options:NSJSONWritingPrettyPrinted error:nil];
+    [self.udpSocket sendData:macInfosData toHost:QTHOST port:9526 withTimeout:1.0 tag:0];
+}
 
+#pragma mark - GCDAsyncUdpSocketDelegate
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{    
     // 解析 Command Dict
     NSDictionary *commandDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];

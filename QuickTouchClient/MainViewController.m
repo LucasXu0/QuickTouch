@@ -12,6 +12,7 @@
 #import "SpecialKeyViewController.h"
 #import "CustomShortCutViewController.h"
 #import "SuperCustomViewController.h"
+#import "MacInfosViewController.h"
 
 #define cellID @"commandTypesCell"
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key"];
+    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Mac Infos"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -84,6 +85,12 @@
             SuperCustomViewController *superCustomVC = [SuperCustomViewController new];
             superCustomVC.title = @"Super Custom";
             [self.navigationController pushViewController:superCustomVC animated:NO];
+        }
+            break;
+        case 5:{
+            MacInfosViewController *macInfosVC = [MacInfosViewController new];
+            macInfosVC.title = @"Mac Infos";
+            [self.navigationController pushViewController:macInfosVC animated:NO];
         }
             break;
         default:
