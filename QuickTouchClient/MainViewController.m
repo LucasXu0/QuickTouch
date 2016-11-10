@@ -11,6 +11,7 @@
 #import "TwoViewController.h"
 #import "SpecialKeyViewController.h"
 #import "CustomShortCutViewController.h"
+#import "SuperCustomViewController.h"
 
 #define cellID @"commandTypesCell"
 
@@ -29,7 +30,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key"];
+    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -77,6 +78,12 @@
             CustomShortCutViewController *customVC = [CustomShortCutViewController new];
             customVC.title = @"Custom";
             [self.navigationController pushViewController:customVC animated:NO];
+        }
+            break;
+        case 4:{
+            SuperCustomViewController *superCustomVC = [SuperCustomViewController new];
+            superCustomVC.title = @"Super Custom";
+            [self.navigationController pushViewController:superCustomVC animated:NO];
         }
             break;
         default:

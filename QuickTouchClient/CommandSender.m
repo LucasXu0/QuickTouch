@@ -10,7 +10,6 @@
 
 @implementation CommandSender
 
-
 + (instancetype)sharedInstance{
     static CommandSender *sharedInstance = nil;
     static dispatch_once_t onceToken ;

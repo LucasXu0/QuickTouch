@@ -18,7 +18,8 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandTwo, // 单功能键 + 普通键 如 Command + c
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
     QTCommandSpecial,
-    QTCommandMultiKeys //组合键
+    QTCommandMultiKeys, //组合键
+    QTCommandSuperCustom // 超级自定义
 };
 
 @interface AppDelegate () <GCDAsyncUdpSocketDelegate>
@@ -37,8 +38,15 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
 #warning 错误信息待完善
     [self.udpSocket bindToPort:QTPORT error:nil];
     [self.udpSocket beginReceiving:nil];
+    //
+    //    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sayHi) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+    //
+    [[NSWorkspace sharedWorkspace] launchApplication:@"test"];
 }
-
+//
+//- (void)sayHi{
+//    NSLog(@"hi %@",[NSWorkspace sharedWorkspace].frontmostApplication.localizedName);
+//}
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application

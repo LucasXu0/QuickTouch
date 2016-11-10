@@ -18,14 +18,15 @@
 		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
 		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
 		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
+		34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
 		34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D21DD0D89500998965 /* LaunchScreen.storyboard */; };
 		34B049DE1DD0D97500998965 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049DC1DD0D97500998965 /* MainViewController.m */; };
+		34B984B31DD42AE800B38897 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B984B21DD42AE800B38897 /* CommandSender.m */; };
 		34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC201DD22FB40007D6A1 /* OneViewController.m */; };
 		34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC211DD22FB40007D6A1 /* OneViewController.xib */; };
-		34C6DC261DD2329F0007D6A1 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC251DD2329F0007D6A1 /* CommandSender.m */; };
 		34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */; };
 		34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */; };
 		34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */; };
@@ -53,6 +54,8 @@
 		3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
 		341135721DD31BC300D98C94 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
 		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
+		34AB50E91DD426FA00315615 /* SuperCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCustomViewController.h; sourceTree = "<group>"; };
+		34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCustomViewController.m; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B049C51DD0D89500998965 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34B049C71DD0D89500998965 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,11 +65,11 @@
 		34B049D51DD0D89500998965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B049DB1DD0D97500998965 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		34B049DC1DD0D97500998965 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		34B984B11DD42AE800B38897 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
+		34B984B21DD42AE800B38897 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
 		34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		34C6DC201DD22FB40007D6A1 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		34C6DC211DD22FB40007D6A1 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
-		34C6DC241DD2329F0007D6A1 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
-		34C6DC251DD2329F0007D6A1 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
 		34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
 		34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
 		34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
@@ -180,8 +183,8 @@
 				34DEA0391DD0DE6B003B5D2D /* Shared */,
 				34B049C71DD0D89500998965 /* AppDelegate.h */,
 				34B049C81DD0D89500998965 /* AppDelegate.m */,
-				34C6DC241DD2329F0007D6A1 /* CommandSender.h */,
-				34C6DC251DD2329F0007D6A1 /* CommandSender.m */,
+				34B984B11DD42AE800B38897 /* CommandSender.h */,
+				34B984B21DD42AE800B38897 /* CommandSender.m */,
 				34B049DB1DD0D97500998965 /* MainViewController.h */,
 				34B049DC1DD0D97500998965 /* MainViewController.m */,
 				34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */,
@@ -194,6 +197,8 @@
 				3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */,
 				341135721DD31BC300D98C94 /* CustomShortCutViewController.h */,
 				341135731DD31BC300D98C94 /* CustomShortCutViewController.m */,
+				34AB50E91DD426FA00315615 /* SuperCustomViewController.h */,
+				34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */,
 				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
 				34B049D01DD0D89500998965 /* Assets.xcassets */,
 				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
@@ -400,8 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */,
+				34B984B31DD42AE800B38897 /* CommandSender.m in Sources */,
 				34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */,
-				34C6DC261DD2329F0007D6A1 /* CommandSender.m in Sources */,
+				34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */,
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
 				34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */,
 				34B049DE1DD0D97500998965 /* MainViewController.m in Sources */,
@@ -564,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK9MPZYTDE;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchClient/QuickTouchClient-prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchClient/QuickTouchClient-prefix.pch";
 				INFOPLIST_FILE = QuickTouchClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;
@@ -579,7 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK9MPZYTDE;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouchClient/QuickTouchClient/QuickTouchClient-prefix.pch";
+				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchClient/QuickTouchClient-prefix.pch";
 				INFOPLIST_FILE = QuickTouchClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;

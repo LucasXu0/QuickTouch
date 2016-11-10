@@ -20,5 +20,6 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandTwo, // 单功能键 + 普通键 如 Command + c
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
     QTCommandSpecial,
-    QTCommandMultiKeys // 组合键
+    QTCommandMultiKeys, // 组合键
+    QTCommandSuperCustom // 超级自定义
 };
