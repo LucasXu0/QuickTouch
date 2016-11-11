@@ -32,9 +32,8 @@
     [self.udpSocket beginReceiving:nil];
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-
-    //    AudioObjectPropertyAddress propertyAddress = {kAudioHardwareServiceDeviceProperty_VirtualMasterVolume,kAudioDevicePropertyScopeOutput,kAudioObjectPropertyElementMaster};
-//    AudioDeviceSetProperty(<#AudioDeviceID inDevice#>, <#const AudioTimeStamp * _Nullable inWhen#>, <#UInt32 inChannel#>, <#Boolean isInput#>, <#AudioDevicePropertyID inPropertyID#>, <#UInt32 inPropertyDataSize#>, <#const void * _Nonnull inPropertyData#>)
+    
+    [QTSystemSetting sleepNow];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

@@ -18,4 +18,22 @@
  */
 + (void)setSystemBrightness:(float)level;
 
+/**
+  设置/获取系统音量
+
+ @param level 0 最低 100 最高
+ */
++ (void)setSystemVolume:(int)level;
++ (SInt32)getSystemVolume;
+
+
+/**
+ 使 Mac 休眠
+
+ @param delay 延迟时间
+ */
++ (void)sleepWithDelay:(int)delay;
++ (void)sleepNow;
+
+
 @end

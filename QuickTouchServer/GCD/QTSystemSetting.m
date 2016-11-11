@@ -23,4 +23,23 @@
     }
 }
 
++ (void)setSystemVolume:(int)level{
+    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat: @"set volume output volume %d",level]];
+    [script executeAndReturnError:nil];
+}
+
++ (SInt32)getSystemVolume{
+    NSAppleScript *script = [[NSAppleScript alloc] initWithSource:@"output volume of (get volume settings)"];
+    return [[script executeAndReturnError:nil] int32Value];
+}
+
++ (void)sleepWithDelay:(int)delay{
+    NSAppleScript *sleepScript = [[NSAppleScript alloc] initWithSource:[NSString stringWithFormat:@"delay %d \n tell application \"System Events\" \n\t sleep \n end tell",delay]];
+    [sleepScript executeAndReturnError:nil];
+}
+
++ (void)sleepNow{
+    [QTSystemSetting sleepWithDelay:0];
+}
+
 @end
