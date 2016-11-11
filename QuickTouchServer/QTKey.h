@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FTKey : NSObject
+/**
+ 模拟键盘按键
+ */
+@interface QTKey : NSObject
 
 // 这里不直接使用 key 是因为怕出歧义，所以使用 key code
 + (void)pressNormalKey:(CGKeyCode) keyCode;

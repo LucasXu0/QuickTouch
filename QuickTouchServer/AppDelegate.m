@@ -11,16 +11,8 @@
 #include <Carbon/Carbon.h>
 #include <CoreFoundation/CoreFoundation.h>
 #import "NSString+KeyCode.h"
-#import "FTKey.h"
-
-typedef NS_ENUM(NSUInteger, QTCommandType) {
-    QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
-    QTCommandTwo, // 单功能键 + 普通键 如 Command + c
-    QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
-    QTCommandSpecial,
-    QTCommandMultiKeys, //组合键
-    QTCommandSuperCustom // 超级自定义
-};
+#import "QTKey.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface AppDelegate () <GCDAsyncUdpSocketDelegate>
 
@@ -40,7 +32,9 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     [self.udpSocket beginReceiving:nil];
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-    
+
+    //    AudioObjectPropertyAddress propertyAddress = {kAudioHardwareServiceDeviceProperty_VirtualMasterVolume,kAudioDevicePropertyScopeOutput,kAudioObjectPropertyElementMaster};
+//    AudioDeviceSetProperty(<#AudioDeviceID inDevice#>, <#const AudioTimeStamp * _Nullable inWhen#>, <#UInt32 inChannel#>, <#Boolean isInput#>, <#AudioDevicePropertyID inPropertyID#>, <#UInt32 inPropertyDataSize#>, <#const void * _Nonnull inPropertyData#>)
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -110,34 +104,34 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
      for (int i = 0 ; i < command.length ; i++) {
         each = [NSString stringWithFormat:@"%c",[command characterAtIndex:i]];
         keyCode = [NSString keyCodeFormKeyString:each];
-         [FTKey pressNormalKey:keyCode];
+         [QTKey pressNormalKey:keyCode];
      }
     
     if (isEnter) {
         keyCode = [NSString keyCodeFormKeyString:@"ENTER"];
-        [FTKey pressNormalKey:keyCode];
+        [QTKey pressNormalKey:keyCode];
     }
 }
 
 - (void)handleTypeTwoCommandKey:(NSString *) command functionKeys:(NSArray *)functionKeys{
     CGKeyCode commandKC = [NSString keyCodeFormKeyString:command];
-    [FTKey pressNormalKey:commandKC withFlags:functionKeys];
+    [QTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
 
 - (void)handleTypeSpecialCommand:(NSString *) command{
     CGKeyCode keyCode = [NSString keyCodeFormKeyString:command];
-    [FTKey pressNormalKey:keyCode];
+    [QTKey pressNormalKey:keyCode];
 }
 
 - (void)handleTypeMultiNormalKey:(NSString *) normalKey functionKeys:(NSArray *)functionKeys{
     CGKeyCode commandKC = [NSString keyCodeFormKeyString:normalKey];
-    [FTKey pressNormalKey:commandKC withFlags:functionKeys];
+    [QTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
 
 - (void)qtThunder{
     // Command + C 复制
     CGKeyCode ckeyCode = [NSString keyCodeFormKeyString:@"c"];
-    [FTKey pressNormalKey:ckeyCode withFlag:@"command"];
+    [QTKey pressNormalKey:ckeyCode withFlag:@"command"];
     
     // Open Thunder 打开迅雷
     [[NSWorkspace sharedWorkspace] launchApplication:@"Thunder"];
@@ -146,7 +140,7 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     sleep(5.0);
     // Command + V 粘贴
     CGKeyCode vkeyCode = [NSString keyCodeFormKeyString:@"v"];
-    [FTKey pressNormalKey:vkeyCode withFlag:@"command"];
+    [QTKey pressNormalKey:vkeyCode withFlag:@"command"];
 }
 
 @end

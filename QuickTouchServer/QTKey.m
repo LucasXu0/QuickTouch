@@ -6,9 +6,9 @@
 //  Copyright © 2016 TsuiYuenHong. All rights reserved.
 //
 
-#import "FTKey.h"
+#import "QTKey.h"
 
-@implementation FTKey
+@implementation QTKey
 
 + (void)pressNormalKey:(CGKeyCode)keyCode{
     CGEventRef eventDown, eventUp;

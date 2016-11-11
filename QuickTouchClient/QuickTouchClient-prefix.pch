@@ -10,7 +10,7 @@
 #import "Masonry.h"
 #import "CommandSender.h"
 
-#define QTHOST @"192.168.1.112"
+#define QTHOST @"192.168.81.107"
 #define QTPORT 9527
 
 #define toNSNumber(a) [NSNumber numberWithUnsignedInteger:(a)]

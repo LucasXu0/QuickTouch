@@ -6,5 +6,16 @@
 //  Copyright © 2016 TsuiYuenHong. All rights reserved.
 //
 
-#define QTHOST @"192.168.1.114"
+#import "QTSystemSetting.h"
+
+#define QTHOST @"192.168.81.106"
 #define QTPORT 9527
+
+typedef NS_ENUM(NSUInteger, QTCommandType) {
+    QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
+    QTCommandTwo, // 单功能键 + 普通键 如 Command + c
+    QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
+    QTCommandSpecial,
+    QTCommandMultiKeys, //组合键
+    QTCommandSuperCustom // 超级自定义
+};

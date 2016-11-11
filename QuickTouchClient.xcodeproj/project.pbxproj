@@ -12,12 +12,13 @@
 		341135621DD2CEB000D98C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135541DD2CEB000D98C94 /* main.m */; };
 		341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */; };
 		341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */; };
-		341135661DD2CEB000D98C94 /* FTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355B1DD2CEB000D98C94 /* FTKey.m */; };
+		341135661DD2CEB000D98C94 /* QTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355B1DD2CEB000D98C94 /* QTKey.m */; };
 		341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3411355E1DD2CEB000D98C94 /* Assets.xcassets */; };
 		341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355F1DD2CEB000D98C94 /* AppDelegate.m */; };
 		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
 		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
 		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
+		347652C11DD5D67C00E10392 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 347652C01DD5D67C00E10392 /* QTSystemSetting.m */; };
 		34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
@@ -46,8 +47,8 @@
 		341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		341135591DD2CEB000D98C94 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		3411355B1DD2CEB000D98C94 /* FTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTKey.m; sourceTree = "<group>"; };
-		3411355C1DD2CEB000D98C94 /* FTKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTKey.h; sourceTree = "<group>"; };
+		3411355B1DD2CEB000D98C94 /* QTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKey.m; sourceTree = "<group>"; };
+		3411355C1DD2CEB000D98C94 /* QTKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKey.h; sourceTree = "<group>"; };
 		3411355E1DD2CEB000D98C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3411355F1DD2CEB000D98C94 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		341135601DD2CEB000D98C94 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +57,8 @@
 		3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
 		341135721DD31BC300D98C94 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
 		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
+		347652BF1DD5D67C00E10392 /* QTSystemSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QTSystemSetting.h; path = GCD/QTSystemSetting.h; sourceTree = "<group>"; };
+		347652C01DD5D67C00E10392 /* QTSystemSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QTSystemSetting.m; path = GCD/QTSystemSetting.m; sourceTree = "<group>"; };
 		34AB50E91DD426FA00315615 /* SuperCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCustomViewController.h; sourceTree = "<group>"; };
 		34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCustomViewController.m; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,8 +133,10 @@
 				341135561DD2CEB000D98C94 /* GCD */,
 				341135601DD2CEB000D98C94 /* AppDelegate.h */,
 				3411355F1DD2CEB000D98C94 /* AppDelegate.m */,
-				3411355C1DD2CEB000D98C94 /* FTKey.h */,
-				3411355B1DD2CEB000D98C94 /* FTKey.m */,
+				3411355C1DD2CEB000D98C94 /* QTKey.h */,
+				3411355B1DD2CEB000D98C94 /* QTKey.m */,
+				347652BF1DD5D67C00E10392 /* QTSystemSetting.h */,
+				347652C01DD5D67C00E10392 /* QTSystemSetting.m */,
 				341135531DD2CEB000D98C94 /* NSString+KeyCode.h */,
 				341135521DD2CEB000D98C94 /* NSString+KeyCode.m */,
 				341135541DD2CEB000D98C94 /* main.m */,
@@ -400,12 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				347652C11DD5D67C00E10392 /* QTSystemSetting.m in Sources */,
 				341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */,
 				341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */,
 				341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */,
 				341135621DD2CEB000D98C94 /* main.m in Sources */,
 				341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */,
-				341135661DD2CEB000D98C94 /* FTKey.m in Sources */,
+				341135661DD2CEB000D98C94 /* QTKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
