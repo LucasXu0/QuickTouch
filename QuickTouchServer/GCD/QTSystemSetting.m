@@ -42,4 +42,16 @@
     [QTSystemSetting sleepWithDelay:0];
 }
 
++ (void)clickMenuItemName:(NSString *)itemName ofMenu:(int)menu ofMenuBarItem:(int)menuBarItem ofMenuBar:(int)menuBar ofApplicationName:(NSString *)appName{
+    NSString *scriptStr = [NSString stringWithFormat:@"tell application \"System Events\" to tell process \"%@\"\
+     \nset frontmost to true\
+     \ntell menu bar item %d of menu bar %d\
+     \nclick\
+     \nclick menu item \"%@\" of menu %d\
+     \nend tell\
+     \nend tell",appName,menuBarItem,menuBar,itemName,menu];
+    NSAppleScript *clickMenuBarItemScript = [[NSAppleScript alloc] initWithSource:scriptStr];
+    [clickMenuBarItemScript executeAndReturnError:nil];
+}
+
 @end

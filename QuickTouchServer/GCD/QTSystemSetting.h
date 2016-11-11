@@ -36,4 +36,10 @@
 + (void)sleepNow;
 
 
++ (void)clickMenuItemName:(NSString *)itemName
+                   ofMenu:(int)menu
+            ofMenuBarItem:(int)menuBarItem
+                ofMenuBar:(int)menuBar
+        ofApplicationName:(NSString *)appName;
+
 @end
