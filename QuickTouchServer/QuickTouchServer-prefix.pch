@@ -8,7 +8,7 @@
 
 #import "QTSystemSetting.h"
 
-#define QTHOST @"192.168.81.106"
+#define QTHOST @"192.168.1.115"
 #define QTPORT 9527
 
 typedef NS_ENUM(NSUInteger, QTCommandType) {

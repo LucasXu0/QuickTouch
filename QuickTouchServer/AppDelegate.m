@@ -31,11 +31,10 @@
     [self.udpSocket bindToPort:QTPORT error:nil];
     [self.udpSocket beginReceiving:nil];
     
-    [NSEvent addGlobalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:nil];
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
     
-    [QTSystemSetting clickMenuItemName:@"Minimize" ofMenu:1 ofMenuBarItem:12 ofMenuBar:1 ofApplicationName:@"Xcode"];
+
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
