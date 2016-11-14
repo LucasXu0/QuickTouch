@@ -60,7 +60,7 @@ Inspired by nMBP touch bar, this project make u control your mac using your iPho
 
 5. run **QuickTouchServer** Target on mac, and then stop, drop **QuickTouchServer.app** (under Products file) into applications. Go to system preference and allow this app to control your mac.
 
-![](http://ocnnxadky.bkt.clouddn.com/public/16-11-15/99085664.jpg)
+  ![](http://ocnnxadky.bkt.clouddn.com/public/16-11-15/99085664.jpg)
 
 6. run **QuickTouchClient** on iOS device.
 
