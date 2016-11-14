@@ -39,24 +39,29 @@ Inspired by nMBP touch bar, this project make u control your mac using your iPho
 2. open **QuickTouchClient.xcworkspace**. (打开 **QuickTouchClient.xcworkspace**)
 
 3. change some paras. (修改一些参数)
-```
-#define QTHOST @"192.168.1.112" // your mac IP address
-#define QTSENDPORT 9527 // a port not occupy
-#define QTRECEIVEPORT 9526 // a port not occupy
-```
-in **QuickTouchClient-prefix.pch** file
+
+    ```
+    #define QTHOST @"192.168.1.112" // your mac IP address
+    #define QTSENDPORT 9527 // a port not occupy
+    #define QTRECEIVEPORT 9526 // a port not occupy
+    ```
+
+    in **QuickTouchClient-prefix.pch** file
 
 4. change some paras (修改一些参数)
-```
-#define QTHOST @"192.168.1.114" // your iOS device IP address
-#define QTRECEIVEPORT 9527 // a port not occupy, must be same as QTSENDPORT in QuickTouchClient-prefix.pch
-#define QTSENDPORT 9526 // a port not occupy, must be same as QTRECEIVEPORT in QuickTouchClient-prefix.pch
-```
-in **QuickTouchServer-prefix.pch** file
+
+    ```
+    #define QTHOST @"192.168.1.114" // your iOS device IP address
+    #define QTRECEIVEPORT 9527 // a port not occupy, must be same as QTSENDPORT in QuickTouchClient-prefix.pch
+    #define QTSENDPORT 9526 // a port not occupy, must be same as QTRECEIVEPORT in QuickTouchClient-prefix.pch
+    ```
+
+    in **QuickTouchServer-prefix.pch** file
 
 5. run **QuickTouchServer** Target on mac, and then stop, drop **QuickTouchServer.app** (under Products file) into applications. Go to system preference and allow this app to control your mac.
+
 ![](http://ocnnxadky.bkt.clouddn.com/public/16-11-15/99085664.jpg)
 
 6. run **QuickTouchClient** on iOS device.
 
-7. enjoy Quick Touch ~.
+7. enjoy **Quick Touch** ~.
