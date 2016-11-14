@@ -107,6 +107,22 @@
             [QTSystemSetting clickSubMenuItem:subMenuItem ofMenuItem:menuItem ofMenu:menu ofMenuBar:menuBar ofApplication:app];
         }
             break;
+        case QTCommandSystemSetting:{
+            QTSystemSettingType type = [commandDict[@"systemSettingType"] integerValue];
+            switch (type) {
+                case QTSystemSettingSleep:
+                    [QTSystemSetting sleepNow];
+                    break;
+                case QTSystemSettingBrightness:{
+                    float brightness = [commandDict[@"brightness"] floatValue];
+                    [QTSystemSetting setSystemBrightness:brightness];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
         default:
             break;
     }

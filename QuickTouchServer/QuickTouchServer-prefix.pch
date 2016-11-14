@@ -20,5 +20,13 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandMultiKeys, //组合键
     QTCommandSuperCustom, // 超级自定义
     QTCommandClickMenuItem, // 点击 MenuItem
-    QTCommandClickSubMenuItem // 点击 SubMenuItem
+    QTCommandClickSubMenuItem, // 点击 SubMenuItem
+    QTCommandSystemSetting // 系统设置
+};
+
+typedef NS_ENUM(NSUInteger, QTSystemSettingType) {
+    QTSystemSettingLaunch = 1, // 启动应用
+    QTSystemSettingBrightness, // 亮度
+    QTSystemSettingVolume, // 音量
+    QTSystemSettingSleep // 睡眠
 };

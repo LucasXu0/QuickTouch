@@ -41,16 +41,18 @@
 
     _appNameLabel.text = @"Finder";
     
-    [self configCommands];
-}
-
-- (void)udpSocket:(GCDAsyncUdpSocket *)sock didNotConnect:(NSError *)error{
-    NSLog(@"%@",error);
+    [self configAppCommands];
+    [self configSystemCommands];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc{
+    [self.socket close];
 }
 
 #pragma mark - UITableViewDataSource
@@ -79,7 +81,7 @@
 }
 
 #pragma mark - Config Commands
-- (void)configCommands{
+- (void)configAppCommands{
     _appQTDataSource = [NSMutableDictionary dictionary];
     // 1. Finder
     // 1.1 新建 Finder 窗口
@@ -131,8 +133,40 @@
     [_appQTDataSource setObject:xcodeArray forKey:@"Xcode"];
 }
 
-- (void)dealloc{
-    [self.socket close];
+- (void)configSystemCommands{
+    // 发送截图指令
+    [[_screenShotBuuton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSDictionary *commandDict = @{
+                                      @"functionKeys":@[@"Command",@"Shift"],
+                                      @"normalKey":@"4",
+                                      @"commandType":toNSNumber(QTCommandMultiKeys),
+                                      };
+        [[CommandSender sharedInstance] sendCommandDict:commandDict];
+    }];
+    
+    // 发送睡眠指令
+    [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        NSDictionary *commandDict = @{
+                                      @"commandType":toNSNumber(QTCommandSystemSetting),
+                                      @"systemSettingType":toNSNumber(QTSystemSettingSleep)
+                                      };
+        [[CommandSender sharedInstance] sendCommandDict:commandDict];
+    }];
+    
+    // 亮度控制
+    [[[[_brightnessSilder rac_signalForControlEvents:UIControlEventValueChanged]
+        throttle:0.1]
+        map:^id(UISlider *slider) {
+            NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
+            return @([value floatValue]);}]
+        subscribeNext:^(NSNumber *number) {
+            NSDictionary *commandDict = @{
+                                          @"commandType":toNSNumber(QTCommandSystemSetting),
+                                          @"systemSettingType":toNSNumber(QTSystemSettingBrightness),
+                                          @"brightness":number
+                                          };
+            [[CommandSender sharedInstance] sendCommandDict:commandDict];
+    }];
 }
 
 
