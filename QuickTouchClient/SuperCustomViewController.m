@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _superCustomCommands = @[@"迅雷"];
+    _superCustomCommands = @[@"Thunder",@"Finder"];
     [self.view addSubview:self.superCustomTableView];
 }
 

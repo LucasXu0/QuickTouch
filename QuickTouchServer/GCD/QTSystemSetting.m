@@ -8,6 +8,7 @@
 
 #import "QTSystemSetting.h"
 
+
 @implementation QTSystemSetting
 
 + (void)setSystemBrightness:(float)level{
@@ -52,6 +53,10 @@
      \nend tell",appName,menuBarItem,menuBar,itemName,menu];
     NSAppleScript *clickMenuBarItemScript = [[NSAppleScript alloc] initWithSource:scriptStr];
     [clickMenuBarItemScript executeAndReturnError:nil];
+}
+
++ (void)launchApp:(NSString *)name{
+    [[NSWorkspace sharedWorkspace] launchApplication:name];
 }
 
 @end

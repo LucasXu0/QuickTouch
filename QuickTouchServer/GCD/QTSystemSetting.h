@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface QTSystemSetting : NSObject
 
@@ -41,5 +42,7 @@
             ofMenuBarItem:(int)menuBarItem
                 ofMenuBar:(int)menuBar
         ofApplicationName:(NSString *)appName;
+
++ (void)launchApp:(NSString *)name;
 
 @end

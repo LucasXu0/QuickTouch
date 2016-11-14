@@ -33,8 +33,6 @@
     
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-    
-
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -89,7 +87,7 @@
             break;
         case QTCommandSuperCustom:{
             NSString *command = commandDict[@"command"];
-            [self qtThunder];
+            [QTSystemSetting launchApp:command];
         }
             break;
         default:
@@ -126,21 +124,6 @@
 - (void)handleTypeMultiNormalKey:(NSString *) normalKey functionKeys:(NSArray *)functionKeys{
     CGKeyCode commandKC = [NSString keyCodeFormKeyString:normalKey];
     [QTKey pressNormalKey:commandKC withFlags:functionKeys];
-}
-
-- (void)qtThunder{
-    // Command + C 复制
-    CGKeyCode ckeyCode = [NSString keyCodeFormKeyString:@"c"];
-    [QTKey pressNormalKey:ckeyCode withFlag:@"command"];
-    
-    // Open Thunder 打开迅雷
-    [[NSWorkspace sharedWorkspace] launchApplication:@"Thunder"];
-    
-    
-    sleep(5.0);
-    // Command + V 粘贴
-    CGKeyCode vkeyCode = [NSString keyCodeFormKeyString:@"v"];
-    [QTKey pressNormalKey:vkeyCode withFlag:@"command"];
 }
 
 @end

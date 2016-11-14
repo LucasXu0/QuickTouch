@@ -24,6 +24,10 @@
     [self.socket beginReceiving:nil];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    self.socket = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

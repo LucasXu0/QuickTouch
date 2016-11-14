@@ -36,20 +36,26 @@
 
 + (void)pressNormalKey:(CGKeyCode)keyCode withFlags:(NSArray *)flags{
     CGEventRef eventDown, eventUp;
+    CGEventFlags cgFlags;
+    int tag = 0;
+    
+    for (NSString *flag in flags) {
+        if (!flag.length) {
+            continue ;
+        }
+        if (0 == tag) {
+            cgFlags = eventFlag(flag);
+            tag = 1;
+        }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wconditional-uninitialized"
+        cgFlags = eventFlag(flag) | cgFlags;
+#pragma clang diagnostic pop
+    }
     eventDown = CGEventCreateKeyboardEvent(nil, keyCode, YES);
-    for (NSString *flag in flags) {
-        if (!flag.length) {
-            continue ;
-        }
-        CGEventSetFlags(eventDown, eventFlag(flag));
-    }
+    CGEventSetFlags(eventDown, cgFlags);
     eventUp = CGEventCreateKeyboardEvent(nil, keyCode, NO);
-    for (NSString *flag in flags) {
-        if (!flag.length) {
-            continue ;
-        }
-        CGEventSetFlags(eventUp, eventFlag(flag));
-    }
+    CGEventSetFlags(eventUp, cgFlags);
     CGEventPost(kCGHIDEventTap, eventDown);
     sleep(0.0001);
     CGEventPost(kCGHIDEventTap, eventUp);
