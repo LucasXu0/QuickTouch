@@ -13,6 +13,7 @@
 #import "CustomShortCutViewController.h"
 #import "SuperCustomViewController.h"
 #import "MacInfosViewController.h"
+#import "QuickTouchViewController.h"
 
 #define cellID @"commandTypesCell"
 
@@ -31,7 +32,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Mac Infos"];
+    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Quicks Touch"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -88,9 +89,9 @@
         }
             break;
         case 5:{
-            MacInfosViewController *macInfosVC = [MacInfosViewController new];
-            macInfosVC.title = @"Mac Infos";
-            [self.navigationController pushViewController:macInfosVC animated:NO];
+            QuickTouchViewController *QTVC = [QuickTouchViewController new];
+            QTVC.title = @"Mac Infos";
+            [self.navigationController pushViewController:QTVC animated:NO];
         }
             break;
         default:

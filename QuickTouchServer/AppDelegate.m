@@ -28,7 +28,7 @@
     // Config UDP Socket
     self.udpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(0, 0)];
 #warning 错误信息待完善
-    [self.udpSocket bindToPort:QTPORT error:nil];
+    [self.udpSocket bindToPort:QTRECEIVEPORT error:nil];
     [self.udpSocket beginReceiving:nil];
     
     
@@ -47,7 +47,7 @@
                                
                                };
     NSData *macInfosData = [NSJSONSerialization dataWithJSONObject:macInfos options:NSJSONWritingPrettyPrinted error:nil];
-    [self.udpSocket sendData:macInfosData toHost:QTHOST port:9526 withTimeout:1.0 tag:0];
+    [self.udpSocket sendData:macInfosData toHost:QTHOST port:QTSENDPORT withTimeout:1.0 tag:0];
 }
 
 #pragma mark - GCDAsyncUdpSocketDelegate
@@ -88,6 +88,23 @@
         case QTCommandSuperCustom:{
             NSString *command = commandDict[@"command"];
             [QTSystemSetting launchApp:command];
+        }
+            break;
+        case QTCommandClickMenuItem:{
+            NSString *menuItem = commandDict[@"menuItem"];
+            NSString *menu = commandDict[@"menu"];
+            NSInteger menuBar = [commandDict[@"menuBar"] integerValue];
+            NSString *app = commandDict[@"app"];
+            [QTSystemSetting clickMenuItem:menuItem ofMenu:menu ofMenuBar:menuBar ofApplication:app];
+        }
+            break;
+        case QTCommandClickSubMenuItem:{
+            NSString *subMenuItem = commandDict[@"subMenuItem"];
+            NSString *menuItem = commandDict[@"menuItem"];
+            NSString *menu = commandDict[@"menu"];
+            NSInteger menuBar = [commandDict[@"menuBar"] integerValue];
+            NSString *app = commandDict[@"app"];
+            [QTSystemSetting clickSubMenuItem:subMenuItem ofMenuItem:menuItem ofMenu:menu ofMenuBar:menuBar ofApplication:app];
         }
             break;
         default:

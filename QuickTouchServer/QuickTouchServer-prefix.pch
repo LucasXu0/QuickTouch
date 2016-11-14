@@ -8,8 +8,9 @@
 
 #import "QTSystemSetting.h"
 
-#define QTHOST @"192.168.1.115"
-#define QTPORT 9527
+#define QTHOST @"192.168.1.114"
+#define QTRECEIVEPORT 9527
+#define QTSENDPORT 9526
 
 typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
@@ -17,5 +18,7 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
     QTCommandSpecial,
     QTCommandMultiKeys, //组合键
-    QTCommandSuperCustom // 超级自定义
+    QTCommandSuperCustom, // 超级自定义
+    QTCommandClickMenuItem, // 点击 MenuItem
+    QTCommandClickSubMenuItem // 点击 SubMenuItem
 };

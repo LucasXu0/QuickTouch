@@ -11,7 +11,8 @@
 #import "CommandSender.h"
 
 #define QTHOST @"192.168.1.112"
-#define QTPORT 9527
+#define QTSENDPORT 9527
+#define QTRECEIVEPORT 9526
 
 #define toNSNumber(a) [NSNumber numberWithUnsignedInteger:(a)]
 
@@ -21,5 +22,7 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
     QTCommandSpecial,
     QTCommandMultiKeys, // 组合键
-    QTCommandSuperCustom // 超级自定义
+    QTCommandSuperCustom, // 超级自定义
+    QTCommandClickMenuItem, // 点击 MenuItem
+    QTCommandClickSubMenuItem // 点击 SubMenuItem
 };

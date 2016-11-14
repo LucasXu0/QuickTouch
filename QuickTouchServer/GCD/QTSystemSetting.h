@@ -37,12 +37,46 @@
 + (void)sleepNow;
 
 
-+ (void)clickMenuItemName:(NSString *)itemName
-                   ofMenu:(int)menu
-            ofMenuBarItem:(int)menuBarItem
-                ofMenuBar:(int)menuBar
-        ofApplicationName:(NSString *)appName;
+/**
+ 获取某个 APP menuItem 的全部名称
 
+ @param appName 应用名字
+ */
++ (void)fetchAllMenuItemNameOfApp:(NSString *)appName;
+
+/**
+ 模拟点击 MenuItem
+ 
+ @param item item 名字 如 新建 Finder 窗口
+ @param menu menu 名字 如 文件
+ @param menuBar 第 X 个 menu bar 通常为1
+ @param appName 应用名字 如 Finder
+ */
++ (void)clickMenuItem:(NSString *)item
+               ofMenu:(NSString *)menu
+            ofMenuBar:(NSInteger)menuBar
+        ofApplication:(NSString *)appName;
+
+/**
+ 模拟点击 SubMenuItem
+ 
+ @param item item 名字 如 新建 Finder 窗口
+ @param menu menu 名字 如 文件
+ @param menuBar 第 X 个 menu bar 通常为1
+ @param appName 应用名字 如 Finder
+ */
++ (void)clickSubMenuItem:(NSString *)subItem
+              ofMenuItem:(NSString *)item
+               ofMenu:(NSString *)menu
+            ofMenuBar:(NSInteger)menuBar
+        ofApplication:(NSString *)appName;
+
+
+/**
+ 启动某个 APP
+
+ @param name APP Name
+ */
 + (void)launchApp:(NSString *)name;
 
 @end

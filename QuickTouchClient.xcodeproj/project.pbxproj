@@ -19,6 +19,8 @@
 		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
 		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
 		347652C11DD5D67C00E10392 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 347652C01DD5D67C00E10392 /* QTSystemSetting.m */; };
+		347E9A011DD9BBED00B19B2E /* QuickTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */; };
+		347E9A021DD9BBED00B19B2E /* QuickTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */; };
 		34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
@@ -59,6 +61,9 @@
 		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
 		347652BF1DD5D67C00E10392 /* QTSystemSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QTSystemSetting.h; path = GCD/QTSystemSetting.h; sourceTree = "<group>"; };
 		347652C01DD5D67C00E10392 /* QTSystemSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QTSystemSetting.m; path = GCD/QTSystemSetting.m; sourceTree = "<group>"; };
+		347E99FE1DD9BBED00B19B2E /* QuickTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickTouchViewController.h; sourceTree = "<group>"; };
+		347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickTouchViewController.m; sourceTree = "<group>"; };
+		347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickTouchViewController.xib; sourceTree = "<group>"; };
 		34AB50E91DD426FA00315615 /* SuperCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCustomViewController.h; sourceTree = "<group>"; };
 		34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCustomViewController.m; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +172,16 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		347E9A031DD9BC7600B19B2E /* QuickTouch */ = {
+			isa = PBXGroup;
+			children = (
+				347E99FE1DD9BBED00B19B2E /* QuickTouchViewController.h */,
+				347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */,
+				347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */,
+			);
+			name = QuickTouch;
+			sourceTree = "<group>";
+		};
 		34B049B81DD0D89500998965 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +228,7 @@
 				34B984B51DD43FB600B38897 /* MacInfosViewController.m */,
 				34B984B61DD43FB600B38897 /* MacInfosViewController.xib */,
 				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
+				347E9A031DD9BC7600B19B2E /* QuickTouch */,
 				34B049D01DD0D89500998965 /* Assets.xcassets */,
 				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
 				34B049D51DD0D89500998965 /* Info.plist */,
@@ -344,6 +360,7 @@
 			files = (
 				34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */,
 				34B984B81DD43FB600B38897 /* MacInfosViewController.xib in Resources */,
+				347E9A021DD9BBED00B19B2E /* QuickTouchViewController.xib in Resources */,
 				34B049D11DD0D89500998965 /* Assets.xcassets in Resources */,
 				34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */,
 				34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */,
@@ -420,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */,
+				347E9A011DD9BBED00B19B2E /* QuickTouchViewController.m in Sources */,
 				34B984B31DD42AE800B38897 /* CommandSender.m in Sources */,
 				34B984B71DD43FB600B38897 /* MacInfosViewController.m in Sources */,
 				34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */,
@@ -463,7 +481,8 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 446D3AAR7E;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchServer/QuickTouchServer-prefix.pch";
+				GCC_ENABLE_BUILTIN_FUNCTIONS = NO;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/QuickTouchServer/QuickTouchServer-prefix.pch";
 				INFOPLIST_FILE = QuickTouchServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -480,7 +499,8 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 446D3AAR7E;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchServer/QuickTouchServer-prefix.pch";
+				GCC_ENABLE_BUILTIN_FUNCTIONS = NO;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/QuickTouchServer/QuickTouchServer-prefix.pch";
 				INFOPLIST_FILE = QuickTouchServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -586,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK9MPZYTDE;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchClient/QuickTouchClient-prefix.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/QuickTouchClient/QuickTouchClient-prefix.pch";
 				INFOPLIST_FILE = QuickTouchClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;
@@ -601,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DK9MPZYTDE;
-				GCC_PREFIX_HEADER = "/Users/TsuiYuenHong/Desktop/QuickTouch/QuickTouchClient/QuickTouchClient-prefix.pch";
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/QuickTouchClient/QuickTouchClient-prefix.pch";
 				INFOPLIST_FILE = QuickTouchClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchClient;

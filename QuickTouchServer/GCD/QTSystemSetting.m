@@ -43,14 +43,28 @@
     [QTSystemSetting sleepWithDelay:0];
 }
 
-+ (void)clickMenuItemName:(NSString *)itemName ofMenu:(int)menu ofMenuBarItem:(int)menuBarItem ofMenuBar:(int)menuBar ofApplicationName:(NSString *)appName{
++ (void)fetchAllMenuItemNameOfApp:(NSString *)appName{
     NSString *scriptStr = [NSString stringWithFormat:@"tell application \"System Events\" to tell process \"%@\"\
-     \nset frontmost to true\
-     \ntell menu bar item %d of menu bar %d\
-     \nclick\
-     \nclick menu item \"%@\" of menu %d\
-     \nend tell\
-     \nend tell",appName,menuBarItem,menuBar,itemName,menu];
+                           \nname of every menu item of every menu of menu bar 1\
+                           \nend tell",appName];
+    NSAppleScript *clickMenuBarItemScript = [[NSAppleScript alloc] initWithSource:scriptStr];
+    [clickMenuBarItemScript executeAndReturnError:nil];
+}
+
++ (void)clickMenuItem:(NSString *)item ofMenu:(NSString *)menu ofMenuBar:(NSInteger)menuBar ofApplication:(NSString *)appName{
+    NSString *scriptStr = [NSString stringWithFormat:@"tell application \"System Events\" to tell process \"%@\"\
+                           \nset frontmost to true\
+                           \nclick menu item \"%@\" of menu \"%@\" of menu bar %ld\
+                           \nend tell",appName,item,menu,(long)menuBar];
+    NSAppleScript *clickMenuBarItemScript = [[NSAppleScript alloc] initWithSource:scriptStr];
+    [clickMenuBarItemScript executeAndReturnError:nil];
+}
+
++ (void)clickSubMenuItem:(NSString *)subItem ofMenuItem:(NSString *)item ofMenu:(NSString *)menu ofMenuBar:(NSInteger)menuBar ofApplication:(NSString *)appName{
+    NSString *scriptStr = [NSString stringWithFormat:@"tell application \"System Events\" to tell process \"%@\"\
+                           \nset frontmost to true\
+                           \nclick menu item \"%@\" of menu of menu item \"%@\" of menu \"%@\" of menu bar %ld\
+                           \nend tell",appName,subItem,item,menu,(long)menuBar];
     NSAppleScript *clickMenuBarItemScript = [[NSAppleScript alloc] initWithSource:scriptStr];
     [clickMenuBarItemScript executeAndReturnError:nil];
 }

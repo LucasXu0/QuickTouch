@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [self.socket bindToPort:9526 error:nil];
+    [self.socket bindToPort:QTRECEIVEPORT error:nil];
     [self.socket beginReceiving:nil];
 }
 

@@ -38,7 +38,6 @@
     CGEventRef eventDown, eventUp;
     CGEventFlags cgFlags;
     int tag = 0;
-    
     for (NSString *flag in flags) {
         if (!flag.length) {
             continue ;
@@ -64,33 +63,18 @@
 }
 
 CGEventFlags eventFlag(NSString *flag){
-    if ([flag isEqual: @"command"]) {
+    if ([flag isEqual: @"Command"]) {
         return kCGEventFlagMaskCommand;
-    }else if([flag isEqual: @"shift"]){
+    }else if([flag isEqual: @"Shift"]){
         return kCGEventFlagMaskShift;
-    }else if([flag isEqualToString:@"control"]){
+    }else if([flag isEqualToString:@"Control"]){
         return kCGEventFlagMaskControl;
+    }else if([flag isEqualToString:@"Alt"]){
+        return kCGEventFlagMaskAlternate;
+    }else if([flag isEqualToString:@"Fn"]){
+        return kCGEventFlagMaskSecondaryFn;
     }
-    return kCGEventFlagMaskSecondaryFn;
+    return kCGEventFlagMaskHelp;
 }
-
-//typedef CF_OPTIONS(uint64_t, CGEventFlags) { /* Flags for events */
-//    /* Device-independent modifier key bits. */
-//    kCGEventFlagMaskAlphaShift =          NX_ALPHASHIFTMASK,
-//    kCGEventFlagMaskShift =               NX_SHIFTMASK,
-//    kCGEventFlagMaskControl =             NX_CONTROLMASK,
-//    kCGEventFlagMaskAlternate =           NX_ALTERNATEMASK,
-//    kCGEventFlagMaskCommand =             NX_COMMANDMASK,
-//    
-//    /* Special key identifiers. */
-//    kCGEventFlagMaskHelp =                NX_HELPMASK,
-//    kCGEventFlagMaskSecondaryFn =         NX_SECONDARYFNMASK,
-//    
-//    /* Identifies key events from numeric keypad area on extended keyboards. */
-//    kCGEventFlagMaskNumericPad =          NX_NUMERICPADMASK,
-//    
-//    /* Indicates if mouse/pen movement events are not being coalesced */
-//    kCGEventFlagMaskNonCoalesced =        NX_NONCOALSESCEDMASK
-//};
 
 @end

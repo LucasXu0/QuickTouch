@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuickTouchViewController">
+            <connections>
+                <outlet property="appNameLabel" destination="aJ8-hK-F1h" id="Eaf-6O-PcB"/>
+                <outlet property="appQTTableView" destination="Iq2-lA-9ry" id="jcA-jT-QU9"/>
+                <outlet property="brightnessSilder" destination="XAj-dS-MBa" id="K1t-YQ-GG6"/>
+                <outlet property="screenShotBuuton" destination="nTY-mP-hVh" id="cHp-xB-aog"/>
+                <outlet property="sleepButton" destination="Nar-NK-PpN" id="yMS-ig-TeK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="volumeSilder" destination="hlK-Xg-2y6" id="ZEm-zK-7aM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ8-hK-F1h">
+                    <rect key="frame" x="88" y="75" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="7TK-he-ytp"/>
+                        <constraint firstAttribute="height" constant="30" id="IQj-bW-4Rf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuJ-LH-SgA">
+                    <rect key="frame" x="0.0" y="110" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.016228096559643745" green="0.0037715095095336437" blue="0.0078679770231246948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="pp4-Mb-0f1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOj-fo-iHh">
+                    <rect key="frame" x="0.0" y="425" width="375" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="XNX-1q-jiG"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="亮度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-NF-PmN">
+                    <rect key="frame" x="27" y="453" width="35" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="音量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzf-qk-HQb">
+                    <rect key="frame" x="27" y="503" width="35" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iq2-lA-9ry">
+                    <rect key="frame" x="0.0" y="115" width="375" height="300"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="t4L-d5-ncp"/>
+                    </constraints>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="xHu-E7-D1f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6By-JC-WJa">
+                    <rect key="frame" x="27" y="558" width="35" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMl-7A-BGU">
+                    <rect key="frame" x="95" y="553" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="&lt;"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTY-mP-hVh">
+                    <rect key="frame" x="300" y="448" width="31" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="截图">
+                        <color key="titleColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-NK-PpN">
+                    <rect key="frame" x="300" y="498" width="31" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="睡眠">
+                        <color key="titleColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-dS-MBa">
+                    <rect key="frame" x="85" y="448" width="118" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </slider>
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-Xg-2y6">
+                    <rect key="frame" x="85" y="498" width="118" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyg-qz-Hp4">
+                    <rect key="frame" x="258" y="553" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="&gt;"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFn-IN-s74">
+                    <rect key="frame" x="160" y="553" width="75" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Play/Pause"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VOj-fo-iHh" secondAttribute="trailing" id="297-Ox-Frz"/>
+                <constraint firstItem="YuJ-LH-SgA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Zf-Ut-2pm"/>
+                <constraint firstItem="Iq2-lA-9ry" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IbT-ar-dmc"/>
+                <constraint firstAttribute="trailing" secondItem="Iq2-lA-9ry" secondAttribute="trailing" id="Ig1-2J-wjp"/>
+                <constraint firstItem="YuJ-LH-SgA" firstAttribute="top" secondItem="aJ8-hK-F1h" secondAttribute="bottom" constant="5" id="Kqz-Jh-DrR"/>
+                <constraint firstAttribute="trailing" secondItem="YuJ-LH-SgA" secondAttribute="trailing" id="RD0-Hg-G12"/>
+                <constraint firstItem="aJ8-hK-F1h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="VUx-Rx-Uj7"/>
+                <constraint firstItem="aJ8-hK-F1h" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zun-OW-rh9"/>
+                <constraint firstItem="Iq2-lA-9ry" firstAttribute="top" secondItem="aJ8-hK-F1h" secondAttribute="bottom" constant="10" id="bRx-D5-bjF"/>
+                <constraint firstItem="VOj-fo-iHh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f7P-Gg-Rgz"/>
+                <constraint firstItem="VOj-fo-iHh" firstAttribute="top" secondItem="Iq2-lA-9ry" secondAttribute="bottom" constant="10" id="vSR-oK-83I"/>
+            </constraints>
+            <point key="canvasLocation" x="-844" y="95"/>
+        </view>
+    </objects>
+</document>
