@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Quicks Touch"];
+    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Quick Touch"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -90,7 +90,7 @@
             break;
         case 5:{
             QuickTouchViewController *QTVC = [QuickTouchViewController new];
-            QTVC.title = @"Mac Infos";
+            QTVC.title = @"Quick Touch";
             [self.navigationController pushViewController:QTVC animated:NO];
         }
             break;

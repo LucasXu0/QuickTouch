@@ -118,6 +118,11 @@
                     [QTSystemSetting setSystemBrightness:brightness];
                 }
                     break;
+                case QTSystemSettingVolume:{
+                    int volume = [commandDict[@"volume"] intValue];
+                    [QTSystemSetting setSystemVolume:volume];
+                }
+                    break;
                 default:
                     break;
             }

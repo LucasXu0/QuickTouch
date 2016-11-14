@@ -158,7 +158,7 @@
         throttle:0.1]
         map:^id(UISlider *slider) {
             NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
-            return @([value floatValue]);}]
+            return @(value.floatValue);}]
         subscribeNext:^(NSNumber *number) {
             NSDictionary *commandDict = @{
                                           @"commandType":toNSNumber(QTCommandSystemSetting),
@@ -166,6 +166,21 @@
                                           @"brightness":number
                                           };
             [[CommandSender sharedInstance] sendCommandDict:commandDict];
+    }];
+    
+    // 音量控制
+    [[[[_volumeSilder rac_signalForControlEvents:UIControlEventValueChanged]
+        map:^id(UISlider *slider) {
+            return @((int)(100*slider.value));}]
+        distinctUntilChanged]
+        subscribeNext:^(NSNumber *number) {
+            NSDictionary *commandDict = @{
+                                          @"commandType":toNSNumber(QTCommandSystemSetting),
+                                          @"systemSettingType":toNSNumber(QTSystemSettingVolume),
+                                          @"volume":number
+                                          };
+            [[CommandSender sharedInstance] sendCommandDict:commandDict];
+
     }];
 }
 
