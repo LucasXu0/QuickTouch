@@ -3,6 +3,8 @@ Inspired by nMBP touch bar, this project make u control your mac using your iPho
 
 这个项目的 idea 是源于 nMBP 的 touch bar 功能，你可以用你的 iPhone / iPad 来作为 "touch bar" 使用。
 
+Demo Video (演示视频) <http://www.bilibili.com/video/av7107528>
+
 #### Now Support Function including (已支持功能包括):
 
 * **NEW 2016.11.14**
