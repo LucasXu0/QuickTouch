@@ -15,7 +15,7 @@
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[CommandSender alloc] init];
-        sharedInstance.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        sharedInstance.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:sharedInstance delegateQueue:dispatch_get_main_queue()];
     });
     return sharedInstance ;
 }
