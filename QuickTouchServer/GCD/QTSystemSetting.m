@@ -73,4 +73,18 @@
     [[NSWorkspace sharedWorkspace] launchApplication:name];
 }
 
++ (NSString *)getLocalIPAddress{
+    NSString *stringAddress;
+    NSArray *addresses = [[NSHost currentHost] addresses];
+    for (NSString *anAddress in addresses) {
+        if (![anAddress hasPrefix:@"127"] && [[anAddress componentsSeparatedByString:@"."] count] == 4) {
+            stringAddress = anAddress;
+            break;
+        } else {
+            stringAddress = @"IPv4 address not available" ;
+        }
+    }
+    return stringAddress;
+}
+
 @end

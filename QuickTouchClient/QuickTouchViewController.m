@@ -31,7 +31,7 @@
 
     // create socket
     self.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [self.socket bindToPort:QTRECEIVEPORT error:nil];
+    [self.socket bindToPort:[CommandSender sharedInstance].RecePort error:nil];
     [self.socket beginReceiving:nil];
     
     // config tableview

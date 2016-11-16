@@ -12,8 +12,8 @@
 #import "SpecialKeyViewController.h"
 #import "CustomShortCutViewController.h"
 #import "SuperCustomViewController.h"
-#import "MacInfosViewController.h"
 #import "QuickTouchViewController.h"
+#import "ScanQRCodeViewController.h"
 
 #define cellID @"commandTypesCell"
 
@@ -23,6 +23,7 @@
 @property (nonatomic, strong) UIButton *kpasteButton;
 @property (nonatomic, strong) UITableView *mainTableView;
 @property (nonatomic, strong) NSArray *commandTypes;
+//@property
 
 @end
 
@@ -36,12 +37,19 @@
     
     [self.view addSubview:self.mainTableView];
 
+
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Scan" style:UIBarButtonItemStylePlain target:self action:@selector(scanQRCode)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (void)scanQRCode{
+    [self.navigationController pushViewController:[ScanQRCodeViewController new] animated:NO];
+}
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -8,7 +8,7 @@
 
 #import "QTSystemSetting.h"
 
-#define QTHOST @"192.168.1.114"
+#define QTHOST [[NSUserDefaults standardUserDefaults] objectForKey:@"iOSLocalIP"]
 #define QTRECEIVEPORT 9527
 #define QTSENDPORT 9526
 
@@ -21,7 +21,9 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandSuperCustom, // 超级自定义
     QTCommandClickMenuItem, // 点击 MenuItem
     QTCommandClickSubMenuItem, // 点击 SubMenuItem
-    QTCommandSystemSetting // 系统设置
+    QTCommandSystemSetting, // 系统设置
+    QTCommandConfirm, // 确认信号
+
 };
 
 typedef NS_ENUM(NSUInteger, QTSystemSettingType) {

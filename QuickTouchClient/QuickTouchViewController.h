@@ -1,4 +1,4 @@
-//
+
 //  QuickTouchViewController.h
 //  QuickTouchClient
 //

@@ -13,11 +13,15 @@
 #import "NSString+KeyCode.h"
 #import "QTKey.h"
 #import <AudioToolbox/AudioToolbox.h>
-
+#import "QRCodeCreator.h"
 @interface AppDelegate () <GCDAsyncUdpSocketDelegate>
 
 @property (weak) IBOutlet NSWindow *window;
 @property (strong) GCDAsyncUdpSocket *udpSocket;
+@property (weak) IBOutlet NSImageView *qrCodeImage;
+@property (weak) IBOutlet NSTextField *ipAddressLabel;
+@property (weak) IBOutlet NSTextField *sendPortLabel;
+@property (weak) IBOutlet NSTextField *receivePortLabel;
 
 @end
 
@@ -30,24 +34,34 @@
 #warning 错误信息待完善
     [self.udpSocket bindToPort:QTRECEIVEPORT error:nil];
     [self.udpSocket beginReceiving:nil];
+
     
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+
+    [self configSubviews];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
 
-#pragma mark - send mac infos
+#pragma mark - Config Subviews
+- (void)configSubviews{
+    self.ipAddressLabel.stringValue = [NSString stringWithFormat:@"Local IP : %@",[QTSystemSetting getLocalIPAddress]];
+    self.sendPortLabel.stringValue = [NSString stringWithFormat:@"Send Port : %d",QTSENDPORT];
+    self.receivePortLabel.stringValue = [NSString stringWithFormat:@"Rece Port : %d",QTRECEIVEPORT];
+    NSString *qrString = [NSString stringWithFormat:@"%@/%d/%d",[QTSystemSetting getLocalIPAddress],QTRECEIVEPORT,QTSENDPORT];
+    self.qrCodeImage.image = [QRCodeCreator qrImageForString:qrString imageSize:150];
+}
+
+#pragma mark - Send Mac Infos
 - (void)sendMacInfos{
-    NSLog(@"%@",[NSWorkspace sharedWorkspace].frontmostApplication.localizedName);
     NSDictionary *macInfos = @{
                                @"currentAppName":[NSWorkspace sharedWorkspace].frontmostApplication.localizedName,
-                               
                                };
     NSData *macInfosData = [NSJSONSerialization dataWithJSONObject:macInfos options:NSJSONWritingPrettyPrinted error:nil];
-    [self.udpSocket sendData:macInfosData toHost:QTHOST port:QTSENDPORT withTimeout:1.0 tag:0];
+    [_udpSocket sendData:macInfosData toHost:QTHOST port:QTSENDPORT withTimeout:1.0 tag:0];
 }
 
 #pragma mark - GCDAsyncUdpSocketDelegate
@@ -128,6 +142,12 @@
             }
         }
             break;
+        case QTCommandConfirm:{
+            NSString *iOSLocalIP = commandDict[@"iOSLocalIP"];
+            [[NSUserDefaults standardUserDefaults] setObject:iOSLocalIP forKey:@"iOSLocalIP"];
+
+        }
+            break;
         default:
             break;
     }
@@ -163,5 +183,6 @@
     CGKeyCode commandKC = [NSString keyCodeFormKeyString:normalKey];
     [QTKey pressNormalKey:commandKC withFlags:functionKeys];
 }
+
 
 @end

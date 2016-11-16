@@ -11,7 +11,10 @@
 
 @interface CommandSender : NSObject <GCDAsyncUdpSocketDelegate>
 @property (nonatomic, strong) GCDAsyncUdpSocket *socket;
-
+@property (nonatomic, copy) NSString *host;
+@property (nonatomic, assign) uint16_t sendPort;
+@property (nonatomic, assign) uint16_t RecePort;
 + (instancetype)sharedInstance;
 - (void)sendCommandDict:(NSDictionary *)commandDict;
+- (void)configHostAndPort:(NSArray *)array;
 @end

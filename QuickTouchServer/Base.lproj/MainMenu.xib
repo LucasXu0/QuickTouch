@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,8 +13,12 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="ipAddressLabel" destination="9ex-K1-ie9" id="wiP-4t-X1C"/>
+                <outlet property="qrCodeImage" destination="ybX-Sf-t0g" id="nai-nT-LoA"/>
+                <outlet property="receivePortLabel" destination="IY4-5i-Kfe" id="yaQ-rQ-pvW"/>
+                <outlet property="sendPortLabel" destination="xzq-15-N4G" id="689-RN-OG2"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -677,16 +683,74 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-341" y="153"/>
         </menu>
         <window title="QuickTouchServer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Sf-t0g">
+                        <rect key="frame" x="20" y="190" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="qOy-Rg-ffg"/>
+                            <constraint firstAttribute="width" constant="150" id="rgn-hR-Dx5"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="kc8-mt-rq1"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ex-K1-ie9">
+                        <rect key="frame" x="196" y="310" width="200" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="6Q8-CA-umi"/>
+                            <constraint firstAttribute="width" constant="196" id="MC1-Ox-ZlX"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="IP Address" id="1n0-Lv-YL6">
+                            <font key="font" metaFont="system" size="21"/>
+                            <color key="textColor" red="0.92805510759353638" green="0.14879858493804932" blue="0.93557429313659668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IY4-5i-Kfe">
+                        <rect key="frame" x="196" y="190" width="200" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="OrC-iG-l5g"/>
+                            <constraint firstAttribute="width" constant="196" id="o1A-UC-Drp"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Receive Port" id="wbv-Zs-3Xc">
+                            <font key="font" metaFont="system" size="21"/>
+                            <color key="textColor" red="0.92805510759353638" green="0.14879858493804932" blue="0.93557429313659668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xzq-15-N4G">
+                        <rect key="frame" x="196" y="250" width="200" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="196" id="NrD-zL-l5l"/>
+                            <constraint firstAttribute="height" constant="30" id="hYn-r5-6bF"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Send Port" id="NjT-wl-wKL">
+                            <font key="font" metaFont="system" size="21"/>
+                            <color key="textColor" red="0.92805510759353638" green="0.14879858493804932" blue="0.93557429313659668" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xzq-15-N4G" firstAttribute="top" secondItem="9ex-K1-ie9" secondAttribute="bottom" constant="30" id="0zo-Dz-PPf"/>
+                    <constraint firstItem="ybX-Sf-t0g" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="4e6-RU-Ksh"/>
+                    <constraint firstItem="9ex-K1-ie9" firstAttribute="leading" secondItem="ybX-Sf-t0g" secondAttribute="trailing" constant="28" id="5GA-J6-nfm"/>
+                    <constraint firstItem="9ex-K1-ie9" firstAttribute="top" secondItem="ybX-Sf-t0g" secondAttribute="top" id="MiM-Sa-Q8S"/>
+                    <constraint firstItem="IY4-5i-Kfe" firstAttribute="top" secondItem="xzq-15-N4G" secondAttribute="bottom" constant="30" id="MjV-m3-Pne"/>
+                    <constraint firstItem="xzq-15-N4G" firstAttribute="leading" secondItem="ybX-Sf-t0g" secondAttribute="trailing" constant="28" id="WSY-py-fiB"/>
+                    <constraint firstItem="IY4-5i-Kfe" firstAttribute="leading" secondItem="ybX-Sf-t0g" secondAttribute="trailing" constant="28" id="qF9-Yd-qbM"/>
+                    <constraint firstItem="ybX-Sf-t0g" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="ves-F0-lnl"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="-392" y="437"/>
         </window>
     </objects>
 </document>

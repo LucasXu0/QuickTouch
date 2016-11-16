@@ -79,4 +79,6 @@
  */
 + (void)launchApp:(NSString *)name;
 
++ (NSString *)getLocalIPAddress;
+
 @end

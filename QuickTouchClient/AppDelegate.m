@@ -25,6 +25,11 @@
     
     [self.window makeKeyAndVisible];
     
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:QTHostPortInfos]) {
+        NSArray *qrArray = [[NSUserDefaults standardUserDefaults] objectForKey:QTHostPortInfos];
+        [[CommandSender sharedInstance] configHostAndPort:qrArray];
+    }
+
     return YES;
 }
 

@@ -10,9 +10,7 @@
 #import "Masonry.h"
 #import "CommandSender.h"
 
-#define QTHOST @"192.168.1.112"
-#define QTSENDPORT 9527
-#define QTRECEIVEPORT 9526
+#define QTHostPortInfos @"QTHostPortInfos"
 
 #define toNSNumber(a) [NSNumber numberWithUnsignedInteger:(a)]
 
@@ -25,7 +23,8 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandSuperCustom, // 超级自定义
     QTCommandClickMenuItem, // 点击 MenuItem
     QTCommandClickSubMenuItem, // 点击 SubMenuItem
-    QTCommandSystemSetting // 系统设置 
+    QTCommandSystemSetting, // 系统设置
+    QTCommandConfirm, // 确认信号
 };
 
 typedef NS_ENUM(NSUInteger, QTSystemSettingType) {
