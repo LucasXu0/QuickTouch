@@ -8,9 +8,10 @@
 
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
+#import <MJExtension/MJExtension.h>
 #import "CommandSender.h"
 #import "Util.h"
-#import "QTType.h"
+#import "QTTypeClass.h"
 
 #define QTHostPortInfos @"QTHostPortInfos"
 

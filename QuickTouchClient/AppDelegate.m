@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "QTTypeClass.h"
 @interface AppDelegate ()
 
 @end
@@ -29,7 +30,7 @@
         NSArray *qrArray = [[NSUserDefaults standardUserDefaults] objectForKey:QTHostPortInfos];
         [[CommandSender sharedInstance] configHostAndPort:qrArray];
     }
-
+    
     return YES;
 }
 

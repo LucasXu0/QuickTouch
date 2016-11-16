@@ -1,10 +1,12 @@
 //
-//  QTType.h
+//  QTTypeClass.h
 //  QuickTouchClient
 //
-//  Created by TsuiYuenHong on 2016/11/16.
+//  Created by TsuiYuenHong on 2016/11/17.
 //  Copyright © 2016年 TsuiYuenHong. All rights reserved.
 //
+
+#import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, QTType) {
     QTConfirm = 1, // confirm message.
@@ -23,6 +25,10 @@ typedef NS_ENUM(NSInteger, QTSystemSettingType) {
     QTSystemSettingSleep, // mac sleep
 };
 
+
+@interface QTTypeClass : NSObject
+@end
+
 @interface QTTypeModel : NSObject
 @property (nonatomic, assign) QTType qtType;
 @property (nonatomic, strong) id qtContent;
@@ -40,6 +46,7 @@ typedef NS_ENUM(NSInteger, QTSystemSettingType) {
 @property (nonatomic, copy) NSString *desc; // command description
 @property (nonatomic, copy) NSString *content;
 @end
+
 
 //example:
 //QTPureWordsModel *model = [QTPureWordsModel new];
@@ -89,21 +96,5 @@ typedef NS_ENUM(NSInteger, QTSystemSettingType) {
 @property (nonatomic, assign) QTSystemSettingType qtSystemSettingType;
 @property (nonatomic, strong) id paras;
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
