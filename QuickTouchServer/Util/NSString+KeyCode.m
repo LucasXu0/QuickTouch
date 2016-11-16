@@ -62,6 +62,7 @@
     if ([keyString isEqualToString:@"m"]) return 46;
     if ([keyString isEqualToString:@"."]) return 47;
     if ([keyString isEqualToString:@"TAB"]) return 48;
+    if ([keyString isEqualToString:@" "]) return 49;
     if ([keyString isEqualToString:@"SPACE"]) return 49;
     if ([keyString isEqualToString:@"`"]) return 50;
     if ([keyString isEqualToString:@"DELETE"]) return 51;
@@ -134,7 +135,6 @@
         case 7: return @"x";
         case 8: return @"c";
         case 9: return @"v";
-            // what is 10?
         case 11: return @"b";
         case 12: return @"q";
         case 13: return @"w";
@@ -178,23 +178,13 @@
         case 51: return @"DELETE";
         case 52: return @"ENTER";
         case 53: return @"ESCAPE";
-            
-            // some more missing codes abound, reserved I presume, but it would
-            // have been helpful for Apple to have a document with them all listed
-            
         case 65: return @".";
-            
         case 67: return @"*";
-            
         case 69: return @"+";
-            
         case 71: return @"CLEAR";
-            
         case 75: return @"/";
         case 76: return @"ENTER";   // numberpad on full kbd
-            
         case 78: return @"-";
-            
         case 81: return @"=";
         case 82: return @"0";
         case 83: return @"1";
@@ -204,27 +194,19 @@
         case 87: return @"5";
         case 88: return @"6";
         case 89: return @"7";
-            
         case 91: return @"8";
         case 92: return @"9";
-            
         case 96: return @"F5";
         case 97: return @"F6";
         case 98: return @"F7";
         case 99: return @"F3";
         case 100: return @"F8";
         case 101: return @"F9";
-            
         case 103: return @"F11";
-            
         case 105: return @"F13";
-            
         case 107: return @"F14";
-            
         case 109: return @"F10";
-            
         case 111: return @"F12";
-            
         case 113: return @"F15";
         case 114: return @"HELP";
         case 115: return @"HOME";
@@ -241,7 +223,6 @@
         case 126: return @"UP";
             
         default:
-            
             return @"Unknown key";
             // Unknown key, bail and note that RUI needs improvement
             //fprintf(stderr, "%ld\tKey\t%c (DEBUG: %d)\n", currenttime, keyCode;

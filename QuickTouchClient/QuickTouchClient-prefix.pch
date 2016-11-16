@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "CommandSender.h"
 #import "Util.h"
+#import "QTType.h"
 
 #define QTHostPortInfos @"QTHostPortInfos"
 
@@ -26,11 +27,4 @@ typedef NS_ENUM(NSUInteger, QTCommandType) {
     QTCommandClickSubMenuItem, // 点击 SubMenuItem
     QTCommandSystemSetting, // 系统设置
     QTCommandConfirm, // 确认信号
-};
-
-typedef NS_ENUM(NSUInteger, QTSystemSettingType) {
-    QTSystemSettingLaunch = 1, // 启动应用
-    QTSystemSettingBrightness, // 亮度
-    QTSystemSettingVolume, // 音量
-    QTSystemSettingSleep // 睡眠
 };

@@ -7,5 +7,6 @@ target 'QuickTouchClient' do
 
   pod 'Masonry'
   pod 'ReactiveCocoa', '2.5'
+  pod 'MJExtension'
 
 end
