@@ -8,73 +8,86 @@
 
 /* Begin PBXBuildFile section */
 		07CB409008305A8583BF1ACE /* Pods_QuickTouchClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */; };
-		341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135521DD2CEB000D98C94 /* NSString+KeyCode.m */; };
 		341135621DD2CEB000D98C94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135541DD2CEB000D98C94 /* main.m */; };
-		341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */; };
-		341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */; };
-		341135661DD2CEB000D98C94 /* QTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355B1DD2CEB000D98C94 /* QTKey.m */; };
 		341135671DD2CEB000D98C94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3411355E1DD2CEB000D98C94 /* Assets.xcassets */; };
 		341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411355F1DD2CEB000D98C94 /* AppDelegate.m */; };
 		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
-		3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */; };
-		341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341135731DD31BC300D98C94 /* CustomShortCutViewController.m */; };
-		34597B301DDBEE3500F48479 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B2E1DDBEE3500F48479 /* ScanQRCodeViewController.m */; };
-		34597B311DDBEE3500F48479 /* ScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34597B2F1DDBEE3500F48479 /* ScanQRCodeViewController.xib */; };
-		34597B341DDBF37200F48479 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B331DDBF37200F48479 /* UIView+SDExtension.m */; };
-		34597B3B1DDBF78E00F48479 /* QRCodeCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B3A1DDBF78E00F48479 /* QRCodeCreator.m */; };
-		347652C11DD5D67C00E10392 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 347652C01DD5D67C00E10392 /* QTSystemSetting.m */; };
-		347E9A011DD9BBED00B19B2E /* QuickTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */; };
-		347E9A021DD9BBED00B19B2E /* QuickTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */; };
-		34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */; };
+		34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */; };
+		34597B461DDC744D00F48479 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B441DDC744D00F48479 /* UIView+SDExtension.m */; };
+		34597B541DDC748500F48479 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B491DDC748500F48479 /* CustomShortCutViewController.m */; };
+		34597B551DDC748500F48479 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B4B1DDC748500F48479 /* OneViewController.m */; };
+		34597B561DDC748500F48479 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34597B4C1DDC748500F48479 /* OneViewController.xib */; };
+		34597B571DDC748500F48479 /* SpecialKeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B4E1DDC748500F48479 /* SpecialKeyViewController.m */; };
+		34597B581DDC748500F48479 /* SuperCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B501DDC748500F48479 /* SuperCustomViewController.m */; };
+		34597B591DDC748500F48479 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B521DDC748500F48479 /* TwoViewController.m */; };
+		34597B5A1DDC748500F48479 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34597B531DDC748500F48479 /* TwoViewController.xib */; };
+		34597B611DDC74B400F48479 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B5E1DDC74B400F48479 /* GCDAsyncSocket.m */; };
+		34597B621DDC74B400F48479 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B601DDC74B400F48479 /* GCDAsyncUdpSocket.m */; };
+		34597B731DDC755000F48479 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B701DDC755000F48479 /* CommandSender.m */; };
+		34597B741DDC755000F48479 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B721DDC755000F48479 /* Util.m */; };
+		34597B791DDC758200F48479 /* QuickTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B771DDC758200F48479 /* QuickTouchViewController.m */; };
+		34597B7A1DDC758200F48479 /* QuickTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34597B781DDC758200F48479 /* QuickTouchViewController.xib */; };
+		34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B7D1DDC763900F48479 /* NSString+KeyCode.m */; };
+		34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B7F1DDC763900F48479 /* QRCodeCreator.m */; };
+		34597B8D1DDC763900F48479 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B831DDC763900F48479 /* GCDAsyncSocket.m */; };
+		34597B8E1DDC763900F48479 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B851DDC763900F48479 /* GCDAsyncUdpSocket.m */; };
+		34597B8F1DDC763900F48479 /* QTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B881DDC763900F48479 /* QTKey.m */; };
+		34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B8A1DDC763900F48479 /* QTSystemSetting.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
 		34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D21DD0D89500998965 /* LaunchScreen.storyboard */; };
 		34B049DE1DD0D97500998965 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049DC1DD0D97500998965 /* MainViewController.m */; };
-		34B984B31DD42AE800B38897 /* CommandSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B984B21DD42AE800B38897 /* CommandSender.m */; };
-		34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC201DD22FB40007D6A1 /* OneViewController.m */; };
-		34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC211DD22FB40007D6A1 /* OneViewController.xib */; };
-		34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */; };
-		34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */; };
-		34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */; };
-		34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		341135401DD2CE5D00D98C94 /* QuickTouchServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QuickTouchServer-prefix.pch"; sourceTree = "<group>"; };
-		341135521DD2CEB000D98C94 /* NSString+KeyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyCode.m"; sourceTree = "<group>"; };
-		341135531DD2CEB000D98C94 /* NSString+KeyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyCode.h"; sourceTree = "<group>"; };
 		341135541DD2CEB000D98C94 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		341135551DD2CEB000D98C94 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		341135571DD2CEB000D98C94 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		341135591DD2CEB000D98C94 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
-		3411355B1DD2CEB000D98C94 /* QTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKey.m; sourceTree = "<group>"; };
-		3411355C1DD2CEB000D98C94 /* QTKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKey.h; sourceTree = "<group>"; };
 		3411355E1DD2CEB000D98C94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3411355F1DD2CEB000D98C94 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		341135601DD2CEB000D98C94 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3411356A1DD2CF2400D98C94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
-		3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialKeyViewController.h; sourceTree = "<group>"; };
-		3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
-		341135721DD31BC300D98C94 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
-		341135731DD31BC300D98C94 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
-		34597B2D1DDBEE3500F48479 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
-		34597B2E1DDBEE3500F48479 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
-		34597B2F1DDBEE3500F48479 /* ScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanQRCodeViewController.xib; sourceTree = "<group>"; };
-		34597B321DDBF37200F48479 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
-		34597B331DDBF37200F48479 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
-		34597B391DDBF78E00F48479 /* QRCodeCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeCreator.h; sourceTree = "<group>"; };
-		34597B3A1DDBF78E00F48479 /* QRCodeCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeCreator.m; sourceTree = "<group>"; };
-		347652BF1DD5D67C00E10392 /* QTSystemSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QTSystemSetting.h; path = GCD/QTSystemSetting.h; sourceTree = "<group>"; };
-		347652C01DD5D67C00E10392 /* QTSystemSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QTSystemSetting.m; path = GCD/QTSystemSetting.m; sourceTree = "<group>"; };
-		347E99FE1DD9BBED00B19B2E /* QuickTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickTouchViewController.h; sourceTree = "<group>"; };
-		347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickTouchViewController.m; sourceTree = "<group>"; };
-		347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickTouchViewController.xib; sourceTree = "<group>"; };
-		34AB50E91DD426FA00315615 /* SuperCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCustomViewController.h; sourceTree = "<group>"; };
-		34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCustomViewController.m; sourceTree = "<group>"; };
+		34597B411DDC744D00F48479 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
+		34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
+		34597B431DDC744D00F48479 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		34597B441DDC744D00F48479 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		34597B481DDC748500F48479 /* CustomShortCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShortCutViewController.h; sourceTree = "<group>"; };
+		34597B491DDC748500F48479 /* CustomShortCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShortCutViewController.m; sourceTree = "<group>"; };
+		34597B4A1DDC748500F48479 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		34597B4B1DDC748500F48479 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		34597B4C1DDC748500F48479 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
+		34597B4D1DDC748500F48479 /* SpecialKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialKeyViewController.h; sourceTree = "<group>"; };
+		34597B4E1DDC748500F48479 /* SpecialKeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialKeyViewController.m; sourceTree = "<group>"; };
+		34597B4F1DDC748500F48479 /* SuperCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperCustomViewController.h; sourceTree = "<group>"; };
+		34597B501DDC748500F48479 /* SuperCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperCustomViewController.m; sourceTree = "<group>"; };
+		34597B511DDC748500F48479 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		34597B521DDC748500F48479 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		34597B531DDC748500F48479 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
+		34597B5D1DDC74B400F48479 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		34597B5E1DDC74B400F48479 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		34597B5F1DDC74B400F48479 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		34597B601DDC74B400F48479 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		34597B6F1DDC755000F48479 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
+		34597B701DDC755000F48479 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
+		34597B711DDC755000F48479 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		34597B721DDC755000F48479 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		34597B761DDC758200F48479 /* QuickTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickTouchViewController.h; sourceTree = "<group>"; };
+		34597B771DDC758200F48479 /* QuickTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickTouchViewController.m; sourceTree = "<group>"; };
+		34597B781DDC758200F48479 /* QuickTouchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickTouchViewController.xib; sourceTree = "<group>"; };
+		34597B7C1DDC763900F48479 /* NSString+KeyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyCode.h"; sourceTree = "<group>"; };
+		34597B7D1DDC763900F48479 /* NSString+KeyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyCode.m"; sourceTree = "<group>"; };
+		34597B7E1DDC763900F48479 /* QRCodeCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeCreator.h; sourceTree = "<group>"; };
+		34597B7F1DDC763900F48479 /* QRCodeCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeCreator.m; sourceTree = "<group>"; };
+		34597B821DDC763900F48479 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		34597B831DDC763900F48479 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		34597B841DDC763900F48479 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		34597B851DDC763900F48479 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		34597B871DDC763900F48479 /* QTKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTKey.h; sourceTree = "<group>"; };
+		34597B881DDC763900F48479 /* QTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKey.m; sourceTree = "<group>"; };
+		34597B891DDC763900F48479 /* QTSystemSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTSystemSetting.h; sourceTree = "<group>"; };
+		34597B8A1DDC763900F48479 /* QTSystemSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTSystemSetting.m; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B049C51DD0D89500998965 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34B049C71DD0D89500998965 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,19 +97,7 @@
 		34B049D51DD0D89500998965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B049DB1DD0D97500998965 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		34B049DC1DD0D97500998965 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		34B984B11DD42AE800B38897 /* CommandSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandSender.h; sourceTree = "<group>"; };
-		34B984B21DD42AE800B38897 /* CommandSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandSender.m; sourceTree = "<group>"; };
-		34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
-		34C6DC201DD22FB40007D6A1 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
-		34C6DC211DD22FB40007D6A1 /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
-		34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
-		34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
-		34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
 		34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickTouchClient-prefix.pch"; sourceTree = "<group>"; };
-		34DEA03B1DD0DE76003B5D2D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		34DEA03D1DD0DE76003B5D2D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickTouchClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85DD7EAC6B03C7CF7E8BDF84 /* Pods-QuickTouchClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient.debug.xcconfig"; sourceTree = "<group>"; };
 		EEC6579A36956BED82996FE1 /* Pods-QuickTouchClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,35 +142,15 @@
 		341135411DD2CE5D00D98C94 /* QuickTouchServer */ = {
 			isa = PBXGroup;
 			children = (
-				341135561DD2CEB000D98C94 /* GCD */,
 				341135601DD2CEB000D98C94 /* AppDelegate.h */,
 				3411355F1DD2CEB000D98C94 /* AppDelegate.m */,
-				3411355C1DD2CEB000D98C94 /* QTKey.h */,
-				3411355B1DD2CEB000D98C94 /* QTKey.m */,
-				347652BF1DD5D67C00E10392 /* QTSystemSetting.h */,
-				347652C01DD5D67C00E10392 /* QTSystemSetting.m */,
-				341135531DD2CEB000D98C94 /* NSString+KeyCode.h */,
-				341135521DD2CEB000D98C94 /* NSString+KeyCode.m */,
-				34597B391DDBF78E00F48479 /* QRCodeCreator.h */,
-				34597B3A1DDBF78E00F48479 /* QRCodeCreator.m */,
-				341135541DD2CEB000D98C94 /* main.m */,
-				341135551DD2CEB000D98C94 /* Info.plist */,
-				341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */,
+				34597B7B1DDC763900F48479 /* Util */,
+				34597B801DDC763900F48479 /* Shared */,
+				34597B861DDC763900F48479 /* QTService */,
 				3411355D1DD2CEB000D98C94 /* Base.lproj */,
-				3411355E1DD2CEB000D98C94 /* Assets.xcassets */,
+				34597B911DDC764800F48479 /* Supporting Files */,
 			);
 			path = QuickTouchServer;
-			sourceTree = "<group>";
-		};
-		341135561DD2CEB000D98C94 /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				341135571DD2CEB000D98C94 /* GCDAsyncSocket.h */,
-				341135581DD2CEB000D98C94 /* GCDAsyncSocket.m */,
-				341135591DD2CEB000D98C94 /* GCDAsyncUdpSocket.h */,
-				3411355A1DD2CEB000D98C94 /* GCDAsyncUdpSocket.m */,
-			);
-			path = GCD;
 			sourceTree = "<group>";
 		};
 		3411355D1DD2CEB000D98C94 /* Base.lproj */ = {
@@ -180,14 +161,126 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
-		347E9A031DD9BC7600B19B2E /* QuickTouch */ = {
+		34597B401DDC744D00F48479 /* ScanQRCode */ = {
 			isa = PBXGroup;
 			children = (
-				347E99FE1DD9BBED00B19B2E /* QuickTouchViewController.h */,
-				347E99FF1DD9BBED00B19B2E /* QuickTouchViewController.m */,
-				347E9A001DD9BBED00B19B2E /* QuickTouchViewController.xib */,
+				34597B411DDC744D00F48479 /* ScanQRCodeViewController.h */,
+				34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */,
+				34597B431DDC744D00F48479 /* UIView+SDExtension.h */,
+				34597B441DDC744D00F48479 /* UIView+SDExtension.m */,
 			);
-			name = QuickTouch;
+			path = ScanQRCode;
+			sourceTree = "<group>";
+		};
+		34597B471DDC748500F48479 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				34597B481DDC748500F48479 /* CustomShortCutViewController.h */,
+				34597B491DDC748500F48479 /* CustomShortCutViewController.m */,
+				34597B4A1DDC748500F48479 /* OneViewController.h */,
+				34597B4B1DDC748500F48479 /* OneViewController.m */,
+				34597B4C1DDC748500F48479 /* OneViewController.xib */,
+				34597B4D1DDC748500F48479 /* SpecialKeyViewController.h */,
+				34597B4E1DDC748500F48479 /* SpecialKeyViewController.m */,
+				34597B4F1DDC748500F48479 /* SuperCustomViewController.h */,
+				34597B501DDC748500F48479 /* SuperCustomViewController.m */,
+				34597B511DDC748500F48479 /* TwoViewController.h */,
+				34597B521DDC748500F48479 /* TwoViewController.m */,
+				34597B531DDC748500F48479 /* TwoViewController.xib */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		34597B5B1DDC74B400F48479 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				34597B5C1DDC74B400F48479 /* GCDAsyncSokcet */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		34597B5C1DDC74B400F48479 /* GCDAsyncSokcet */ = {
+			isa = PBXGroup;
+			children = (
+				34597B5D1DDC74B400F48479 /* GCDAsyncSocket.h */,
+				34597B5E1DDC74B400F48479 /* GCDAsyncSocket.m */,
+				34597B5F1DDC74B400F48479 /* GCDAsyncUdpSocket.h */,
+				34597B601DDC74B400F48479 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCDAsyncSokcet;
+			sourceTree = "<group>";
+		};
+		34597B6E1DDC755000F48479 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				34597B6F1DDC755000F48479 /* CommandSender.h */,
+				34597B701DDC755000F48479 /* CommandSender.m */,
+				34597B711DDC755000F48479 /* Util.h */,
+				34597B721DDC755000F48479 /* Util.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		34597B751DDC758200F48479 /* Quick Touch */ = {
+			isa = PBXGroup;
+			children = (
+				34597B761DDC758200F48479 /* QuickTouchViewController.h */,
+				34597B771DDC758200F48479 /* QuickTouchViewController.m */,
+				34597B781DDC758200F48479 /* QuickTouchViewController.xib */,
+			);
+			path = "Quick Touch";
+			sourceTree = "<group>";
+		};
+		34597B7B1DDC763900F48479 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				34597B7C1DDC763900F48479 /* NSString+KeyCode.h */,
+				34597B7D1DDC763900F48479 /* NSString+KeyCode.m */,
+				34597B7E1DDC763900F48479 /* QRCodeCreator.h */,
+				34597B7F1DDC763900F48479 /* QRCodeCreator.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		34597B801DDC763900F48479 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				34597B811DDC763900F48479 /* GCD */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		34597B811DDC763900F48479 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				34597B821DDC763900F48479 /* GCDAsyncSocket.h */,
+				34597B831DDC763900F48479 /* GCDAsyncSocket.m */,
+				34597B841DDC763900F48479 /* GCDAsyncUdpSocket.h */,
+				34597B851DDC763900F48479 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		34597B861DDC763900F48479 /* QTService */ = {
+			isa = PBXGroup;
+			children = (
+				34597B871DDC763900F48479 /* QTKey.h */,
+				34597B881DDC763900F48479 /* QTKey.m */,
+				34597B891DDC763900F48479 /* QTSystemSetting.h */,
+				34597B8A1DDC763900F48479 /* QTSystemSetting.m */,
+			);
+			path = QTService;
+			sourceTree = "<group>";
+		};
+		34597B911DDC764800F48479 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3411355E1DD2CEB000D98C94 /* Assets.xcassets */,
+				341135541DD2CEB000D98C94 /* main.m */,
+				341135551DD2CEB000D98C94 /* Info.plist */,
+				341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		34B049B81DD0D89500998965 = {
@@ -213,35 +306,15 @@
 		34B049C31DD0D89500998965 /* QuickTouchClient */ = {
 			isa = PBXGroup;
 			children = (
-				34DEA0391DD0DE6B003B5D2D /* Shared */,
 				34B049C71DD0D89500998965 /* AppDelegate.h */,
 				34B049C81DD0D89500998965 /* AppDelegate.m */,
-				34B984B11DD42AE800B38897 /* CommandSender.h */,
-				34B984B21DD42AE800B38897 /* CommandSender.m */,
 				34B049DB1DD0D97500998965 /* MainViewController.h */,
 				34B049DC1DD0D97500998965 /* MainViewController.m */,
-				34C6DC1F1DD22FB40007D6A1 /* OneViewController.h */,
-				34C6DC201DD22FB40007D6A1 /* OneViewController.m */,
-				34C6DC211DD22FB40007D6A1 /* OneViewController.xib */,
-				34C6DC281DD2A30A0007D6A1 /* TwoViewController.h */,
-				34C6DC291DD2A30A0007D6A1 /* TwoViewController.m */,
-				34C6DC2A1DD2A30A0007D6A1 /* TwoViewController.xib */,
-				3411356C1DD2D4C500D98C94 /* SpecialKeyViewController.h */,
-				3411356D1DD2D4C500D98C94 /* SpecialKeyViewController.m */,
-				341135721DD31BC300D98C94 /* CustomShortCutViewController.h */,
-				341135731DD31BC300D98C94 /* CustomShortCutViewController.m */,
-				34AB50E91DD426FA00315615 /* SuperCustomViewController.h */,
-				34AB50EA1DD426FA00315615 /* SuperCustomViewController.m */,
-				34597B2D1DDBEE3500F48479 /* ScanQRCodeViewController.h */,
-				34597B2E1DDBEE3500F48479 /* ScanQRCodeViewController.m */,
-				34597B2F1DDBEE3500F48479 /* ScanQRCodeViewController.xib */,
-				34597B321DDBF37200F48479 /* UIView+SDExtension.h */,
-				34597B331DDBF37200F48479 /* UIView+SDExtension.m */,
-				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
-				347E9A031DD9BC7600B19B2E /* QuickTouch */,
-				34B049D01DD0D89500998965 /* Assets.xcassets */,
-				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
-				34B049D51DD0D89500998965 /* Info.plist */,
+				34597B751DDC758200F48479 /* Quick Touch */,
+				34597B401DDC744D00F48479 /* ScanQRCode */,
+				34597B6E1DDC755000F48479 /* Util */,
+				34597B5B1DDC74B400F48479 /* Shared */,
+				34597B471DDC748500F48479 /* Demo */,
 				34B049C41DD0D89500998965 /* Supporting Files */,
 			);
 			path = QuickTouchClient;
@@ -250,28 +323,13 @@
 		34B049C41DD0D89500998965 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34B049D01DD0D89500998965 /* Assets.xcassets */,
+				34B049D21DD0D89500998965 /* LaunchScreen.storyboard */,
+				34B049D51DD0D89500998965 /* Info.plist */,
+				34DEA0381DD0DC4E003B5D2D /* QuickTouchClient-prefix.pch */,
 				34B049C51DD0D89500998965 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		34DEA0391DD0DE6B003B5D2D /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				34DEA03A1DD0DE76003B5D2D /* GCD */,
-			);
-			name = Shared;
-			sourceTree = "<group>";
-		};
-		34DEA03A1DD0DE76003B5D2D /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				34DEA03B1DD0DE76003B5D2D /* GCDAsyncSocket.h */,
-				34DEA03C1DD0DE76003B5D2D /* GCDAsyncSocket.m */,
-				34DEA03D1DD0DE76003B5D2D /* GCDAsyncUdpSocket.h */,
-				34DEA03E1DD0DE76003B5D2D /* GCDAsyncUdpSocket.m */,
-			);
-			path = GCD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +426,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34597B311DDBEE3500F48479 /* ScanQRCodeViewController.xib in Resources */,
 				34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */,
-				347E9A021DD9BBED00B19B2E /* QuickTouchViewController.xib in Resources */,
+				34597B7A1DDC758200F48479 /* QuickTouchViewController.xib in Resources */,
 				34B049D11DD0D89500998965 /* Assets.xcassets in Resources */,
-				34C6DC231DD22FB40007D6A1 /* OneViewController.xib in Resources */,
-				34C6DC2C1DD2A30A0007D6A1 /* TwoViewController.xib in Resources */,
+				34597B5A1DDC748500F48479 /* TwoViewController.xib in Resources */,
+				34597B561DDC748500F48479 /* OneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,14 +489,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34597B3B1DDBF78E00F48479 /* QRCodeCreator.m in Sources */,
-				347652C11DD5D67C00E10392 /* QTSystemSetting.m in Sources */,
-				341135651DD2CEB000D98C94 /* GCDAsyncUdpSocket.m in Sources */,
-				341135641DD2CEB000D98C94 /* GCDAsyncSocket.m in Sources */,
+				34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */,
+				34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */,
+				34597B8E1DDC763900F48479 /* GCDAsyncUdpSocket.m in Sources */,
 				341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */,
+				34597B8F1DDC763900F48479 /* QTKey.m in Sources */,
+				34597B8D1DDC763900F48479 /* GCDAsyncSocket.m in Sources */,
+				34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */,
 				341135621DD2CEB000D98C94 /* main.m in Sources */,
-				341135611DD2CEB000D98C94 /* NSString+KeyCode.m in Sources */,
-				341135661DD2CEB000D98C94 /* QTKey.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,20 +504,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34DEA03F1DD0DE76003B5D2D /* GCDAsyncSocket.m in Sources */,
-				347E9A011DD9BBED00B19B2E /* QuickTouchViewController.m in Sources */,
-				34B984B31DD42AE800B38897 /* CommandSender.m in Sources */,
-				34DEA0401DD0DE76003B5D2D /* GCDAsyncUdpSocket.m in Sources */,
-				34AB50EB1DD426FA00315615 /* SuperCustomViewController.m in Sources */,
+				34597B621DDC74B400F48479 /* GCDAsyncUdpSocket.m in Sources */,
+				34597B731DDC755000F48479 /* CommandSender.m in Sources */,
+				34597B591DDC748500F48479 /* TwoViewController.m in Sources */,
+				34597B551DDC748500F48479 /* OneViewController.m in Sources */,
+				34597B741DDC755000F48479 /* Util.m in Sources */,
+				34597B571DDC748500F48479 /* SpecialKeyViewController.m in Sources */,
+				34597B581DDC748500F48479 /* SuperCustomViewController.m in Sources */,
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
-				34597B301DDBEE3500F48479 /* ScanQRCodeViewController.m in Sources */,
-				34C6DC221DD22FB40007D6A1 /* OneViewController.m in Sources */,
+				34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */,
+				34597B541DDC748500F48479 /* CustomShortCutViewController.m in Sources */,
+				34597B791DDC758200F48479 /* QuickTouchViewController.m in Sources */,
 				34B049DE1DD0D97500998965 /* MainViewController.m in Sources */,
 				34B049C61DD0D89500998965 /* main.m in Sources */,
-				34C6DC2B1DD2A30A0007D6A1 /* TwoViewController.m in Sources */,
-				3411356E1DD2D4C500D98C94 /* SpecialKeyViewController.m in Sources */,
-				34597B341DDBF37200F48479 /* UIView+SDExtension.m in Sources */,
-				341135751DD31BC300D98C94 /* CustomShortCutViewController.m in Sources */,
+				34597B611DDC74B400F48479 /* GCDAsyncSocket.m in Sources */,
+				34597B461DDC744D00F48479 /* UIView+SDExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

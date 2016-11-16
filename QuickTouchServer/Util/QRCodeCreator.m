@@ -53,4 +53,5 @@
     NSImage *outputImage = [[NSImage alloc] initWithCGImage:scaledImage size:CGSizeMake(150, 150)];
     return outputImage;
 }
+
 @end

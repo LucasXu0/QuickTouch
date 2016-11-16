@@ -9,6 +9,7 @@
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
 #import "CommandSender.h"
+#import "Util.h"
 
 #define QTHostPortInfos @"QTHostPortInfos"
 

@@ -9,9 +9,7 @@
 #import "ScanQRCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "UIView+SDExtension.h"
-#include <arpa/inet.h>
-#include <net/if.h>
-#include <ifaddrs.h>
+
 static const CGFloat kMargin = 30;
 static const CGFloat kBorderW = 100;
 @interface ScanQRCodeViewController () <AVCaptureMetadataOutputObjectsDelegate>
@@ -37,7 +35,6 @@ static const CGFloat kBorderW = 100;
 - (void)setupMaskView
 {
     UIView *mask = [[UIView alloc] init];
-    _maskView = mask;
     
     mask.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7].CGColor;
     mask.layer.borderWidth = kBorderW;
@@ -47,34 +44,45 @@ static const CGFloat kBorderW = 100;
     mask.sd_y = 0;
     
     [self.view addSubview:mask];
+    _maskView = mask;
 }
 
 - (void)beginScanning
 {
+    // 取后置摄像头为输入设备
     AVCaptureDevice * device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    // 初始化输入源
     AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     if (!input) return;
-    AVCaptureMetadataOutput * output = [[AVCaptureMetadataOutput alloc]init];
+    // 初始化输出源
+    AVCaptureMetadataOutput * output = [[AVCaptureMetadataOutput alloc] init];
+    // 设置代理
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     CGRect scanCrop=[self getScanCrop:_scanWindow.bounds readerViewBounds:self.view.frame];
     output.rectOfInterest = scanCrop;
-    _session = [[AVCaptureSession alloc]init];
+    
+    // 生成会话
+    _session = [[AVCaptureSession alloc] init];
     [_session setSessionPreset:AVCaptureSessionPresetHigh];
     [_session addInput:input];
     [_session addOutput:output];
-    output.metadataObjectTypes=@[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+    
+    // 设置识别类型为二维码
+    output.metadataObjectTypes=@[AVMetadataObjectTypeQRCode];
     
     AVCaptureVideoPreviewLayer * layer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    layer.videoGravity=AVLayerVideoGravityResizeAspectFill;
-    layer.frame=self.view.layer.bounds;
+    layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    layer.frame = self.view.frame;
     [self.view.layer insertSublayer:layer atIndex:0];
+    
+    // 开始识别
     [_session startRunning];
 }
 
 -(void)setupTipTitleView{
     
-    UIView *mask=[[UIView alloc]initWithFrame:CGRectMake(0, _maskView.sd_y+_maskView.sd_height, self.view.sd_width, kBorderW)];
-    mask.backgroundColor=[UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
+    UIView *mask = [[UIView alloc] initWithFrame:CGRectMake(0, _maskView.sd_y+_maskView.sd_height, self.view.sd_width, kBorderW)];
+    mask.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
     [self.view addSubview:mask];
     
     UILabel * tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.sd_height*0.9-kBorderW*2, self.view.bounds.size.width, kBorderW)];
@@ -102,7 +110,7 @@ static const CGFloat kBorderW = 100;
         [_session stopRunning];
         NSDictionary *commandDict = @{
                                       @"commandType":toNSNumber(QTCommandConfirm),
-                                      @"iOSLocalIP":[self localIPAddress],
+                                      @"iOSLocalIP":[Util localIPAddress],
                                       };
         [[CommandSender sharedInstance] sendCommandDict:commandDict];
         AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
@@ -139,35 +147,5 @@ static const CGFloat kBorderW = 100;
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString *)localIPAddress
-{
-    NSString *address = @"error";
-    struct ifaddrs *interfaces = NULL;
-    struct ifaddrs *temp_addr = NULL;
-    int success = 0;
-    // retrieve the current interfaces - returns 0 on success
-    success = getifaddrs(&interfaces);
-    if (success == 0)
-    {
-        // Loop through linked list of interfaces
-        temp_addr = interfaces;
-        while(temp_addr != NULL)
-        {
-            if(temp_addr->ifa_addr->sa_family == AF_INET)
-            {
-                // Check if interface is en0 which is the wifi connection on the iPhone
-                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"])
-                {
-                    // Get NSString from C String
-                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
-                }
-            }
-            temp_addr = temp_addr->ifa_next;
-        }
-    }
-    // Free memory
-    freeifaddrs(interfaces);
-    return address;
-}
 
 @end
