@@ -15,15 +15,15 @@ typedef NS_ENUM(NSInteger, QTType) {
     QTPureWords, // like 'abcd','F1'. 'F1' means twos letters(F & 1).
     QTShortCuts, // like 'Command + C', 'Command + v'.
     QTClickMenuItem, // like click menu bar.
-    QTSystemSetting, // like launch app, control volume etc.
+    QTSystemEvent, // like launch app, control volume etc.
     QTMacToiOS, // infos mac send to iOS
 };
 
-typedef NS_ENUM(NSInteger, QTSystemSettingType) {
-    QTSystemSettingLaunch = 1, // launch app
-    QTSystemSettingBrightness, // control brightness
-    QTSystemSettingVolume, // control volume
-    QTSystemSettingSleep, // mac sleep
+typedef NS_ENUM(NSInteger, QTSystemEventType) {
+    QTSystemEventLaunch = 1, // launch app
+    QTSystemEventBrightness, // control brightness
+    QTSystemEventVolume, // control volume
+    QTSystemEventSleep, // mac sleep
 };
 
 typedef NS_ENUM(NSInteger, QTMacToiOSType) {
@@ -35,10 +35,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @interface QTTypeClass : NSObject
 @end
 
-@interface QTTypeModel : NSObject
-@property (nonatomic, assign) QTType qtType;
-@property (nonatomic, strong) id qtContent;
-@end
+
 
 @interface QTConfirmModel : NSObject
 @end
@@ -51,6 +48,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @interface QTSingleWordModel : NSObject
 @property (nonatomic, copy) NSString *desc; // command description
 @property (nonatomic, copy) NSString *content;
+- (void)handleEvent;
 @end
 
 
@@ -63,6 +61,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @property (nonatomic, copy) NSString *desc; // command description
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, assign, getter=isEnter) BOOL enter; // press enter key after excute content
+- (void)handleEvent;
 @end
 
 //example:
@@ -74,6 +73,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @property (nonatomic, copy) NSString *desc; // command description
 @property (nonatomic, strong) NSArray *functionKeys; // Command / Control / Alt / Shift / Fn ( but Fn key did not seem to have effect )
 @property (nonatomic, copy) NSString *plainKey; // a b c d ...
+- (void)handleEvent;
 @end
 
 //example:
@@ -90,6 +90,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @property (nonatomic, copy) NSString *menu;
 @property (nonatomic, assign) NSInteger menuBar; // normoally set @1
 @property (nonatomic, copy) NSString *appName;
+- (void)handleEvent;
 @end
 
 //example:
@@ -97,10 +98,17 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //model.desc = @"Make Mac Sleep";
 //model.qtSystemSettingType = QTSystemSettingSleep;
 //model.paras = @{@"delay":30};
-@interface QTSystemSettingModel : NSObject
+@interface QTSystemEventModel : NSObject
 @property (nonatomic, copy) NSString *desc; // command description
-@property (nonatomic, assign) QTSystemSettingType qtSystemSettingType;
+@property (nonatomic, assign) QTSystemEventType qtSystemEventType;
 @property (nonatomic, strong) id paras;
+- (void)handleEvent;
+@end
+
+@interface QTTypeModel : NSObject
+@property (nonatomic, copy) NSString *qtDesc; // command description
+@property (nonatomic, assign) QTType qtType;
+@property (nonatomic, strong) id qtContent;
 @end
 
 

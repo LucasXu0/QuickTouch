@@ -16,6 +16,9 @@
 		34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B5B1DDCA03E0091045C /* GCDAsyncUdpSocket.m */; };
 		34275B761DDCC0F70091045C /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B721DDCC0F70091045C /* QTProcessor.m */; };
 		34275B7E1DDCC2D20091045C /* QTTypeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B7D1DDCC2D20091045C /* QTTypeClass.m */; };
+		34275B7F1DDD54680091045C /* QTTypeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B7D1DDCC2D20091045C /* QTTypeClass.m */; };
+		34275B801DDD546A0091045C /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B721DDCC0F70091045C /* QTProcessor.m */; };
+		34275B811DDD75CA0091045C /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B7D1DDC763900F48479 /* NSString+KeyCode.m */; };
 		34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */; };
 		34597B461DDC744D00F48479 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B441DDC744D00F48479 /* UIView+SDExtension.m */; };
 		34597B541DDC748500F48479 /* CustomShortCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B491DDC748500F48479 /* CustomShortCutViewController.m */; };
@@ -40,9 +43,13 @@
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
 		34B049D41DD0D89500998965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D21DD0D89500998965 /* LaunchScreen.storyboard */; };
 		34B049DE1DD0D97500998965 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049DC1DD0D97500998965 /* MainViewController.m */; };
+		76B0B441A4127CEF1A3E63E7 /* Pods_QuickTouchServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A25B06040C75F92B4F226D /* Pods_QuickTouchServer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		108A3946979789A260262B51 /* Pods-QuickTouchServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchServer/Pods-QuickTouchServer.release.xcconfig"; sourceTree = "<group>"; };
+		17232945795D99972E314DA8 /* Pods-QuickTouchServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickTouchServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuickTouchServer/Pods-QuickTouchServer.debug.xcconfig"; sourceTree = "<group>"; };
+		26A25B06040C75F92B4F226D /* Pods_QuickTouchServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickTouchServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		341135401DD2CE5D00D98C94 /* QuickTouchServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		341135511DD2CEB000D98C94 /* QuickTouchServer-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QuickTouchServer-prefix.pch"; sourceTree = "<group>"; };
 		341135541DD2CEB000D98C94 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76B0B441A4127CEF1A3E63E7 /* Pods_QuickTouchServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				50795AB4E3DAFDD0E82A4258 /* Pods_QuickTouchClient.framework */,
+				26A25B06040C75F92B4F226D /* Pods_QuickTouchServer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +150,8 @@
 			children = (
 				85DD7EAC6B03C7CF7E8BDF84 /* Pods-QuickTouchClient.debug.xcconfig */,
 				EEC6579A36956BED82996FE1 /* Pods-QuickTouchClient.release.xcconfig */,
+				17232945795D99972E314DA8 /* Pods-QuickTouchServer.debug.xcconfig */,
+				108A3946979789A260262B51 /* Pods-QuickTouchServer.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -323,11 +334,11 @@
 		34B049C31DD0D89500998965 /* QuickTouchClient */ = {
 			isa = PBXGroup;
 			children = (
-				34275B701DDCC0F70091045C /* QTModule */,
 				34B049C71DD0D89500998965 /* AppDelegate.h */,
 				34B049C81DD0D89500998965 /* AppDelegate.m */,
 				34B049DB1DD0D97500998965 /* MainViewController.h */,
 				34B049DC1DD0D97500998965 /* MainViewController.m */,
+				34275B701DDCC0F70091045C /* QTModule */,
 				34597B751DDC758200F48479 /* Quick Touch */,
 				34597B401DDC744D00F48479 /* ScanQRCode */,
 				34597B6E1DDC755000F48479 /* Util */,
@@ -357,9 +368,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3411354E1DD2CE5D00D98C94 /* Build configuration list for PBXNativeTarget "QuickTouchServer" */;
 			buildPhases = (
+				FAAC19F4190EF9995B96908D /* [CP] Check Pods Manifest.lock */,
 				3411353C1DD2CE5D00D98C94 /* Sources */,
 				3411353D1DD2CE5D00D98C94 /* Frameworks */,
 				3411353E1DD2CE5D00D98C94 /* Resources */,
+				CA03531BA905F18A474E4455 /* [CP] Embed Pods Frameworks */,
+				EDB59A423943291E14BE9528 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -485,6 +499,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		CA03531BA905F18A474E4455 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickTouchServer/Pods-QuickTouchServer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDB59A423943291E14BE9528 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickTouchServer/Pods-QuickTouchServer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F7853AE342B638E1A767FD7F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +544,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickTouchClient/Pods-QuickTouchClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FAAC19F4190EF9995B96908D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -508,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34275B5C1DDCA03E0091045C /* GCDAsyncSocket.m in Sources */,
+				34275B801DDD546A0091045C /* QTProcessor.m in Sources */,
 				34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */,
 				34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */,
 				34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */,
@@ -515,6 +575,7 @@
 				34597B8F1DDC763900F48479 /* QTKey.m in Sources */,
 				34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */,
 				341135621DD2CEB000D98C94 /* main.m in Sources */,
+				34275B7F1DDD54680091045C /* QTTypeClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +591,7 @@
 				34597B571DDC748500F48479 /* SpecialKeyViewController.m in Sources */,
 				34597B581DDC748500F48479 /* SuperCustomViewController.m in Sources */,
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
+				34275B811DDD75CA0091045C /* NSString+KeyCode.m in Sources */,
 				34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */,
 				34597B541DDC748500F48479 /* CustomShortCutViewController.m in Sources */,
 				34597B791DDC758200F48479 /* QuickTouchViewController.m in Sources */,
@@ -566,6 +628,7 @@
 /* Begin XCBuildConfiguration section */
 		3411354F1DD2CE5D00D98C94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17232945795D99972E314DA8 /* Pods-QuickTouchServer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -579,11 +642,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
 		341135501DD2CE5D00D98C94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 108A3946979789A260262B51 /* Pods-QuickTouchServer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
@@ -597,6 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = TsuiYuenHong.QuickTouchServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};

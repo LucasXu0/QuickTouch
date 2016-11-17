@@ -7,6 +7,7 @@
 //
 
 #import "QuickTouchViewController.h"
+#import "QTProcessor.h"
 
 #define QTCellID @"QTCellID"
 
@@ -62,15 +63,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QTCellID];
-    NSDictionary *cellDict = _appQTDataSource[_appNameLabel.text][indexPath.row];
-    cell.textLabel.text = cellDict[@"desc"];
+    QTTypeModel *qtTypeModel = _appQTDataSource[_appNameLabel.text][indexPath.row];
+    cell.textLabel.text = qtTypeModel.qtDesc;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [[CommandSender sharedInstance] sendCommandDict:_appQTDataSource[_appNameLabel.text][indexPath.row][@"command"]];
+    QTTypeModel *qtTypeModel = _appQTDataSource[_appNameLabel.text][indexPath.row];
+    [[QTProcessor sharedInstance] sendQTDataModel:qtTypeModel];
 }
 
 #pragma mark - GCDAsyncUdpSocketDelegate
@@ -95,42 +97,58 @@
                                           @"app":@"Finder",
                                           }
                                   };
-    // 1.2 AirDrop
-    NSDictionary *finderDict1 = @{
-                                  @"desc":@"AirDrop",
-                                  @"command":@{
-                                          @"commandType":toNSNumber(QTCommandClickMenuItem),
-                                          @"menuItem":@"AirDrop",
-                                          @"menu":@"前往",
-                                          @"menuBar":@1,
-                                          @"app":@"Finder",
-                                          }
-                                  };
-    NSArray *finderArray = @[finderDict0,finderDict1];
-    [_appQTDataSource setObject:finderArray forKey:@"Finder"];
-    //2. Xcode
-    //2.1 注释
-    NSDictionary *xcodeDict0 = @{
-                                     @"desc":@"注释",
-                                 @"command":@{
-                                         @"commandType" : toNSNumber(QTCommandTwo),
-                                         @"functionKeys" : @[@"Command"],
-                                         @"commandKeys" : @"/"
-                                         }
-                                 };
-    NSDictionary *xcodeDict1 = @{
-                                 @"desc":@"格式化代码",
-                                 @"command":@{
-                                         @"commandType" : toNSNumber(QTCommandClickSubMenuItem),
-                                         @"subMenuItem":@"Re-Indent",
-                                         @"menuItem":@"Structure",
-                                         @"menu":@"Editor",
-                                         @"menuBar":@1,
-                                         @"app":@"Xcode",
-                                         }
-                                 };
-    NSArray *xcodeArray = @[xcodeDict0,xcodeDict1];
-    [_appQTDataSource setObject:xcodeArray forKey:@"Xcode"];
+    
+    QTClickMenuItemModel *openNewFinderContentModel = [QTClickMenuItemModel new];
+    //    openNewFinderModel.desc = @"新建 Finder 窗口";
+    openNewFinderContentModel.menuItem = @"新建 Finder 窗口";
+    openNewFinderContentModel.menu = @"文件";
+    openNewFinderContentModel.menuBar = 1;
+    openNewFinderContentModel.appName = @"Finder";
+    
+    QTTypeModel *openNewFinderModel = [QTTypeModel new];
+    openNewFinderModel.qtDesc = @"新建 Finder 窗口";
+    openNewFinderModel.qtType = QTClickMenuItem;
+    openNewFinderModel.qtContent = openNewFinderContentModel;
+
+    [_appQTDataSource setObject:@[openNewFinderModel] forKey:@"Finder"];
+    
+//    
+//    // 1.2 AirDrop
+//    NSDictionary *finderDict1 = @{
+//                                  @"desc":@"AirDrop",
+//                                  @"command":@{
+//                                          @"commandType":toNSNumber(QTCommandClickMenuItem),
+//                                          @"menuItem":@"AirDrop",
+//                                          @"menu":@"前往",
+//                                          @"menuBar":@1,
+//                                          @"app":@"Finder",
+//                                          }
+//                                  };
+//    NSArray *finderArray = @[finderDict0,finderDict1];
+//    [_appQTDataSource setObject:finderArray forKey:@"Finder"];
+//    //2. Xcode
+//    //2.1 注释
+//    NSDictionary *xcodeDict0 = @{
+//                                     @"desc":@"注释",
+//                                 @"command":@{
+//                                         @"commandType" : toNSNumber(QTCommandTwo),
+//                                         @"functionKeys" : @[@"Command"],
+//                                         @"commandKeys" : @"/"
+//                                         }
+//                                 };
+//    NSDictionary *xcodeDict1 = @{
+//                                 @"desc":@"格式化代码",
+//                                 @"command":@{
+//                                         @"commandType" : toNSNumber(QTCommandClickSubMenuItem),
+//                                         @"subMenuItem":@"Re-Indent",
+//                                         @"menuItem":@"Structure",
+//                                         @"menu":@"Editor",
+//                                         @"menuBar":@1,
+//                                         @"app":@"Xcode",
+//                                         }
+//                                 };
+//    NSArray *xcodeArray = @[openNewFinderModel,xcodeDict1];
+//    [_appQTDataSource setObject:xcodeArray forKey:@"Xcode"];
 }
 
 - (void)configSystemCommands{
@@ -145,43 +163,43 @@
     }];
     
     // 发送睡眠指令
-    [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSDictionary *commandDict = @{
-                                      @"commandType":toNSNumber(QTCommandSystemSetting),
-                                      @"systemSettingType":toNSNumber(QTSystemSettingSleep)
-                                      };
-        [[CommandSender sharedInstance] sendCommandDict:commandDict];
-    }];
-    
-    // 亮度控制
-    [[[[_brightnessSilder rac_signalForControlEvents:UIControlEventValueChanged]
-        throttle:0.1]
-        map:^id(UISlider *slider) {
-            NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
-            return @(value.floatValue);}]
-        subscribeNext:^(NSNumber *number) {
-            NSDictionary *commandDict = @{
-                                          @"commandType":toNSNumber(QTCommandSystemSetting),
-                                          @"systemSettingType":toNSNumber(QTSystemSettingBrightness),
-                                          @"brightness":number
-                                          };
-            [[CommandSender sharedInstance] sendCommandDict:commandDict];
-    }];
-    
-    // 音量控制
-    [[[[_volumeSilder rac_signalForControlEvents:UIControlEventValueChanged]
-        map:^id(UISlider *slider) {
-            return @((int)(100*slider.value));}]
-        distinctUntilChanged]
-        subscribeNext:^(NSNumber *number) {
-            NSDictionary *commandDict = @{
-                                          @"commandType":toNSNumber(QTCommandSystemSetting),
-                                          @"systemSettingType":toNSNumber(QTSystemSettingVolume),
-                                          @"volume":number
-                                          };
-            [[CommandSender sharedInstance] sendCommandDict:commandDict];
-
-    }];
+//    [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+//        NSDictionary *commandDict = @{
+//                                      @"commandType":toNSNumber(QTCommandSystemSetting),
+//                                      @"systemSettingType":toNSNumber(QTSystemSettingSleep)
+//                                      };
+//        [[CommandSender sharedInstance] sendCommandDict:commandDict];
+//    }];
+//    
+//    // 亮度控制
+//    [[[[_brightnessSilder rac_signalForControlEvents:UIControlEventValueChanged]
+//        throttle:0.1]
+//        map:^id(UISlider *slider) {
+//            NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
+//            return @(value.floatValue);}]
+//        subscribeNext:^(NSNumber *number) {
+//            NSDictionary *commandDict = @{
+//                                          @"commandType":toNSNumber(QTCommandSystemSetting),
+//                                          @"systemSettingType":toNSNumber(QTSystemSettingBrightness),
+//                                          @"brightness":number
+//                                          };
+//            [[CommandSender sharedInstance] sendCommandDict:commandDict];
+//    }];
+//    
+//    // 音量控制
+//    [[[[_volumeSilder rac_signalForControlEvents:UIControlEventValueChanged]
+//        map:^id(UISlider *slider) {
+//            return @((int)(100*slider.value));}]
+//        distinctUntilChanged]
+//        subscribeNext:^(NSNumber *number) {
+//            NSDictionary *commandDict = @{
+//                                          @"commandType":toNSNumber(QTCommandSystemSetting),
+//                                          @"systemSettingType":toNSNumber(QTSystemSettingVolume),
+//                                          @"volume":number
+//                                          };
+//            [[CommandSender sharedInstance] sendCommandDict:commandDict];
+//
+//    }];
 }
 
 

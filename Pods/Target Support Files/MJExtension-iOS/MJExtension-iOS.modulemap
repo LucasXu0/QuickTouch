@@ -1,0 +1,6 @@
+framework module MJExtension {
+  umbrella header "MJExtension-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

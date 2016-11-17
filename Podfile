@@ -10,3 +10,10 @@ target 'QuickTouchClient' do
   pod 'MJExtension'
 
 end
+
+target 'QuickTouchServer' do
+  
+  use_frameworks!
+  pod 'MJExtension'
+
+end

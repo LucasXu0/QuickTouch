@@ -10,6 +10,7 @@
 
 @implementation NSString (KeyCode)
 
+#if TARGET_OS_OSX
 + (CGKeyCode)keyCodeFormKeyString:(NSString *)keyString
 {
     if ([keyString isEqualToString:@"a"]) return 0;
@@ -229,5 +230,6 @@
             //exit(EXIT_FAILURE;
     }
 }
+#endif
 
 @end

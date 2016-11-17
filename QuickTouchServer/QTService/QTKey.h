@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSString+KeyCode.h"
+#if TARGET_OS_OSX
+#include <Carbon/Carbon.h>
+#include <CoreFoundation/CoreFoundation.h>
+#endif
 /**
  模拟键盘按键
  */

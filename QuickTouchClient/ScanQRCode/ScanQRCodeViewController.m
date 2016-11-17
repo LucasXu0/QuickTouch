@@ -108,16 +108,17 @@ static const CGFloat kBorderW = 100;
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     if (metadataObjects.count>0) {
         [_session stopRunning];
-        NSDictionary *commandDict = @{
-                                      @"commandType":toNSNumber(QTCommandConfirm),
-                                      @"iOSLocalIP":[Util localIPAddress],
-                                      };
-        [[CommandSender sharedInstance] sendCommandDict:commandDict];
+//        NSDictionary *commandDict = @{
+//                                      @"commandType":toNSNumber(QTCommandConfirm),
+//                                      @"iOSLocalIP":[Util localIPAddress],
+//                                      };
+//        [[CommandSender sharedInstance] sendCommandDict:commandDict];
         AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
         NSString *qrString = metadataObject.stringValue;
         NSArray *qrArray = [qrString componentsSeparatedByString:@"/"];
         [[NSUserDefaults standardUserDefaults] setObject:qrArray forKey:QTHostPortInfos];
-        [[CommandSender sharedInstance] configHostAndPort:qrArray];
+        [[QTProcessor sharedInstance] configHostAndPort:qrArray];
+        
         
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"扫描成功" message:@"端口配置成功" preferredStyle:UIAlertControllerStyleAlert];
         [self presentViewController:alertC animated:NO completion:nil];
