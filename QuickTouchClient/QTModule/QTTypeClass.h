@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, QTType) {
     QTShortCuts, // like 'Command + C', 'Command + v'.
     QTClickMenuItem, // like click menu bar.
     QTSystemSetting, // like launch app, control volume etc.
+    QTMacToiOS, // infos mac send to iOS
 };
 
 typedef NS_ENUM(NSInteger, QTSystemSettingType) {
@@ -23,6 +24,11 @@ typedef NS_ENUM(NSInteger, QTSystemSettingType) {
     QTSystemSettingBrightness, // control brightness
     QTSystemSettingVolume, // control volume
     QTSystemSettingSleep, // mac sleep
+};
+
+typedef NS_ENUM(NSInteger, QTMacToiOSType) {
+    QTMacToiOSBrightness, // Mac current brightness
+    QTMacToiOSVolume, // Mac current volume
 };
 
 

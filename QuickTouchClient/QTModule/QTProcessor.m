@@ -21,17 +21,16 @@
     return sharedInstance ;
 }
 
-- (void)sendCommandDict:(NSDictionary *)commandDict{
-    NSData *commandData = [NSJSONSerialization dataWithJSONObject:commandDict options:NSJSONWritingPrettyPrinted error:nil];
-    
-    [self.socket sendData:commandData toHost:self.host port:self.sendPort withTimeout:1.0 tag:0];
-}
-
+#pragma mark - Send Data
 - (void)sendQTDataModel:(id)dataModel{
+    NSDictionary *dataDict = [dataModel mj_keyValues];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dataDict options:NSJSONWritingPrettyPrinted error:nil];
+    [_socket sendData:data withTimeout:-1.0 tag:0];
 }
 
+#pragma mark - Receive Data
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
-    NSDictionary *macInfos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 }
 
 - (void)configHostAndPort:(NSArray *)array{
