@@ -74,16 +74,6 @@
     _appQTDataSource = [NSMutableDictionary dictionary];
     // 1. Finder
     // 1.1 新建 Finder 窗口
-    NSDictionary *finderDict0 = @{
-                                  @"desc":@"新建 Finder 窗口",
-                                  @"command":@{
-                                          @"commandType":toNSNumber(QTCommandClickMenuItem),
-                                          @"menuItem":@"新建 Finder 窗口",
-                                          @"menu":@"文件",
-                                          @"menuBar":@1,
-                                          @"app":@"Finder",
-                                          }
-                                  };
     
     QTClickMenuItemModel *openNewFinderContentModel = [QTClickMenuItemModel new];
     //    openNewFinderModel.desc = @"新建 Finder 窗口";
@@ -139,53 +129,73 @@
 }
 
 - (void)configSystemCommands{
+    
     // 发送截图指令
     [[_screenShotBuuton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSDictionary *commandDict = @{
-                                      @"functionKeys":@[@"Command",@"Shift"],
-                                      @"normalKey":@"4",
-                                      @"commandType":toNSNumber(QTCommandMultiKeys),
-                                      };
+        QTShortCutsModel *qtShortCutsModel = [QTShortCutsModel new];
+        qtShortCutsModel.desc = @"截图";
+        qtShortCutsModel.functionKeys = @[@"Command", @"Shift"];
+        qtShortCutsModel.plainKey = @"4";
+        
+        QTTypeModel *qtTypeModel = [QTTypeModel new];
+        qtTypeModel.qtDesc = @"截图";
+        qtTypeModel.qtType = QTShortCuts;
+        qtTypeModel.qtContent = qtShortCutsModel;
+        
+        [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
     }];
     
-    // 发送睡眠指令
-//    [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-//        NSDictionary *commandDict = @{
-//                                      @"commandType":toNSNumber(QTCommandSystemSetting),
-//                                      @"systemSettingType":toNSNumber(QTSystemSettingSleep)
-//                                      };
-//        [[CommandSender sharedInstance] sendCommandDict:commandDict];
-//    }];
-//    
-//    // 亮度控制
-//    [[[[_brightnessSilder rac_signalForControlEvents:UIControlEventValueChanged]
-//        throttle:0.1]
-//        map:^id(UISlider *slider) {
-//            NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
-//            return @(value.floatValue);}]
-//        subscribeNext:^(NSNumber *number) {
-//            NSDictionary *commandDict = @{
-//                                          @"commandType":toNSNumber(QTCommandSystemSetting),
-//                                          @"systemSettingType":toNSNumber(QTSystemSettingBrightness),
-//                                          @"brightness":number
-//                                          };
-//            [[CommandSender sharedInstance] sendCommandDict:commandDict];
-//    }];
-//    
-//    // 音量控制
-//    [[[[_volumeSilder rac_signalForControlEvents:UIControlEventValueChanged]
-//        map:^id(UISlider *slider) {
-//            return @((int)(100*slider.value));}]
-//        distinctUntilChanged]
-//        subscribeNext:^(NSNumber *number) {
-//            NSDictionary *commandDict = @{
-//                                          @"commandType":toNSNumber(QTCommandSystemSetting),
-//                                          @"systemSettingType":toNSNumber(QTSystemSettingVolume),
-//                                          @"volume":number
-//                                          };
-//            [[CommandSender sharedInstance] sendCommandDict:commandDict];
-//
-//    }];
+    [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
+        qtSystemEventModel.desc = @"睡眠";
+        qtSystemEventModel.qtSystemEventType = QTSystemEventSleep;
+        
+        QTTypeModel *qtTypeModel = [QTTypeModel new];
+        qtTypeModel.qtDesc = @"睡眠";
+        qtTypeModel.qtType = QTSystemEvent;
+        qtTypeModel.qtContent = qtSystemEventModel;
+        
+        [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+    }];
+    
+    // 亮度控制
+    [[[[_brightnessSilder rac_signalForControlEvents:UIControlEventValueChanged]
+        throttle:0.1]
+        map:^id(UISlider *slider) {
+            NSString *value = [NSString stringWithFormat:@"%.1f",slider.value];
+            return @(value.floatValue);}]
+        subscribeNext:^(NSNumber *number) {
+            QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
+            qtSystemEventModel.desc = @"调节亮度";
+            qtSystemEventModel.qtSystemEventType = QTSystemEventBrightness;
+            qtSystemEventModel.paras = @{@"brightness":number};
+            
+            QTTypeModel *qtTypeModel = [QTTypeModel new];
+            qtTypeModel.qtDesc = @"调节亮度";
+            qtTypeModel.qtType = QTSystemEvent;
+            qtTypeModel.qtContent = qtSystemEventModel;
+            
+            [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+    }];
+
+    // 音量控制
+    [[[[_volumeSilder rac_signalForControlEvents:UIControlEventValueChanged]
+        map:^id(UISlider *slider) {
+            return @((int)(100*slider.value));}]
+        distinctUntilChanged]
+        subscribeNext:^(NSNumber *number) {
+            QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
+            qtSystemEventModel.desc = @"调节音量";
+            qtSystemEventModel.qtSystemEventType = QTSystemEventVolume;
+            qtSystemEventModel.paras = @{@"volume":number};
+            
+            QTTypeModel *qtTypeModel = [QTTypeModel new];
+            qtTypeModel.qtDesc = @"调节音量";
+            qtTypeModel.qtType = QTSystemEvent;
+            qtTypeModel.qtContent = qtSystemEventModel;
+            
+            [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+        }];
 }
 
 @end

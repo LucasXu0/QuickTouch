@@ -200,6 +200,14 @@
 			path = Expand;
 			sourceTree = "<group>";
 		};
+		34275B961DDDC2630091045C /* AppShortCuts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AppShortCuts;
+			path = QuickTouchClient/AppShortCuts;
+			sourceTree = "<group>";
+		};
 		34597B401DDC744D00F48479 /* ScanQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +284,7 @@
 		34B049B81DD0D89500998965 = {
 			isa = PBXGroup;
 			children = (
+				34275B961DDDC2630091045C /* AppShortCuts */,
 				34B049C31DD0D89500998965 /* QuickTouchClient */,
 				341135411DD2CE5D00D98C94 /* QuickTouchServer */,
 				34B049C21DD0D89500998965 /* Products */,
