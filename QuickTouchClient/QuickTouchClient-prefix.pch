@@ -8,7 +8,6 @@
 
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
-#import "CommandSender.h"
 #import "Util.h"
 #import "QTTypeClass.h"
 #import "QTProcessor.h"

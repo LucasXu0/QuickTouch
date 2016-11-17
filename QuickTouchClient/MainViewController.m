@@ -7,11 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "OneViewController.h"
-#import "TwoViewController.h"
-#import "SpecialKeyViewController.h"
-#import "CustomShortCutViewController.h"
-#import "SuperCustomViewController.h"
 #import "QuickTouchViewController.h"
 #import "ScanQRCodeViewController.h"
 
@@ -33,7 +28,7 @@
     [super viewDidLoad];
     
     // 初始化数据源
-    self.commandTypes = @[@"Command Without Function",@"Command With One Function",@"Special Key",@"Custom Key",@"Super Custom Key",@"Quick Touch"];
+    self.commandTypes = @[@"Quick Touch"];
     
     [self.view addSubview:self.mainTableView];
 
@@ -67,36 +62,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     switch ((int)indexPath.row) {
         case 0:{
-            OneViewController *oneVC = [OneViewController new];
-            oneVC.title = @"One";
-            [self.navigationController pushViewController:oneVC animated:NO];
-        }
-            break;
-        case 1:{
-            TwoViewController *twoVC = [TwoViewController new];
-            twoVC.title = @"Two";
-            [self.navigationController pushViewController:twoVC animated:NO];
-        }
-            break;
-        case 2:{
-            SpecialKeyViewController *specialKeyVC = [SpecialKeyViewController new];
-            specialKeyVC.title = @"Special";
-            [self.navigationController pushViewController:specialKeyVC animated:NO];
-        }
-            break;
-        case 3:{
-            CustomShortCutViewController *customVC = [CustomShortCutViewController new];
-            customVC.title = @"Custom";
-            [self.navigationController pushViewController:customVC animated:NO];
-        }
-            break;
-        case 4:{
-            SuperCustomViewController *superCustomVC = [SuperCustomViewController new];
-            superCustomVC.title = @"Super Custom";
-            [self.navigationController pushViewController:superCustomVC animated:NO];
-        }
-            break;
-        case 5:{
             QuickTouchViewController *QTVC = [QuickTouchViewController new];
             QTVC.title = @"Quick Touch";
             [self.navigationController pushViewController:QTVC animated:NO];

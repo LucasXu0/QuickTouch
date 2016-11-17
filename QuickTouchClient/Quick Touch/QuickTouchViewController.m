@@ -146,7 +146,6 @@
                                       @"normalKey":@"4",
                                       @"commandType":toNSNumber(QTCommandMultiKeys),
                                       };
-        [[CommandSender sharedInstance] sendCommandDict:commandDict];
     }];
     
     // 发送睡眠指令
