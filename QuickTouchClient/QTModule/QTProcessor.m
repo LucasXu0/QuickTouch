@@ -93,10 +93,13 @@
         }
             break;
 #endif
+#if TARGET_OS_OSX
         case QTiOSHost:{
             _host = dataModel.qtContent;
+            [[NSUserDefaults standardUserDefaults] setObject:_host forKey:UserDeafault_iOSLocalIP];
         }
             break;
+#endif
         default:
             break;
     }

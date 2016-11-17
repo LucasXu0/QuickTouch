@@ -8,27 +8,7 @@
 
 #import "QTSystemSetting.h"
 
-#define QTHOST [[NSUserDefaults standardUserDefaults] objectForKey:@"iOSLocalIP"]
 #define QTRECEIVEPORT 9527
 #define QTSENDPORT 9526
 
-typedef NS_ENUM(NSUInteger, QTCommandType) {
-    QTCommandOne = 1, // 普通键 没有功能键 如 pwd / ls
-    QTCommandTwo, // 单功能键 + 普通键 如 Command + c
-    QTCommandThree, // 双功能键 + 普通键 如 Command + Shift + →
-    QTCommandSpecial,
-    QTCommandMultiKeys, //组合键
-    QTCommandSuperCustom, // 超级自定义
-    QTCommandClickMenuItem, // 点击 MenuItem
-    QTCommandClickSubMenuItem, // 点击 SubMenuItem
-    QTCommandSystemSetting, // 系统设置
-    QTCommandConfirm, // 确认信号
-
-};
-
-typedef NS_ENUM(NSUInteger, QTSystemSettingType) {
-    QTSystemSettingLaunch = 1, // 启动应用
-    QTSystemSettingBrightness, // 亮度
-    QTSystemSettingVolume, // 音量
-    QTSystemSettingSleep // 睡眠
-};
+#define UserDeafault_iOSLocalIP @"UserDeafault_iOSLocalIP"

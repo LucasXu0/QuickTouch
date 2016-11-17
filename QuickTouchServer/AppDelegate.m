@@ -17,6 +17,7 @@
 @property (weak) IBOutlet NSTextField *ipAddressLabel;
 @property (weak) IBOutlet NSTextField *sendPortLabel;
 @property (weak) IBOutlet NSTextField *receivePortLabel;
+@property (weak) IBOutlet NSTextField *iOSIPInfosLabel;
 
 @property (strong) QTProcessor *qtProcessor;
 
@@ -26,6 +27,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP]) {
+        [QTProcessor sharedInstance].host = [[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP];
+        self.iOSIPInfosLabel.stringValue = [NSString stringWithFormat:@"iOS IP:%@ Send:%d Rece:%d",[QTProcessor sharedInstance].host,QTRECEIVEPORT,QTSENDPORT];
+    }
+    
     [QTProcessor sharedInstance].recePort = QTRECEIVEPORT;
     [QTProcessor sharedInstance].sendPort = QTSENDPORT;
     [[QTProcessor sharedInstance] beginReceiving];
