@@ -20,7 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *screenShotBuuton;
 @property (weak, nonatomic) IBOutlet UIButton *sleepButton;
 
-@property (nonatomic, strong) GCDAsyncUdpSocket *socket;
 @property (nonatomic, strong) NSMutableDictionary *appQTDataSource;
 
 @end
@@ -30,11 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // create socket
-    self.socket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [self.socket bindToPort:[CommandSender sharedInstance].RecePort error:nil];
-    [self.socket beginReceiving:nil];
-    
     // config tableview
     _appQTTableView.delegate = self;
     _appQTTableView.dataSource = self;
@@ -45,15 +39,15 @@
     [self configAppCommands];
     [self configSystemCommands];
     
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
+        _appNameLabel.text = notication.object;
+        [_appQTTableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc{
-    [self.socket close];
 }
 
 #pragma mark - UITableViewDataSource
@@ -72,14 +66,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     QTTypeModel *qtTypeModel = _appQTDataSource[_appNameLabel.text][indexPath.row];
-    [[QTProcessor sharedInstance] sendQTDataModel:qtTypeModel];
-}
-
-#pragma mark - GCDAsyncUdpSocketDelegate
-- (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
-    NSDictionary *macInfos = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    _appNameLabel.text = macInfos[@"currentAppName"];
-    [_appQTTableView reloadData];
+    [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
 }
 
 #pragma mark - Config Commands
@@ -201,37 +188,5 @@
 //
 //    }];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

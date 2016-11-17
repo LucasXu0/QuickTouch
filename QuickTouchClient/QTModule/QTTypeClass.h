@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, QTType) {
     QTClickMenuItem, // like click menu bar.
     QTSystemEvent, // like launch app, control volume etc.
     QTMacToiOS, // infos mac send to iOS
+    QTiOSHost,
 };
 
 typedef NS_ENUM(NSInteger, QTSystemEventType) {
@@ -27,17 +28,21 @@ typedef NS_ENUM(NSInteger, QTSystemEventType) {
 };
 
 typedef NS_ENUM(NSInteger, QTMacToiOSType) {
+    QTMacToiOSFrontmostApp = 1, // Mac frontmost app
     QTMacToiOSBrightness, // Mac current brightness
     QTMacToiOSVolume, // Mac current volume
 };
 
-
 @interface QTTypeClass : NSObject
 @end
 
-
-
 @interface QTConfirmModel : NSObject
+@end
+
+@interface QTTypeModel : NSObject
+@property (nonatomic, copy) NSString *qtDesc; // command description
+@property (nonatomic, assign) QTType qtType;
+@property (nonatomic, strong) id qtContent;
 @end
 
 //example:
@@ -105,10 +110,9 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 - (void)handleEvent;
 @end
 
-@interface QTTypeModel : NSObject
-@property (nonatomic, copy) NSString *qtDesc; // command description
-@property (nonatomic, assign) QTType qtType;
-@property (nonatomic, strong) id qtContent;
+@interface QTMacToiOSModel : NSObject
+@property (nonatomic, assign) QTMacToiOSType type;
+@property (nonatomic, strong) NSString *frontmostApp;
+@property (nonatomic, strong) NSString *brightness;
+@property (nonatomic, strong) NSString *volume;
 @end
-
-

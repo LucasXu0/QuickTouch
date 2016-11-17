@@ -23,17 +23,16 @@
 
 - (void)beginReceiving{
 #warning 错误信息待完善
-    [self.socket bindToPort:self.recePort error:nil];
-    [self.socket beginReceiving:nil];
+    [_socket bindToPort:_recePort error:nil];
+    [_socket beginReceiving:nil];
 }
 
 #pragma mark - Send Data
-- (void)sendQTDataModel:(QTTypeModel *)dataModel{
-    [_socket sendData:[self qtConvertModelToData:dataModel] toHost:_host port:_sendPort withTimeout:-1.0 tag:0];
+- (void)sendQTTypeModel:(QTTypeModel *)typeModel{
+    [_socket sendData:[self qtConvertModelToData:typeModel] toHost:_host port:_sendPort withTimeout:-1.0 tag:0];
 }
 
 - (NSData *)qtConvertModelToData:(QTTypeModel *)dataModel{
-    
     NSMutableDictionary *dataModelDict = [dataModel mj_keyValues];
     id qtContent = dataModel.qtContent;
     NSDictionary *qtContentDict = [qtContent mj_keyValues];
@@ -80,8 +79,22 @@
             [model handleEvent];
         }
             break;
+#if TARGET_OS_IOS
         case QTMacToiOS:{
-        
+            QTMacToiOSModel *model = [QTMacToiOSModel mj_objectWithKeyValues:dataModel.qtContent];
+            switch (model.type) {
+                case QTMacToiOSFrontmostApp:{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:QTQuickTouchVCReloadData object:model.frontmostApp];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+#endif
+        case QTiOSHost:{
+            _host = dataModel.qtContent;
         }
             break;
         default:
@@ -90,10 +103,9 @@
 }
 
 - (void)configHostAndPort:(NSArray *)array{
-    self.host = array[0];
-    self.sendPort = [array[1] intValue];
-    self.recePort = [array[2] intValue];
+    _host = array[0];
+    _sendPort = [array[1] intValue];
+    _recePort = [array[2] intValue];
 }
-
 
 @end

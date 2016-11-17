@@ -18,7 +18,7 @@
 @property (nonatomic, assign) uint16_t recePort;
 
 + (instancetype)sharedInstance;
-- (void)sendQTDataModel:(QTTypeModel *)dataModel;
+- (void)sendQTTypeModel:(QTTypeModel *)typeModel;
 - (void)configHostAndPort:(NSArray *)array; // array example : @[@"192.168.1.10", 9527, 9526]
 - (void)beginReceiving;
 

@@ -26,10 +26,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    [QTProcessor sharedInstance].recePort = 9527;
+    [QTProcessor sharedInstance].recePort = QTRECEIVEPORT;
+    [QTProcessor sharedInstance].sendPort = QTSENDPORT;
     [[QTProcessor sharedInstance] beginReceiving];
     
-   // [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
 
     [self configSubviews];
 }
@@ -47,12 +48,16 @@
     self.qrCodeImage.image = [QRCodeCreator qrImageForString:qrString imageSize:150];
 }
 
-//#pragma mark - Send Mac Infos
-//- (void)sendMacInfos{
-//    NSDictionary *macInfos = @{
-//                               @"currentAppName":[NSWorkspace sharedWorkspace].frontmostApplication.localizedName,
-//                               };
-//    NSData *macInfosData = [NSJSONSerialization dataWithJSONObject:macInfos options:NSJSONWritingPrettyPrinted error:nil];
-//    [_udpSocket sendData:macInfosData toHost:QTHOST port:QTSENDPORT withTimeout:1.0 tag:0];
-//}
+#pragma mark - Send Mac Infos
+- (void)sendMacInfos{
+    QTMacToiOSModel *qtMacToiOSModel = [QTMacToiOSModel new];
+    qtMacToiOSModel.type = QTMacToiOSFrontmostApp;
+    qtMacToiOSModel.frontmostApp = [NSWorkspace sharedWorkspace].frontmostApplication.localizedName;
+    QTTypeModel *qtTypeModel = [QTTypeModel new];
+    qtTypeModel.qtDesc = @"发送 Mac 系统信息";
+    qtTypeModel.qtType = QTMacToiOS;
+    qtTypeModel.qtContent = qtMacToiOSModel;
+    [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+}
+
 @end

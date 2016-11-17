@@ -71,7 +71,6 @@
 
 @implementation QTSystemEventModel
 #if TARGET_OS_OSX
-
 - (void)handleEvent{
     switch (self.qtSystemEventType) {
         case QTSystemEventSleep:
@@ -91,4 +90,7 @@
     }
 }
 #endif
+@end
+
+@implementation QTMacToiOSModel
 @end

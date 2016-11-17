@@ -12,6 +12,7 @@
 #import "Util.h"
 #import "QTTypeClass.h"
 #import "QTProcessor.h"
+#import "NotificationConstant.h"
 
 #define QTHostPortInfos @"QTHostPortInfos"
 

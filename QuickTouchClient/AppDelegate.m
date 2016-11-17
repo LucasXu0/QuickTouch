@@ -29,6 +29,7 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:QTHostPortInfos]) {
         NSArray *qrArray = [[NSUserDefaults standardUserDefaults] objectForKey:QTHostPortInfos];
         [[QTProcessor sharedInstance] configHostAndPort:qrArray];
+        [[QTProcessor sharedInstance] beginReceiving];
     }
     
     return YES;
