@@ -3,7 +3,7 @@ Inspired by nMBP touch bar, this project make u control your mac using your iPho
 
 这个项目的 idea 是源于 nMBP 的 touch bar 功能，你可以用你的 iPhone / iPad 来作为 "touch bar" 使用。
 
-Demo Video (演示视频) <http://www.bilibili.com/video/av7107528>
+Demo Video (演示视频) <http://www.bilibili.com/video/av7107528> (only for SHA-1 7b52ba0)
 
 #### Now Support Function including (已支持功能包括):
 
@@ -29,8 +29,6 @@ Demo Video (演示视频) <http://www.bilibili.com/video/av7107528>
 * Touch your device to create one command, like touch `pwd` button, your terminal will execute pwd command. (按下 `pwd` 按钮，你的终端会执行 `pwd` 命令)
 
 * Touch your device to execute almost all shortcuts, like `Command + C` / `Command  + V` / `Command + Shift + LEFT` . (使用你的设备来执行 mac 上几乎所有快捷键)
-
-  ![](http://ocnnxadky.bkt.clouddn.com/public/16-11-15/98223314.jpg)
 
 * Quicky open app on your mac and you can custom some actions after opening app. (快速打开 mac 的软件并且可以自定义打开软件后的事件)
 
