@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UISlider *volumeSilder;
 @property (weak, nonatomic) IBOutlet UIButton *screenShotBuuton;
 @property (weak, nonatomic) IBOutlet UIButton *sleepButton;
+@property (weak, nonatomic) IBOutlet UIButton *upButton;
+@property (weak, nonatomic) IBOutlet UIButton *downButton;
 
 @property (nonatomic, strong) NSMutableDictionary *appQTDataSource;
 
@@ -218,6 +220,32 @@
             }
         }];
 
+    }];
+    
+    [[_upButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        QTSingleWordModel *qtSingleWordModel = [QTSingleWordModel new];
+        qtSingleWordModel.desc = @"上";
+        qtSingleWordModel.content = @"UP";
+        
+        QTTypeModel *qtTypeModel = [QTTypeModel new];
+        qtTypeModel.qtDesc = @"上";
+        qtTypeModel.qtType = QTSingleWord;
+        qtTypeModel.qtContent = qtSingleWordModel;
+        
+        [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+    }];
+
+    [[_downButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        QTSingleWordModel *qtSingleWordModel = [QTSingleWordModel new];
+        qtSingleWordModel.desc = @"下";
+        qtSingleWordModel.content = @"DOWN";
+        
+        QTTypeModel *qtTypeModel = [QTTypeModel new];
+        qtTypeModel.qtDesc = @"下";
+        qtTypeModel.qtType = QTSingleWord;
+        qtTypeModel.qtContent = qtSingleWordModel;
+        
+        [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
     }];
 }
 

@@ -12,7 +12,7 @@ target 'QuickTouchClient' do
 end
 
 target 'QuickTouchServer' do
-  
+
   use_frameworks!
   pod 'MJExtension'
 

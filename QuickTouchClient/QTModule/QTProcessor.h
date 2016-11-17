@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "GCDAsyncUdpSocket.h"
-#import "QTTypeClass.h"
 
 @interface QTProcessor : NSObject <GCDAsyncUdpSocketDelegate>
 
