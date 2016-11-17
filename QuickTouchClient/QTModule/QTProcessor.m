@@ -43,6 +43,7 @@
 #pragma mark - Receive Data
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
     NSDictionary *dataModelDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    NSLog(@"%@",dataModelDict);
     QTTypeModel *dataModel = [QTTypeModel mj_objectWithKeyValues:dataModelDict];
     switch (dataModel.qtType) {
         case QTConfirm:{

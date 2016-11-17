@@ -8,11 +8,13 @@
 
 #import "QuickTouchViewController.h"
 #import "QTProcessor.h"
+#import <LocalAuthentication/LocalAuthentication.h>
 
 #define QTCellID @"QTCellID"
 
 @interface QuickTouchViewController () <GCDAsyncUdpSocketDelegate, UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UIButton *unlockButton;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *appQTTableView;
 @property (weak, nonatomic) IBOutlet UISlider *brightnessSilder;
@@ -196,6 +198,27 @@
             
             [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
         }];
+    
+    [[_unlockButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        LAContext *context = [LAContext new];
+        context.localizedFallbackTitle = @"";
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"解锁 MacBook" reply:^(BOOL success, NSError * _Nullable error) {
+            if (success) {
+                QTPureWordsModel *qtPureWordsModel = [QTPureWordsModel new];
+                qtPureWordsModel.desc = @"解锁";
+                qtPureWordsModel.content = @"tsui";
+                qtPureWordsModel.enter = YES;
+                
+                QTTypeModel *qtTypeModel = [QTTypeModel new];
+                qtTypeModel.qtDesc = @"解锁";
+                qtTypeModel.qtType = QTPureWords;
+                qtTypeModel.qtContent = qtPureWordsModel;
+                
+                [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+            }
+        }];
+
+    }];
 }
 
 @end

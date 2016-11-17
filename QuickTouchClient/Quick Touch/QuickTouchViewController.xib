@@ -16,6 +16,7 @@
                 <outlet property="brightnessSilder" destination="XAj-dS-MBa" id="K1t-YQ-GG6"/>
                 <outlet property="screenShotBuuton" destination="nTY-mP-hVh" id="cHp-xB-aog"/>
                 <outlet property="sleepButton" destination="Nar-NK-PpN" id="yMS-ig-TeK"/>
+                <outlet property="unlockButton" destination="0Hy-0g-bga" id="mov-xj-8Da"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="volumeSilder" destination="hlK-Xg-2y6" id="ZEm-zK-7aM"/>
             </connections>
@@ -118,6 +119,13 @@
                     <rect key="frame" x="160" y="553" width="75" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Play/Pause"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-0g-bga">
+                    <rect key="frame" x="300" y="553" width="31" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="解锁">
+                        <color key="titleColor" red="0.99529057741165161" green="0.18890038132667542" blue="0.0057908031158149242" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
