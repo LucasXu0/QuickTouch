@@ -77,7 +77,7 @@
             case 2:{
                 QTPureWordsModel *pureWordsModel = [QTPureWordsModel new];
                 pureWordsModel.content = self.para1TextField.text;
-                pureWordsModel.enter = self.para2TextField.text;
+                pureWordsModel.enter = [self.para2TextField.text boolValue];
                 QTTypeModel *model = [QTTypeModel new];
                 model.qtType = QTPureWords;
                 model.qtDesc = self.descTextField.text;
