@@ -24,7 +24,7 @@
 @implementation QTAddItemViewController
 
 - (void)viewWillAppear:(BOOL)animated{
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Item" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToAddCommandVC)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Item" style:UIBarButtonItemStylePlain target:self action:@selector(pushToAddCommandVC)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
 
@@ -39,8 +39,8 @@
     
     [[_confirmButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         QTAddItemModel *model = [QTAddItemModel new];
-        model.desc = _descTextField.text;
-        model.qtTypeModels = _itemDataSource;
+        model.desc = _descTextField.text; // Item desc
+        model.qtTypeModels = _itemDataSource; // Item commands
         NSArray *itemDicts = [NSArray new];
         if((itemDicts = [[PINCache sharedCache] objectForKey:_appNameTextField.text])){
             NSMutableArray *mItems = [NSMutableArray arrayWithArray:itemDicts];
@@ -50,7 +50,6 @@
             [[PINCache sharedCache] setObject:@[model] forKey:_appNameTextField.text];
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:QTQuickTouchVCReloadData object:nil];
-        
         [self.navigationController popViewControllerAnimated:NO];
     }];
 }
@@ -60,7 +59,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)jumpToAddCommandVC{
+#pragma mark - jumpToAddCommandVC
+- (void)pushToAddCommandVC{
     QTAddCommnadViewController *addCommandVC = [QTAddCommnadViewController new];
     addCommandVC.title = _appNameTextField.text;
     addCommandVC.delegate = self;

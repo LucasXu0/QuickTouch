@@ -33,40 +33,35 @@
 @implementation QuickTouchViewController
 
 - (void)viewWillAppear:(BOOL)animated{
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Item" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToAddItemVC)];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Item" style:UIBarButtonItemStylePlain target:self action:@selector(pushToAddItemVC)];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _appNameLabel.text = @"Finder";
+    _appNameLabel.text = @"";
     
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
         if (notication.object) {
             _appNameLabel.text = notication.object;
         }
-        
         _appQTDataSource = [[PINCache sharedCache] objectForKey:_appNameLabel.text];
         NSLog(@"%@_%@",_appQTDataSource[0].desc,_appQTDataSource[0].qtTypeModels);
         [_appQTTableView reloadData];
     }];
+    
     // config tableview
     _appQTTableView.delegate = self;
     _appQTTableView.dataSource = self;
     [_appQTTableView registerClass:[UITableViewCell self] forCellReuseIdentifier:QTCellID];
     
     _appQTDataSource = [NSMutableArray new];
-    NSMutableArray *items = [NSMutableArray new];
-    if ((items = [[PINCache sharedCache] objectForKey:_appNameLabel.text])) {
-        _appQTDataSource = items;
-    }
-    
+
     [self configSystemCommands];
 }
 
-- (void)jumpToAddItemVC{
+- (void)pushToAddItemVC{
     QTAddItemViewController *addItemVC = [QTAddItemViewController new];
     addItemVC.title = @"add item";
     [self.navigationController pushViewController:addItemVC animated:NO];
