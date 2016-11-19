@@ -7,13 +7,13 @@ target 'QuickTouchClient' do
 
   pod 'Masonry'
   pod 'ReactiveCocoa', '2.5'
-  pod 'MJExtension'
-
+  pod 'PINCache'
+  pod 'Mantle'
 end
 
 target 'QuickTouchServer' do
 
   use_frameworks!
-  pod 'MJExtension'
+  pod 'Mantle'
 
 end

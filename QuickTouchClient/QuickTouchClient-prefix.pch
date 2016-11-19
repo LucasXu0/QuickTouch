@@ -12,7 +12,9 @@
 #import "QTTypeClass.h"
 #import "QTProcessor.h"
 #import "NotificationConstant.h"
-
+#import "PINCache.h"
+#import "QTAppModel.h"
+#import "Mantle.h"
 #define QTHostPortInfos @"QTHostPortInfos"
 
 #define toNSNumber(a) [NSNumber numberWithUnsignedInteger:(a)]

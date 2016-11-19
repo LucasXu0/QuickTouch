@@ -1,6 +1,9 @@
 PODS:
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
   - Masonry (1.0.2)
-  - MJExtension (3.0.13)
+  - PINCache (2.3)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -10,15 +13,17 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
+  - Mantle
   - Masonry
-  - MJExtension
+  - PINCache
   - ReactiveCocoa (= 2.5)
 
 SPEC CHECKSUMS:
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-PODFILE CHECKSUM: 683153dedad23bd828c2d3dfab9218ee24b4f1cd
+PODFILE CHECKSUM: 3dfa122c21d4589362d2c3ff596e4df4b555df8c
 
 COCOAPODS: 1.1.0.beta.2

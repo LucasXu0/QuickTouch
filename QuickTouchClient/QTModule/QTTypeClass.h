@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Mantle.h"
 typedef NS_ENUM(NSInteger, QTType) {
     QTConfirm = 1, // confirm message.
     QTMouseEvent, // like click mouse.
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 @interface QTConfirmModel : NSObject
 @end
 
-@interface QTTypeModel : NSObject
+@interface QTTypeModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, copy) NSString *qtDesc; // command description
 @property (nonatomic, assign) QTType qtType;
 @property (nonatomic, strong) id qtContent;
@@ -47,11 +47,9 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 
 //example:
 //QTSingleWordModel *model = [QTSingleWordModel new];
-//model.desc = @"press F1 key";
 //model.content = @"F1";
 //model.enter = NO;
-@interface QTSingleWordModel : NSObject
-@property (nonatomic, copy) NSString *desc; // command description
+@interface QTSingleWordModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, copy) NSString *content;
 - (void)handleEvent;
 @end
@@ -59,23 +57,19 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 
 //example:
 //QTPureWordsModel *model = [QTPureWordsModel new];
-//model.desc = @"list all files";
 //model.content = @"ls -a";
 //model.enter = NO;
-@interface QTPureWordsModel : NSObject
-@property (nonatomic, copy) NSString *desc; // command description
+@interface QTPureWordsModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic, assign, getter=isEnter) BOOL enter; // press enter key after excute content
+@property (nonatomic, assign ) BOOL enter; // press enter key after excute content
 - (void)handleEvent;
 @end
 
 //example:
 //QTShortCutsModel *model = [QTShortCutsModel new];
-//model.desc = @"Copy";
 //model.functionKeys = @[@"Command"];
 //model.plainKey = @"C";
-@interface QTShortCutsModel : NSObject
-@property (nonatomic, copy) NSString *desc; // command description
+@interface QTShortCutsModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSArray *functionKeys; // Command / Control / Alt / Shift / Fn ( but Fn key did not seem to have effect )
 @property (nonatomic, copy) NSString *plainKey; // a b c d ...
 - (void)handleEvent;
@@ -83,13 +77,11 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 
 //example:
 //QTClickMenuItemModel *model = [QTClickMenuItemModel new];
-//model.desc = @"open AirDrop";
 //model.menuItem = @"AirDrop";
 //model.menu = @"前往";
 //model.menuBar = @1;
 //model.appName = @"Finder";
-@interface QTClickMenuItemModel : NSObject
-@property (nonatomic, copy) NSString *desc; // command description
+@interface QTClickMenuItemModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, copy) NSString *subMenuItem; // optional, if just click menu item without aonther sub menu
 @property (nonatomic, copy) NSString *menuItem;
 @property (nonatomic, copy) NSString *menu;
@@ -103,14 +95,13 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //model.desc = @"Make Mac Sleep";
 //model.qtSystemSettingType = QTSystemSettingSleep;
 //model.paras = @{@"delay":30};
-@interface QTSystemEventModel : NSObject
-@property (nonatomic, copy) NSString *desc; // command description
+@interface QTSystemEventModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, assign) QTSystemEventType qtSystemEventType;
 @property (nonatomic, strong) id paras;
 - (void)handleEvent;
 @end
 
-@interface QTMacToiOSModel : NSObject
+@interface QTMacToiOSModel : MTLModel <MTLJSONSerializing>
 @property (nonatomic, assign) QTMacToiOSType type;
 @property (nonatomic, strong) NSString *frontmostApp;
 @property (nonatomic, strong) NSString *brightness;

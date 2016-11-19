@@ -29,11 +29,6 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-
-    baby = [BabyBluetooth shareBabyBluetooth];
-    [self babyDelegate];
-    baby.scanForPeripherals().begin().stop(100);
-
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP]) {
         [QTProcessor sharedInstance].host = [[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP];

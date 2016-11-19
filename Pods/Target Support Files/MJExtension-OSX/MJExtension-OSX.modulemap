@@ -1,6 +1,0 @@
-framework module MJExtension {
-  umbrella header "MJExtension-OSX-umbrella.h"
-
-  export *
-  module * { export * }
-}

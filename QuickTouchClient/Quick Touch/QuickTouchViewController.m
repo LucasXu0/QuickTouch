@@ -9,6 +9,8 @@
 #import "QuickTouchViewController.h"
 #import "QTProcessor.h"
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "QTAddItemViewController.h"
+#import "QTAddItemModel.h"
 
 #define QTCellID @"QTCellID"
 
@@ -24,29 +26,50 @@
 @property (weak, nonatomic) IBOutlet UIButton *upButton;
 @property (weak, nonatomic) IBOutlet UIButton *downButton;
 
-@property (nonatomic, strong) NSMutableDictionary *appQTDataSource;
+@property (nonatomic, strong) NSMutableArray<QTAddItemModel *> *appQTDataSource;
 
 @end
 
 @implementation QuickTouchViewController
 
+- (void)viewWillAppear:(BOOL)animated{
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add Item" style:UIBarButtonItemStylePlain target:self action:@selector(jumpToAddItemVC)];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    _appNameLabel.text = @"Finder";
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
+        if (notication.object) {
+            _appNameLabel.text = notication.object;
+        }
+        
+        _appQTDataSource = [[PINCache sharedCache] objectForKey:_appNameLabel.text];
+        NSLog(@"%@_%@",_appQTDataSource[0].desc,_appQTDataSource[0].qtTypeModels);
+        [_appQTTableView reloadData];
+    }];
     // config tableview
     _appQTTableView.delegate = self;
     _appQTTableView.dataSource = self;
     [_appQTTableView registerClass:[UITableViewCell self] forCellReuseIdentifier:QTCellID];
-
-    _appNameLabel.text = @"Finder";
     
-    [self configAppCommands];
+    _appQTDataSource = [NSMutableArray new];
+    NSMutableArray *items = [NSMutableArray new];
+    if ((items = [[PINCache sharedCache] objectForKey:_appNameLabel.text])) {
+        _appQTDataSource = items;
+    }
+    
     [self configSystemCommands];
-    
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
-        _appNameLabel.text = notication.object;
-        [_appQTTableView reloadData];
-    }];
+}
+
+- (void)jumpToAddItemVC{
+    QTAddItemViewController *addItemVC = [QTAddItemViewController new];
+    addItemVC.title = @"add item";
+    [self.navigationController pushViewController:addItemVC animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,88 +79,38 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_appQTDataSource[_appNameLabel.text] count];
+    return _appQTDataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QTCellID];
-    QTTypeModel *qtTypeModel = _appQTDataSource[_appNameLabel.text][indexPath.row];
-    cell.textLabel.text = qtTypeModel.qtDesc;
+    QTAddItemModel *addItemModel = _appQTDataSource[indexPath.row];
+    cell.textLabel.text = addItemModel.desc;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    QTTypeModel *qtTypeModel = _appQTDataSource[_appNameLabel.text][indexPath.row];
-    [[QTProcessor sharedInstance] sendQTTypeModel:qtTypeModel];
+     QTAddItemModel *addItemModel = _appQTDataSource[indexPath.row];
+    NSArray<QTTypeModel *> *qtTypeModels = addItemModel.qtTypeModels;
+    for (QTTypeModel *model in qtTypeModels) {
+        [[QTProcessor sharedInstance] sendQTTypeModel:model];
+    }
 }
 
-#pragma mark - Config Commands
-- (void)configAppCommands{
-    _appQTDataSource = [NSMutableDictionary dictionary];
-    // 1. Finder
-    // 1.1 新建 Finder 窗口
-    
-    QTClickMenuItemModel *openNewFinderContentModel = [QTClickMenuItemModel new];
-    //    openNewFinderModel.desc = @"新建 Finder 窗口";
-    openNewFinderContentModel.menuItem = @"新建 Finder 窗口";
-    openNewFinderContentModel.menu = @"文件";
-    openNewFinderContentModel.menuBar = 1;
-    openNewFinderContentModel.appName = @"Finder";
-    
-    QTTypeModel *openNewFinderModel = [QTTypeModel new];
-    openNewFinderModel.qtDesc = @"新建 Finder 窗口";
-    openNewFinderModel.qtType = QTClickMenuItem;
-    openNewFinderModel.qtContent = openNewFinderContentModel;
-
-    [_appQTDataSource setObject:@[openNewFinderModel] forKey:@"Finder"];
-    
-//    
-//    // 1.2 AirDrop
-//    NSDictionary *finderDict1 = @{
-//                                  @"desc":@"AirDrop",
-//                                  @"command":@{
-//                                          @"commandType":toNSNumber(QTCommandClickMenuItem),
-//                                          @"menuItem":@"AirDrop",
-//                                          @"menu":@"前往",
-//                                          @"menuBar":@1,
-//                                          @"app":@"Finder",
-//                                          }
-//                                  };
-//    NSArray *finderArray = @[finderDict0,finderDict1];
-//    [_appQTDataSource setObject:finderArray forKey:@"Finder"];
-//    //2. Xcode
-//    //2.1 注释
-//    NSDictionary *xcodeDict0 = @{
-//                                     @"desc":@"注释",
-//                                 @"command":@{
-//                                         @"commandType" : toNSNumber(QTCommandTwo),
-//                                         @"functionKeys" : @[@"Command"],
-//                                         @"commandKeys" : @"/"
-//                                         }
-//                                 };
-//    NSDictionary *xcodeDict1 = @{
-//                                 @"desc":@"格式化代码",
-//                                 @"command":@{
-//                                         @"commandType" : toNSNumber(QTCommandClickSubMenuItem),
-//                                         @"subMenuItem":@"Re-Indent",
-//                                         @"menuItem":@"Structure",
-//                                         @"menu":@"Editor",
-//                                         @"menuBar":@1,
-//                                         @"app":@"Xcode",
-//                                         }
-//                                 };
-//    NSArray *xcodeArray = @[openNewFinderModel,xcodeDict1];
-//    [_appQTDataSource setObject:xcodeArray forKey:@"Xcode"];
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [_appQTDataSource removeObjectAtIndex:indexPath.row];
+    [[PINCache sharedCache] setObject:_appQTDataSource forKey:_appNameLabel.text];
+    [_appQTTableView reloadData];
 }
 
+#pragma mark - configSystemCommands
 - (void)configSystemCommands{
     
     // 发送截图指令
     [[_screenShotBuuton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         QTShortCutsModel *qtShortCutsModel = [QTShortCutsModel new];
-        qtShortCutsModel.desc = @"截图";
         qtShortCutsModel.functionKeys = @[@"Command", @"Shift"];
         qtShortCutsModel.plainKey = @"4";
         
@@ -151,7 +124,6 @@
     
     [[_sleepButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
-        qtSystemEventModel.desc = @"睡眠";
         qtSystemEventModel.qtSystemEventType = QTSystemEventSleep;
         
         QTTypeModel *qtTypeModel = [QTTypeModel new];
@@ -170,7 +142,6 @@
             return @(value.floatValue);}]
         subscribeNext:^(NSNumber *number) {
             QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
-            qtSystemEventModel.desc = @"调节亮度";
             qtSystemEventModel.qtSystemEventType = QTSystemEventBrightness;
             qtSystemEventModel.paras = @{@"brightness":number};
             
@@ -189,7 +160,6 @@
         distinctUntilChanged]
         subscribeNext:^(NSNumber *number) {
             QTSystemEventModel *qtSystemEventModel = [QTSystemEventModel new];
-            qtSystemEventModel.desc = @"调节音量";
             qtSystemEventModel.qtSystemEventType = QTSystemEventVolume;
             qtSystemEventModel.paras = @{@"volume":number};
             
@@ -207,7 +177,6 @@
         [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"解锁 MacBook" reply:^(BOOL success, NSError * _Nullable error) {
             if (success) {
                 QTPureWordsModel *qtPureWordsModel = [QTPureWordsModel new];
-                qtPureWordsModel.desc = @"解锁";
                 qtPureWordsModel.content = @"tsui";
                 qtPureWordsModel.enter = YES;
                 
@@ -224,7 +193,6 @@
     
     [[_upButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         QTSingleWordModel *qtSingleWordModel = [QTSingleWordModel new];
-        qtSingleWordModel.desc = @"上";
         qtSingleWordModel.content = @"UP";
         
         QTTypeModel *qtTypeModel = [QTTypeModel new];
@@ -237,7 +205,6 @@
 
     [[_downButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         QTSingleWordModel *qtSingleWordModel = [QTSingleWordModel new];
-        qtSingleWordModel.desc = @"下";
         qtSingleWordModel.content = @"DOWN";
         
         QTTypeModel *qtTypeModel = [QTTypeModel new];

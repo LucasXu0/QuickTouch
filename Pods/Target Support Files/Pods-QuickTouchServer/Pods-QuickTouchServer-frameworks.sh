@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension-OSX/MJExtension.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Mantle-OSX/Mantle.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension-OSX/MJExtension.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Mantle-OSX/Mantle.framework"
 fi

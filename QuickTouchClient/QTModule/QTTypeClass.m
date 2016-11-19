@@ -15,12 +15,24 @@
 @end
 
 @implementation QTTypeModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"qtDesc":@"qtDesc",
+             @"qtContent":@"qtContent",
+             @"qtType":@"qtType",
+             };
+}
 @end
 
 @implementation QTConfirmModel
 @end
 
 @implementation QTSingleWordModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"content":@"content",
+             };
+}
 #if TARGET_OS_OSX
 - (void)handleEvent{
     CGKeyCode keyCode = [NSString keyCodeFormKeyString:self.content];
@@ -30,6 +42,12 @@
 @end
 
 @implementation QTPureWordsModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"content":@"content",
+             @"enter":@"enter"
+             };
+}
 #if TARGET_OS_OSX
 - (void)handleEvent{
     NSString *each = @"";
@@ -40,7 +58,7 @@
         [QTKey pressNormalKey:keyCode];
     }
     
-    if (self.isEnter) {
+    if (self.enter) {
         keyCode = [NSString keyCodeFormKeyString:@"ENTER"];
         [QTKey pressNormalKey:keyCode];
     }
@@ -49,6 +67,12 @@
 @end
 
 @implementation QTShortCutsModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"functionKeys":@"functionKeys",
+             @"plainKey":@"plainKey",
+             };
+}
 #if TARGET_OS_OSX
 - (void)handleEvent{
     CGKeyCode keyCode = [NSString keyCodeFormKeyString:self.plainKey];
@@ -58,6 +82,15 @@
 @end
 
 @implementation QTClickMenuItemModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"subMenuItem":@"subMenuItem",
+             @"menuItem":@"menuItem",
+             @"menu":@"menu",
+             @"menuBar":@"menuBar",
+             @"appName":@"appName",
+             };
+}
 #if TARGET_OS_OSX
 - (void)handleEvent{
     if (self.subMenuItem) {
@@ -70,6 +103,12 @@
 @end
 
 @implementation QTSystemEventModel
++ (NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"qtSystemEventType":@"qtSystemEventType",
+             @"paras":@"paras",
+             };
+}
 #if TARGET_OS_OSX
 - (void)handleEvent{
     switch (self.qtSystemEventType) {
@@ -93,4 +132,12 @@
 @end
 
 @implementation QTMacToiOSModel
++(NSDictionary *)JSONKeyPathsByPropertyKey{
+    return @{
+             @"type":@"type",
+             @"frontmostApp":@"frontmostApp",
+             @"brightness":@"brightness",
+             @"volume":@"volume",
+             };
+}
 @end
