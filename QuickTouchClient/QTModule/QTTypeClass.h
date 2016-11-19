@@ -33,6 +33,12 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
     QTMacToiOSVolume, // Mac current volume
 };
 
+@protocol QTTypeModelDelegate <NSObject>
+#if TARGET_OS_OSX
+- (void)handleEvent;
+#endif
+@end
+
 @interface QTTypeClass : NSObject
 @end
 
@@ -49,9 +55,8 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //QTSingleWordModel *model = [QTSingleWordModel new];
 //model.content = @"F1";
 //model.enter = NO;
-@interface QTSingleWordModel : MTLModel <MTLJSONSerializing>
+@interface QTSingleWordModel : MTLModel <MTLJSONSerializing,QTTypeModelDelegate>
 @property (nonatomic, copy) NSString *content;
-- (void)handleEvent;
 @end
 
 
@@ -59,20 +64,18 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //QTPureWordsModel *model = [QTPureWordsModel new];
 //model.content = @"ls -a";
 //model.enter = NO;
-@interface QTPureWordsModel : MTLModel <MTLJSONSerializing>
+@interface QTPureWordsModel : MTLModel <MTLJSONSerializing,QTTypeModelDelegate>
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, assign ) BOOL enter; // press enter key after excute content
-- (void)handleEvent;
 @end
 
 //example:
 //QTShortCutsModel *model = [QTShortCutsModel new];
 //model.functionKeys = @[@"Command"];
 //model.plainKey = @"C";
-@interface QTShortCutsModel : MTLModel <MTLJSONSerializing>
+@interface QTShortCutsModel : MTLModel <MTLJSONSerializing,QTTypeModelDelegate>
 @property (nonatomic, strong) NSArray *functionKeys; // Command / Control / Alt / Shift / Fn ( but Fn key did not seem to have effect )
 @property (nonatomic, copy) NSString *plainKey; // a b c d ...
-- (void)handleEvent;
 @end
 
 //example:
@@ -81,13 +84,12 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //model.menu = @"前往";
 //model.menuBar = @1;
 //model.appName = @"Finder";
-@interface QTClickMenuItemModel : MTLModel <MTLJSONSerializing>
+@interface QTClickMenuItemModel : MTLModel <MTLJSONSerializing,QTTypeModelDelegate>
 @property (nonatomic, copy) NSString *subMenuItem; // optional, if just click menu item without aonther sub menu
 @property (nonatomic, copy) NSString *menuItem;
 @property (nonatomic, copy) NSString *menu;
 @property (nonatomic, assign) NSInteger menuBar; // normoally set @1
 @property (nonatomic, copy) NSString *appName;
-- (void)handleEvent;
 @end
 
 //example:
@@ -95,10 +97,9 @@ typedef NS_ENUM(NSInteger, QTMacToiOSType) {
 //model.desc = @"Make Mac Sleep";
 //model.qtSystemSettingType = QTSystemSettingSleep;
 //model.paras = @{@"delay":30};
-@interface QTSystemEventModel : MTLModel <MTLJSONSerializing>
+@interface QTSystemEventModel : MTLModel <MTLJSONSerializing,QTTypeModelDelegate>
 @property (nonatomic, assign) QTSystemEventType qtSystemEventType;
 @property (nonatomic, strong) id paras;
-- (void)handleEvent;
 @end
 
 @interface QTMacToiOSModel : MTLModel <MTLJSONSerializing>

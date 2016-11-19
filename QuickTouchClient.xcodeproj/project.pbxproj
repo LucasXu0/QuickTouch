@@ -14,31 +14,11 @@
 		3411356B1DD2CF2400D98C94 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 341135691DD2CF2400D98C94 /* MainMenu.xib */; };
 		34275B5C1DDCA03E0091045C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B591DDCA03E0091045C /* GCDAsyncSocket.m */; };
 		34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B5B1DDCA03E0091045C /* GCDAsyncUdpSocket.m */; };
-		34275B761DDCC0F70091045C /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B721DDCC0F70091045C /* QTProcessor.m */; };
 		34275B7E1DDCC2D20091045C /* QTTypeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B7D1DDCC2D20091045C /* QTTypeClass.m */; };
 		34275B7F1DDD54680091045C /* QTTypeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B7D1DDCC2D20091045C /* QTTypeClass.m */; };
-		34275B801DDD546A0091045C /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B721DDCC0F70091045C /* QTProcessor.m */; };
 		34275B811DDD75CA0091045C /* NSString+KeyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B7D1DDC763900F48479 /* NSString+KeyCode.m */; };
 		34275B8F1DDD9E960091045C /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B8D1DDD9E960091045C /* Util.m */; };
 		34275B951DDDA0330091045C /* NotificationConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B941DDDA0330091045C /* NotificationConstant.m */; };
-		34275BAE1DDDE69B0091045C /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B9D1DDDE69B0091045C /* BabyBluetooth.m */; };
-		34275BAF1DDDE69B0091045C /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B9D1DDDE69B0091045C /* BabyBluetooth.m */; };
-		34275BB01DDDE69B0091045C /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B9F1DDDE69B0091045C /* BabyCallback.m */; };
-		34275BB11DDDE69B0091045C /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275B9F1DDDE69B0091045C /* BabyCallback.m */; };
-		34275BB21DDDE69B0091045C /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA11DDDE69B0091045C /* BabyCentralManager.m */; };
-		34275BB31DDDE69B0091045C /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA11DDDE69B0091045C /* BabyCentralManager.m */; };
-		34275BB41DDDE69B0091045C /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA31DDDE69B0091045C /* BabyDefine.m */; };
-		34275BB51DDDE69B0091045C /* BabyDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA31DDDE69B0091045C /* BabyDefine.m */; };
-		34275BB61DDDE69B0091045C /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA51DDDE69B0091045C /* BabyOptions.m */; };
-		34275BB71DDDE69B0091045C /* BabyOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA51DDDE69B0091045C /* BabyOptions.m */; };
-		34275BB81DDDE69B0091045C /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA71DDDE69B0091045C /* BabyPeripheralManager.m */; };
-		34275BB91DDDE69B0091045C /* BabyPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA71DDDE69B0091045C /* BabyPeripheralManager.m */; };
-		34275BBA1DDDE69B0091045C /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA91DDDE69B0091045C /* BabyRhythm.m */; };
-		34275BBB1DDDE69B0091045C /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BA91DDDE69B0091045C /* BabyRhythm.m */; };
-		34275BBC1DDDE69B0091045C /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BAB1DDDE69B0091045C /* BabySpeaker.m */; };
-		34275BBD1DDDE69B0091045C /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BAB1DDDE69B0091045C /* BabySpeaker.m */; };
-		34275BBE1DDDE69B0091045C /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BAD1DDDE69B0091045C /* BabyToy.m */; };
-		34275BBF1DDDE69B0091045C /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BAD1DDDE69B0091045C /* BabyToy.m */; };
 		34275BC21DDF3E500091045C /* QTAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BC11DDF3E500091045C /* QTAppModel.m */; };
 		34275BC61DDF441B0091045C /* QTAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BC41DDF441B0091045C /* QTAddItemViewController.m */; };
 		34275BC71DDF441B0091045C /* QTAddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34275BC51DDF441B0091045C /* QTAddItemViewController.xib */; };
@@ -81,31 +61,12 @@
 		34275B5A1DDCA03E0091045C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		34275B5B1DDCA03E0091045C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		34275B711DDCC0F70091045C /* QTProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTProcessor.h; sourceTree = "<group>"; };
-		34275B721DDCC0F70091045C /* QTProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTProcessor.m; sourceTree = "<group>"; };
 		34275B7C1DDCC2D20091045C /* QTTypeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTTypeClass.h; sourceTree = "<group>"; };
 		34275B7D1DDCC2D20091045C /* QTTypeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTTypeClass.m; sourceTree = "<group>"; };
 		34275B8C1DDD9E960091045C /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		34275B8D1DDD9E960091045C /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		34275B931DDDA0330091045C /* NotificationConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationConstant.h; sourceTree = "<group>"; };
 		34275B941DDDA0330091045C /* NotificationConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationConstant.m; sourceTree = "<group>"; };
-		34275B9C1DDDE69B0091045C /* BabyBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
-		34275B9D1DDDE69B0091045C /* BabyBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
-		34275B9E1DDDE69B0091045C /* BabyCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
-		34275B9F1DDDE69B0091045C /* BabyCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCallback.m; sourceTree = "<group>"; };
-		34275BA01DDDE69B0091045C /* BabyCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCentralManager.h; sourceTree = "<group>"; };
-		34275BA11DDDE69B0091045C /* BabyCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyCentralManager.m; sourceTree = "<group>"; };
-		34275BA21DDDE69B0091045C /* BabyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDefine.h; sourceTree = "<group>"; };
-		34275BA31DDDE69B0091045C /* BabyDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDefine.m; sourceTree = "<group>"; };
-		34275BA41DDDE69B0091045C /* BabyOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyOptions.h; sourceTree = "<group>"; };
-		34275BA51DDDE69B0091045C /* BabyOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyOptions.m; sourceTree = "<group>"; };
-		34275BA61DDDE69B0091045C /* BabyPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeripheralManager.h; sourceTree = "<group>"; };
-		34275BA71DDDE69B0091045C /* BabyPeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyPeripheralManager.m; sourceTree = "<group>"; };
-		34275BA81DDDE69B0091045C /* BabyRhythm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyRhythm.h; sourceTree = "<group>"; };
-		34275BA91DDDE69B0091045C /* BabyRhythm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyRhythm.m; sourceTree = "<group>"; };
-		34275BAA1DDDE69B0091045C /* BabySpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabySpeaker.h; sourceTree = "<group>"; };
-		34275BAB1DDDE69B0091045C /* BabySpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
-		34275BAC1DDDE69B0091045C /* BabyToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
-		34275BAD1DDDE69B0091045C /* BabyToy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
 		34275BC01DDF3E500091045C /* QTAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTAppModel.h; sourceTree = "<group>"; };
 		34275BC11DDF3E500091045C /* QTAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTAppModel.m; sourceTree = "<group>"; };
 		34275BC31DDF441B0091045C /* QTAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTAddItemViewController.h; sourceTree = "<group>"; };
@@ -236,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				34275B711DDCC0F70091045C /* QTProcessor.h */,
-				34275B721DDCC0F70091045C /* QTProcessor.m */,
 				346A99401DE0110000DE19FC /* QTProcessor.m */,
 				34275B7C1DDCC2D20091045C /* QTTypeClass.h */,
 				34275B7D1DDCC2D20091045C /* QTTypeClass.m */,
@@ -265,31 +225,6 @@
 			path = QuickTouchClient/AppShortCuts;
 			sourceTree = "<group>";
 		};
-		34275B9B1DDDE69B0091045C /* bluetooth */ = {
-			isa = PBXGroup;
-			children = (
-				34275B9C1DDDE69B0091045C /* BabyBluetooth.h */,
-				34275B9D1DDDE69B0091045C /* BabyBluetooth.m */,
-				34275B9E1DDDE69B0091045C /* BabyCallback.h */,
-				34275B9F1DDDE69B0091045C /* BabyCallback.m */,
-				34275BA01DDDE69B0091045C /* BabyCentralManager.h */,
-				34275BA11DDDE69B0091045C /* BabyCentralManager.m */,
-				34275BA21DDDE69B0091045C /* BabyDefine.h */,
-				34275BA31DDDE69B0091045C /* BabyDefine.m */,
-				34275BA41DDDE69B0091045C /* BabyOptions.h */,
-				34275BA51DDDE69B0091045C /* BabyOptions.m */,
-				34275BA61DDDE69B0091045C /* BabyPeripheralManager.h */,
-				34275BA71DDDE69B0091045C /* BabyPeripheralManager.m */,
-				34275BA81DDDE69B0091045C /* BabyRhythm.h */,
-				34275BA91DDDE69B0091045C /* BabyRhythm.m */,
-				34275BAA1DDDE69B0091045C /* BabySpeaker.h */,
-				34275BAB1DDDE69B0091045C /* BabySpeaker.m */,
-				34275BAC1DDDE69B0091045C /* BabyToy.h */,
-				34275BAD1DDDE69B0091045C /* BabyToy.m */,
-			);
-			path = bluetooth;
-			sourceTree = "<group>";
-		};
 		34597B401DDC744D00F48479 /* ScanQRCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,7 +239,6 @@
 		34597B5B1DDC74B400F48479 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				34275B9B1DDDE69B0091045C /* bluetooth */,
 				34597B5C1DDC74B400F48479 /* GCDAsyncSokcet */,
 			);
 			path = Shared;
@@ -627,25 +561,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34275BBF1DDDE69B0091045C /* BabyToy.m in Sources */,
-				34275BB51DDDE69B0091045C /* BabyDefine.m in Sources */,
-				34275BBB1DDDE69B0091045C /* BabyRhythm.m in Sources */,
 				34275B5C1DDCA03E0091045C /* GCDAsyncSocket.m in Sources */,
-				34275BBD1DDDE69B0091045C /* BabySpeaker.m in Sources */,
-				34275B801DDD546A0091045C /* QTProcessor.m in Sources */,
 				34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */,
 				34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */,
-				34275BB11DDDE69B0091045C /* BabyCallback.m in Sources */,
 				34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */,
-				34275BB91DDDE69B0091045C /* BabyPeripheralManager.m in Sources */,
 				341135681DD2CEB000D98C94 /* AppDelegate.m in Sources */,
 				34597B8F1DDC763900F48479 /* QTKey.m in Sources */,
 				34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */,
-				34275BB71DDDE69B0091045C /* BabyOptions.m in Sources */,
-				34275BB31DDDE69B0091045C /* BabyCentralManager.m in Sources */,
 				341135621DD2CEB000D98C94 /* main.m in Sources */,
 				34275B7F1DDD54680091045C /* QTTypeClass.m in Sources */,
-				34275BAF1DDDE69B0091045C /* BabyBluetooth.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,31 +578,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				34597B621DDC74B400F48479 /* GCDAsyncUdpSocket.m in Sources */,
-				34275BBA1DDDE69B0091045C /* BabyRhythm.m in Sources */,
-				34275BB21DDDE69B0091045C /* BabyCentralManager.m in Sources */,
-				34275BBC1DDDE69B0091045C /* BabySpeaker.m in Sources */,
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
 				34275B811DDD75CA0091045C /* NSString+KeyCode.m in Sources */,
-				34275BB41DDDE69B0091045C /* BabyDefine.m in Sources */,
 				34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */,
 				34275BC61DDF441B0091045C /* QTAddItemViewController.m in Sources */,
 				346A99411DE0110000DE19FC /* QTProcessor.m in Sources */,
 				34275BCF1DDF699A0091045C /* QTAddItemModel.m in Sources */,
 				34275BCB1DDF44A40091045C /* QTAddCommnadViewController.m in Sources */,
-				34275BAE1DDDE69B0091045C /* BabyBluetooth.m in Sources */,
 				34275B951DDDA0330091045C /* NotificationConstant.m in Sources */,
 				34597B791DDC758200F48479 /* QuickTouchViewController.m in Sources */,
 				34B049DE1DD0D97500998965 /* MainViewController.m in Sources */,
-				34275BBE1DDDE69B0091045C /* BabyToy.m in Sources */,
 				34B049C61DD0D89500998965 /* main.m in Sources */,
-				34275BB81DDDE69B0091045C /* BabyPeripheralManager.m in Sources */,
-				34275B761DDCC0F70091045C /* QTProcessor.m in Sources */,
 				34275BC21DDF3E500091045C /* QTAppModel.m in Sources */,
 				34597B611DDC74B400F48479 /* GCDAsyncSocket.m in Sources */,
 				34597B461DDC744D00F48479 /* UIView+SDExtension.m in Sources */,
 				34275B7E1DDCC2D20091045C /* QTTypeClass.m in Sources */,
-				34275BB01DDDE69B0091045C /* BabyCallback.m in Sources */,
-				34275BB61DDDE69B0091045C /* BabyOptions.m in Sources */,
 				34275B8F1DDD9E960091045C /* Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

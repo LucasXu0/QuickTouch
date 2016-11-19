@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "QRCodeCreator.h"
 #import "QTProcessor.h"
-#import "BabyBluetooth.h"
 
 @interface AppDelegate ()
 
