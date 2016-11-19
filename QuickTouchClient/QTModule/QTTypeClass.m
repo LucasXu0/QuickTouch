@@ -93,7 +93,7 @@
 }
 #if TARGET_OS_OSX
 - (void)handleEvent{
-    if (self.subMenuItem) {
+    if (self.subMenuItem && self.subMenuItem.length > 0) {
         [QTSystemSetting clickSubMenuItem:self.subMenuItem ofMenuItem:self.menuItem ofMenu:self.menu ofMenuBar:self.menuBar ofApplication:self.appName];
     }else{
         [QTSystemSetting clickMenuItem:self.menuItem ofMenu:self.menu ofMenuBar:self.menuBar ofApplication:self.appName];
