@@ -42,7 +42,9 @@
     
     _appNameLabel.text = @"";
     
+    @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
+        @strongify(self);
         if (notication.object) {
             _appNameLabel.text = notication.object;
         }
