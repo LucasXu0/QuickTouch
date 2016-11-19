@@ -23,9 +23,7 @@
 
 @end
 
-@implementation AppDelegate{
-    BabyBluetooth *baby;
-}
+@implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
@@ -41,31 +39,6 @@
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
 
     [self configSubviews];
-}
-
-//设置蓝牙委托
--(void)babyDelegate{
-    
-    //设置扫描到设备的委托
-    [baby setBlockOnDiscoverToPeripherals:^(CBCentralManager *central, CBPeripheral *peripheral, NSDictionary *advertisementData, NSNumber *RSSI) {
-        NSLog(@"搜索到了设备:%@",peripheral.name);
-    }];
-    
-    //过滤器
-    //设置查找设备的过滤器
-    [baby setFilterOnDiscoverPeripherals:^BOOL(NSString *peripheralName, NSDictionary *advertisementData, NSNumber *RSSI) {
-        //最常用的场景是查找某一个前缀开头的设备
-        //if ([peripheralName hasPrefix:@"Pxxxx"] ) {
-        //    return YES;
-        //}
-        //return NO;
-        NSLog(@"%@",peripheralName);
-        //设置查找规则是名称大于1 ， the search rule is peripheral.name length > 1
-        if (peripheralName.length >1) {
-            return YES;
-        }
-        return NO;
-    }];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

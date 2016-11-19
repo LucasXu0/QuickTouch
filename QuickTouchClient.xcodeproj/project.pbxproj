@@ -36,6 +36,7 @@
 		34597B8F1DDC763900F48479 /* QTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B881DDC763900F48479 /* QTKey.m */; };
 		34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B8A1DDC763900F48479 /* QTSystemSetting.m */; };
 		346A99411DE0110000DE19FC /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A99401DE0110000DE19FC /* QTProcessor.m */; };
+		346A99421DE026AC00DE19FC /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A99401DE0110000DE19FC /* QTProcessor.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
@@ -562,6 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34275B5C1DDCA03E0091045C /* GCDAsyncSocket.m in Sources */,
+				346A99421DE026AC00DE19FC /* QTProcessor.m in Sources */,
 				34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */,
 				34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */,
 				34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */,
