@@ -49,7 +49,6 @@
             _appNameLabel.text = notication.object;
         }
         _appQTDataSource = [[PINCache sharedCache] objectForKey:_appNameLabel.text];
-        NSLog(@"%@_%@",_appQTDataSource[0].desc,_appQTDataSource[0].qtTypeModels);
         [_appQTTableView reloadData];
     }];
     
@@ -97,7 +96,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    [_appQTDataSource removeObjectAtIndex:indexPath.row];
+    if (_appQTDataSource.count == 1) {
+        _appQTDataSource = [NSMutableArray arrayWithArray:@[]];
+    }else{
+        [_appQTDataSource removeObjectAtIndex:indexPath.row];
+    }
     [[PINCache sharedCache] setObject:_appQTDataSource forKey:_appNameLabel.text];
     [_appQTTableView reloadData];
 }
