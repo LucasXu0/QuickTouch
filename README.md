@@ -7,7 +7,8 @@ Demo Video (演示视频) <http://www.bilibili.com/video/av7107528> (only for SH
 
 #### Now Support Function including (已支持功能包括):
 
-* **2016.11.20**
+* **NEW 2016.11.20**
+  
   Add function - you can custom command. （可以自定义对应 App 的命令）
 
 * **2016.11.16**
