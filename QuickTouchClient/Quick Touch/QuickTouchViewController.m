@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sleepButton;
 @property (weak, nonatomic) IBOutlet UIButton *upButton;
 @property (weak, nonatomic) IBOutlet UIButton *downButton;
+@property (weak, nonatomic) IBOutlet UIImageView *appIcon;
 
 @property (nonatomic, strong) NSMutableArray<QTAddItemModel *> *appQTDataSource;
 
@@ -46,7 +47,8 @@
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:QTQuickTouchVCReloadData object:nil] subscribeNext:^(NSNotification *notication) {
         @strongify(self);
         if (notication.object) {
-            _appNameLabel.text = notication.object;
+            QTMacToiOSModel *model = notication.object;
+            _appNameLabel.text = model.frontmostApp;
         }
         _appQTDataSource = [[PINCache sharedCache] objectForKey:_appNameLabel.text];
         [_appQTTableView reloadData];
@@ -70,7 +72,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource
