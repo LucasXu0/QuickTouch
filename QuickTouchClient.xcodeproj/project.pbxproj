@@ -25,6 +25,8 @@
 		34275BCB1DDF44A40091045C /* QTAddCommnadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BC91DDF44A40091045C /* QTAddCommnadViewController.m */; };
 		34275BCC1DDF44A40091045C /* QTAddCommnadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34275BCA1DDF44A40091045C /* QTAddCommnadViewController.xib */; };
 		34275BCF1DDF699A0091045C /* QTAddItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34275BCE1DDF699A0091045C /* QTAddItemModel.m */; };
+		345225C31DE2C82A0090BE75 /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 345225C21DE2C82A0090BE75 /* QTProcessor.m */; };
+		345225C41DE2C82A0090BE75 /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 345225C21DE2C82A0090BE75 /* QTProcessor.m */; };
 		34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */; };
 		34597B461DDC744D00F48479 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B441DDC744D00F48479 /* UIView+SDExtension.m */; };
 		34597B611DDC74B400F48479 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B5E1DDC74B400F48479 /* GCDAsyncSocket.m */; };
@@ -35,8 +37,6 @@
 		34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B7F1DDC763900F48479 /* QRCodeCreator.m */; };
 		34597B8F1DDC763900F48479 /* QTKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B881DDC763900F48479 /* QTKey.m */; };
 		34597B901DDC763900F48479 /* QTSystemSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 34597B8A1DDC763900F48479 /* QTSystemSetting.m */; };
-		346A99411DE0110000DE19FC /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A99401DE0110000DE19FC /* QTProcessor.m */; };
-		346A99421DE026AC00DE19FC /* QTProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A99401DE0110000DE19FC /* QTProcessor.m */; };
 		34B049C61DD0D89500998965 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C51DD0D89500998965 /* main.m */; };
 		34B049C91DD0D89500998965 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B049C81DD0D89500998965 /* AppDelegate.m */; };
 		34B049D11DD0D89500998965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B049D01DD0D89500998965 /* Assets.xcassets */; };
@@ -78,6 +78,7 @@
 		34275BCA1DDF44A40091045C /* QTAddCommnadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QTAddCommnadViewController.xib; sourceTree = "<group>"; };
 		34275BCD1DDF699A0091045C /* QTAddItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTAddItemModel.h; sourceTree = "<group>"; };
 		34275BCE1DDF699A0091045C /* QTAddItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTAddItemModel.m; sourceTree = "<group>"; };
+		345225C21DE2C82A0090BE75 /* QTProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTProcessor.m; sourceTree = "<group>"; };
 		34597B411DDC744D00F48479 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
 		34597B421DDC744D00F48479 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
 		34597B431DDC744D00F48479 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		34597B881DDC763900F48479 /* QTKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTKey.m; sourceTree = "<group>"; };
 		34597B891DDC763900F48479 /* QTSystemSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTSystemSetting.h; sourceTree = "<group>"; };
 		34597B8A1DDC763900F48479 /* QTSystemSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTSystemSetting.m; sourceTree = "<group>"; };
-		346A99401DE0110000DE19FC /* QTProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QTProcessor.m; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/QTProcessor.m"; sourceTree = "<group>"; };
 		34B049C11DD0D89500998965 /* QuickTouchClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickTouchClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B049C51DD0D89500998965 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34B049C71DD0D89500998965 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				34275B711DDCC0F70091045C /* QTProcessor.h */,
-				346A99401DE0110000DE19FC /* QTProcessor.m */,
+				345225C21DE2C82A0090BE75 /* QTProcessor.m */,
 				34275B7C1DDCC2D20091045C /* QTTypeClass.h */,
 				34275B7D1DDCC2D20091045C /* QTTypeClass.m */,
 				34275BC01DDF3E500091045C /* QTAppModel.h */,
@@ -563,7 +563,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34275B5C1DDCA03E0091045C /* GCDAsyncSocket.m in Sources */,
-				346A99421DE026AC00DE19FC /* QTProcessor.m in Sources */,
+				345225C41DE2C82A0090BE75 /* QTProcessor.m in Sources */,
 				34275B5D1DDCA03E0091045C /* GCDAsyncUdpSocket.m in Sources */,
 				34597B8B1DDC763900F48479 /* NSString+KeyCode.m in Sources */,
 				34597B8C1DDC763900F48479 /* QRCodeCreator.m in Sources */,
@@ -583,8 +583,8 @@
 				34B049C91DD0D89500998965 /* AppDelegate.m in Sources */,
 				34275B811DDD75CA0091045C /* NSString+KeyCode.m in Sources */,
 				34597B451DDC744D00F48479 /* ScanQRCodeViewController.m in Sources */,
+				345225C31DE2C82A0090BE75 /* QTProcessor.m in Sources */,
 				34275BC61DDF441B0091045C /* QTAddItemViewController.m in Sources */,
-				346A99411DE0110000DE19FC /* QTProcessor.m in Sources */,
 				34275BCF1DDF699A0091045C /* QTAddItemModel.m in Sources */,
 				34275BCB1DDF44A40091045C /* QTAddCommnadViewController.m in Sources */,
 				34275B951DDDA0330091045C /* NotificationConstant.m in Sources */,
