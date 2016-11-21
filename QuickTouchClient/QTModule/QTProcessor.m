@@ -38,13 +38,14 @@
         NSDictionary *qtContentDict = [MTLJSONAdapter JSONDictionaryFromModel:dataModel.qtContent error:nil];
         [dataModelDict setValue:qtContentDict forKey:@"qtContent"];
     }
+    NSLog(@"-- send message -- \n%@",dataModelDict);
     return  [NSJSONSerialization dataWithJSONObject:dataModelDict options:NSJSONWritingPrettyPrinted error:nil];
 }
 
 #pragma mark - Receive Data
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext{
     NSDictionary *dataModelDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    NSLog(@"%@",dataModelDict);
+    NSLog(@"-- receive message -- \n%@",dataModelDict);
     QTTypeModel *dataModel = [MTLJSONAdapter modelOfClass:QTTypeModel.class fromJSONDictionary:dataModelDict error:nil];
     switch (dataModel.qtType) {
         case QTConfirm:{
@@ -85,6 +86,7 @@
         case QTiOSHost:{
             _host = dataModel.qtContent;
             [[NSUserDefaults standardUserDefaults] setObject:_host forKey:UserDeafault_iOSLocalIP];
+            [[[NSWorkspace sharedWorkspace] notificationCenter] postNotificationName:QTServerMainViewReload object:nil];
         }
             break;
 #endif

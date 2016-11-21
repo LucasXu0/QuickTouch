@@ -8,6 +8,7 @@
 
 #import "QTSystemSetting.h"
 #import "QTTypeClass.h"
+#import "NotificationConstant.h"
 
 #define QTRECEIVEPORT 9527
 #define QTSENDPORT 9526
