@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
+#import "QTMainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,8 +19,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    //MainViewController *mainVC = [[MainViewController alloc] init];
+    QTMainViewController *qtMainVC = [QTMainViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qtMainVC];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];

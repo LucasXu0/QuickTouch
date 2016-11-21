@@ -85,6 +85,7 @@
         case QTiOSHost:{
             _host = dataModel.qtContent;
             [[NSUserDefaults standardUserDefaults] setObject:_host forKey:UserDeafault_iOSLocalIP];
+            [[NSNotificationCenter defaultCenter] postNotificationName:QTServerMainViewReload object:nil];
         }
             break;
 #endif

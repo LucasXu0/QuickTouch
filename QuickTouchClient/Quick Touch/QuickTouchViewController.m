@@ -48,7 +48,7 @@
         @strongify(self);
         if (notication.object) {
             QTMacToiOSModel *model = notication.object;
-            _appNameLabel.text = model.frontmostApp;
+            self.appNameLabel.text = model.frontmostApp;
         }
         _appQTDataSource = [[PINCache sharedCache] objectForKey:_appNameLabel.text];
         [_appQTTableView reloadData];

@@ -29,22 +29,24 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP]) {
-        [QTProcessor sharedInstance].host = [[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP];
-        self.iOSIPInfosLabel.stringValue = [NSString stringWithFormat:@"iOS IP:%@ Send:%d Rece:%d",[QTProcessor sharedInstance].host,QTRECEIVEPORT,QTSENDPORT];
-    }
-    
     [QTProcessor sharedInstance].recePort = QTRECEIVEPORT;
     [QTProcessor sharedInstance].sendPort = QTSENDPORT;
     [[QTProcessor sharedInstance] beginReceiving];
     
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(sendMacInfos) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(reloadMainView) name:QTServerMainViewReload object:nil];
 
+    
     [self configSubviews];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+- (void)reloadMainView{
+    [QTProcessor sharedInstance].host = [[NSUserDefaults standardUserDefaults] objectForKey:UserDeafault_iOSLocalIP];
+    self.iOSIPInfosLabel.stringValue = [NSString stringWithFormat:@"iOS IP:%@ Send:%d Rece:%d",[QTProcessor sharedInstance].host,QTRECEIVEPORT,QTSENDPORT];
 }
 
 #pragma mark - Config Subviews
