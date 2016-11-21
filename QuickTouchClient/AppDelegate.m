@@ -19,7 +19,6 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    //MainViewController *mainVC = [[MainViewController alloc] init];
     QTMainViewController *qtMainVC = [QTMainViewController new];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qtMainVC];
     self.window.rootViewController = nav;

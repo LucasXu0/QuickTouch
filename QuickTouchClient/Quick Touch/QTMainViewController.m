@@ -8,9 +8,11 @@
 
 #import "QTMainViewController.h"
 #import "QTHeaderView.h"
+#import "QTFooterView.h"
 @interface QTMainViewController ()
 
 @property (nonatomic, strong) QTHeaderView *headerView;
+@property (nonatomic, strong) QTFooterView *footerView;
 
 @end
 
@@ -18,21 +20,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:YES];
     [self.view addSubview:self.headerView];
+    [self.view addSubview:self.footerView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (QTHeaderView *)headerView{
     if (!_headerView) {
-        _headerView = [[QTHeaderView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 70)];
+        _headerView = [[QTHeaderView alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 130)];
         _headerView.appName = @"xcode";
         _headerView.userName = @"Tsui YuenHong";
     }
     return _headerView;
+}
+
+- (QTFooterView *)footerView{
+    if (!_footerView) {
+        _footerView = [[QTFooterView alloc] initWithFrame:CGRectMake(0, 560, self.view.frame.size.width, 120)];
+    }
+    return _footerView;
 }
 
 @end

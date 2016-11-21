@@ -23,6 +23,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        [self.layer setBorderColor:[[UIColor blueColor] CGColor]];
+        [self.layer setBorderWidth:2.0f];
         [self configSubviews];
         RAC(self.appNameLabel, text) = RACObserve(self, appName);
         RAC(self.appIconView, image) = [RACObserve(self, appName) map:^UIImage *(NSString *appName) {
